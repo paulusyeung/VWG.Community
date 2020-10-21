@@ -55,15 +55,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dropzone.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Dropzone.designer.cs">
-      <DependentUpon>Dropzone.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DropzoneSkin.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Helper\ColorHelper.cs" />
     <Compile Include="Helper\ImageUploaderFile.cs" />
     <Compile Include="Helper\UploadBoxHelper.cs" />
@@ -77,9 +68,6 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="DropzoneSkin.resx">
-      <DependentUpon>DropzoneSkin.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Upload\UploadBox.png" />
     <EmbeddedResource Include="Upload\UploadBox.bmp" />
   </ItemGroup>
@@ -90,16 +78,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Dropzone.bmp" />
-    <Content Include="DropzoneSkin.dropzone.css">
-      <DependentUpon>DropzoneSkin.cs</DependentUpon>
-    </Content>
-    <Content Include="DropzoneSkin.dropzone.html">
-      <DependentUpon>DropzoneSkin.cs</DependentUpon>
-    </Content>
-    <Content Include="DropzoneSkin.dropzone.min.js">
-      <DependentUpon>DropzoneSkin.cs</DependentUpon>
-    </Content>
     <Content Include="UploadBoxSkin.jquery.fileupload.js">
       <DependentUpon>UploadBoxSkin.cs</DependentUpon>
     </Content>
