@@ -3,7 +3,9 @@
 function UploadBox_Initialize(strControlId) {
     // Get reference to the XML data node 
     var objNode = mobjApp.Data_GetNode(strControlId);
-    console.log(strControlId + ": " + JSON.stringify(objNode.attributes));
+
+    // 2020.10.19 paulus: un-comment for debugging
+    //console.log(strControlId + ": " + JSON.stringify(objNode.attributes));
 
     // Prepare for settings 
     var objSettings = {};
@@ -42,8 +44,8 @@ function UploadBox_Initialize(strControlId) {
     objSettings["dataType"] = 'json';
 
     objSettings["acceptFileTypes"] = '^.*$';        // 2020.10.19 paulus: 漏咗？
-    objSettings["backColor"] = 'transparent';
-    objSettings["foreColor"] = 'black';
+    objSettings["backColor"] = 'transparent';       // 2020.10.19 paulus: 我加嘅
+    objSettings["foreColor"] = 'black';             // 2020.10.19 paulus: 我加嘅
 
     // Event that fires once at the start of every group of files added to the control in the same operation
     objSettings["add"] = function (e, data) {

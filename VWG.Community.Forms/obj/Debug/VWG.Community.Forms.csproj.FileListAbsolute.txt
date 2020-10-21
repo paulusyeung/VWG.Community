@@ -25,5 +25,4 @@ C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.dll
 C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.pdb
 C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.csproj.GenerateResource.Cache
 C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.Skins.UploadBoxSkin.resources
-C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.DropzoneSkin.resources
 C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.csprojResolveAssemblyReference.cache

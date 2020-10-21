@@ -98,11 +98,10 @@ namespace VWG.Community.Forms
         private static readonly SerializableProperty UploadTextProperty = SerializableProperty.Register("UploadText", typeof(string), typeof(UploadBox));
         private static readonly SerializableProperty UploadShowFilenameOnBarProperty = SerializableProperty.Register("UploadShowFilenameOnBar", typeof(bool), typeof(UploadBox));
         private static readonly SerializableProperty UploadShowSpeedOnBarProperty = SerializableProperty.Register("UploadShowSpeedOnBar", typeof(bool), typeof(UploadBox));
-
+        
+        // 2020.10.22 paulus: serialize 增加嘅 properties
         private static readonly SerializableProperty BackColorProperty = SerializableProperty.Register("BackColor", typeof(String), typeof(UploadBox));
         private static readonly SerializableProperty ForeColorProperty = SerializableProperty.Register("ForeColor", typeof(String), typeof(UploadBox));
-
-        //private static readonly SerializableEvent FileUploadedEvent = SerializableEvent.Register("FileUploaded", typeof(EventHandler), typeof(UploadBox));
         #endregion
 
         /// <summary>
@@ -357,7 +356,7 @@ namespace VWG.Community.Forms
             }
         }
 
-        #region 2020.10.20 paulus: 增加 attributes
+        #region 2020.10.20 paulus: 增加 public properties
         [Category("UploadBox")]
         [Description("Background Color of UploadBox. Use Color Names only.")]
         [DefaultValue(0)]
@@ -598,6 +597,7 @@ namespace VWG.Community.Forms
         /// <param name="writer"></param>
         protected override void RenderAttributes(IContext context, IAttributeWriter writer)
         {
+            // 2020.10.22 paulus: WGAttributes 屬於 WebGUI Core，唔識增加 WGAttributes.UploadBox???，借用現有嘅 WGAttributes.UploadControl???
             writer.WriteAttributeString(WGAttributes.UploadControlMaxNumberOfFiles, this.UploadMaxNumberOfFiles.ToString(CultureInfo.InvariantCulture));
             writer.WriteAttributeString(WGAttributes.UploadControlMaxFileSize, this.UploadMaxFileSize.ToString(CultureInfo.InvariantCulture));
             writer.WriteAttributeString(WGAttributes.UploadControlMinFileSize, this.UploadMinFileSize.ToString(CultureInfo.InvariantCulture));
@@ -674,6 +674,7 @@ namespace VWG.Community.Forms
         {
             CriticalEventsData objEvents = base.GetCriticalEventsData();
 
+            // 2020.10.22 paulus: WGEvents 屬於 WebGUI Core，唔識增加 WGEvents.UploadBox???，借用現有嘅 WGEvents.UploadControl???
             if (this.UploadErrorHandler != null) objEvents.Set(WGEvents.UploadControlErrorHandler);
             if (this.UploadFileCompletedHandler != null) objEvents.Set(WGEvents.UploadControlFileCompletedHandler);
             if (this.UploadBatchStartingHandler != null) objEvents.Set(WGEvents.UploadControlBatchStartingHandler);
@@ -690,6 +691,7 @@ namespace VWG.Community.Forms
         {
             CriticalEventsData objEvents = base.GetCriticalClientEventsData();
 
+            // 2020.10.22 paulus: WGEvents 屬於 WebGUI Core，唔識增加 WGEvents.UploadBox???，借用現有嘅 WGEvents.UploadControl???
             if (this.HasClientHandler("UploadErrorHandler")) objEvents.Set(WGEvents.UploadControlErrorHandler);
             if (this.HasClientHandler("UploadFileCompletedHandler")) objEvents.Set(WGEvents.UploadControlFileCompletedHandler);
             if (this.HasClientHandler("UploadBatchStartingHandler")) objEvents.Set(WGEvents.UploadControlBatchStartingHandler);
