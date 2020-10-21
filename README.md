@@ -29,7 +29,7 @@ NetSqlAzMan.Tester 係 debug 時候用嘅。
 
 ### VWG.Community.Forms
 
-唔繼續用 VWG.Community.CustomControl 個名，改用呢倨，跟番 WebGUI 個 Namespace．
+唔繼續用 VWG.Community.CustomControl 個名，改用呢個，跟番 WebGUI 個 Namespace．
 
 1. UploadBox
 
