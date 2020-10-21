@@ -1,0 +1,85 @@
+﻿<!-- refer: https://gist.github.com/elipeters/ae2eafc00f867052876583412f524dfa -->
+<div id="actions" class="row my-4">
+
+    <div class="col-lg-7">
+        <!-- The fileinput-button span is used to style the file input field as button -->
+        <span class="btn btn-success fileinput-button dz-clickable">
+            <i class="icon-plus small-text"></i>
+            <span>Add files...</span>
+        </span>
+        <button type="submit" class="btn btn-primary start">
+            <i class="icon-arrow-circle-o-up icon-offset"></i>
+            <span>Start upload</span>
+        </button>
+        <button type="reset" class="btn btn-warning text-white cancel">
+            <i class="icon-ban icon-offset"></i>
+            <span>Cancel upload</span>
+        </button>
+    </div>
+
+    <div class="col-lg-5">
+        <!-- The global file processing state -->
+        <span class="fileupload-process">
+            <div id="total-progress" class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <div class="progress-bar progress-bar-success" style="width:0%;" data-dz-uploadprogress=""></div>
+            </div>
+        </span>
+    </div>
+
+</div>
+
+<div id="drop-area">
+    <div class="files" id="previews">
+        <div id="template" class="position-relative bg-white d-flex justify-content-between py-2 border border-top-0 border-right-0 border-left-0">
+            <!-- This is used as the file preview template -->
+            <div>
+                <span class="preview"><img data-dz-thumbnail /></span>
+            </div>
+            <div>
+                <p class="name" data-dz-name></p>
+                <strong class="error text-danger" data-dz-errormessage></strong>
+            </div>
+            <div>
+                <p class="size" data-dz-size></p>
+                <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                    <div class="progress-bar progress-bar-success" style="width:0%;" data-dz-uploadprogress></div>
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-primary start">
+                    <i class="icon-arrow-circle-o-up icon-offset"></i>
+                    <span>Start</span>
+                </button>
+                <button data-dz-remove class="btn btn-warning text-white cancel">
+                    <i class="icon-ban icon-offset"></i>
+                    <span>Cancel</span>
+                </button>
+                <button data-dz-remove class="btn btn-danger delete">
+                    <i class="icon-times-circle-o icon-offset"></i>
+                    <span>Delete</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    #drop-area {
+        border: 1px dashed #007bff;
+        border-radius: 20px;
+        padding: 20px;
+        min-height: 400px;
+        width: 100%;
+        position: relative;
+    }
+
+        #drop-area:before {
+            content: "Drop your image files here.";
+            position: absolute;
+            left: 50%;
+            width: 300px;
+            margin-left: -150px;
+            margin-top: -10px;
+            top: 50%;
+            height: 20px;
+        }
+</style>

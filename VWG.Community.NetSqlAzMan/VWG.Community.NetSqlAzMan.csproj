@@ -1,0 +1,713 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{546267D1-FD94-4BB2-8592-8D2629C2308F}</ProjectGuid>
+    <ProjectTypeGuids>{80d85812-7475-4db8-9a61-dd0ef1ebd354};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VWG.Community.NetSqlAzMan</RootNamespace>
+    <AssemblyName>VWG.Community.NetSqlAzMan</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Gizmox.WebGUI.Forms.Extended, Version=4.5.25701.0, Culture=neutral, PublicKeyToken=85eae29607c9f5f3, processorArchitecture=MSIL" />
+    <Reference Include="Gizmox.WebGUI.Forms.Office, Version=4.5.25701.0, Culture=neutral, PublicKeyToken=d50c2c7452ba77d9, processorArchitecture=MSIL" />
+    <Reference Include="NetSqlAzMan, Version=3.6.0.15, Culture=neutral, PublicKeyToken=ad1153f7ddd0e504, processorArchitecture=MSIL">
+      <HintPath>..\packages\NetSqlAzMan-x86.3.6.0.15\lib\net40\NetSqlAzMan.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Gizmox.WebGUI.Forms, Version=4.5.25701.0, Culture=neutral, PublicKeyToken=c508b41386c60f1d">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gizmox.WebGUI.Forms.Themes, Version=4.5.25701.0, Culture=neutral, PublicKeyToken=263fa4ef694acff6">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gizmox.WebGUI.Common, Version=4.5.25701.0, Culture=neutral, PublicKeyToken=263fa4ef694acff6">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\Application\HierarchyView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Application\HierarchyView.Designer.cs">
+      <DependentUpon>HierarchyView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Application\ApplicationGroupsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Application\ApplicationGroupsList.Designer.cs">
+      <DependentUpon>ApplicationGroupsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Application\AttributeItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Application\AttributeItem.Designer.cs">
+      <DependentUpon>AttributeItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Application\Attributes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Application\Attributes.Designer.cs">
+      <DependentUpon>Attributes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Application\DBUsersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Application\DBUsersList.Designer.cs">
+      <DependentUpon>DBUsersList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Application\Permissions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Application\Permissions.Designer.cs">
+      <DependentUpon>Permissions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Application\ApplicationGroupEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Application\ApplicationGroupEdit.Designer.cs">
+      <DependentUpon>ApplicationGroupEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Application\CheckAccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Application\CheckAccess.Designer.cs">
+      <DependentUpon>CheckAccess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Application\StoreGroupsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Application\StoreGroupsList.Designer.cs">
+      <DependentUpon>StoreGroupsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Definition\BizRule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Definition\BizRule.Designer.cs">
+      <DependentUpon>BizRule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Definition\Attributes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Definition\Attributes.Designer.cs">
+      <DependentUpon>Attributes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Definition\AttributeItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Definition\AttributeItem.Designer.cs">
+      <DependentUpon>AttributeItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Definition\OperationEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Definition\OperationEdit.Designer.cs">
+      <DependentUpon>OperationEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Definition\TaskEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Definition\TaskEdit.Designer.cs">
+      <DependentUpon>TaskEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Definition\Task.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Definition\Task.Designer.cs">
+      <DependentUpon>Task.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Definition\ItemList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Definition\ItemList.Designer.cs">
+      <DependentUpon>ItemList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Authorization\Attributes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Authorization\Attributes.Designer.cs">
+      <DependentUpon>Attributes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Authorization\AttributeItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Authorization\AttributeItem.Designer.cs">
+      <DependentUpon>AttributeItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Authorization\DBUsersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Authorization\DBUsersList.Designer.cs">
+      <DependentUpon>DBUsersList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Authorization\ApplicationGroupsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Authorization\ApplicationGroupsList.Designer.cs">
+      <DependentUpon>ApplicationGroupsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Authorization\AuthorizationItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Authorization\AuthorizationItem.Designer.cs">
+      <DependentUpon>AuthorizationItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Definition\RoleEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Definition\RoleEdit.Designer.cs">
+      <DependentUpon>RoleEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Authorization\StoreGroupsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Authorization\StoreGroupsList.Designer.cs">
+      <DependentUpon>StoreGroupsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Definition\Operation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Definition\Operation.Designer.cs">
+      <DependentUpon>Operation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Authorization\ManageAuthorization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Authorization\ManageAuthorization.Designer.cs">
+      <DependentUpon>ManageAuthorization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Definition\Role.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Definition\Role.Designer.cs">
+      <DependentUpon>Role.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Application\ApplicationGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Application\ApplicationGroup.Designer.cs">
+      <DependentUpon>ApplicationGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Application\Application.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Application\Application.Designer.cs">
+      <DependentUpon>Application.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Import.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Import.Designer.cs">
+      <DependentUpon>Import.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Export.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Export.Designer.cs">
+      <DependentUpon>Export.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Store\DBUsersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Store\DBUsersList.Designer.cs">
+      <DependentUpon>DBUsersList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Store\HierarchyView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Store\HierarchyView.Designer.cs">
+      <DependentUpon>HierarchyView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Store\StoreGroupEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Store\StoreGroupEdit.Designer.cs">
+      <DependentUpon>StoreGroupEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Store\StoreGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Store\StoreGroup.Designer.cs">
+      <DependentUpon>StoreGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Store\AttributeItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Store\AttributeItem.Designer.cs">
+      <DependentUpon>AttributeItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Store\Attributes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Store\Attributes.Designer.cs">
+      <DependentUpon>Attributes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Store\Permissions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Store\Permissions.Designer.cs">
+      <DependentUpon>Permissions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Store\Store.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Store\Store.Designer.cs">
+      <DependentUpon>Store.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Store\StoreGroupsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Store\StoreGroupsList.Designer.cs">
+      <DependentUpon>StoreGroupsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\ActionMenu.cs" />
+    <Compile Include="Helper\Config.cs" />
+    <Compile Include="Helper\Enums.cs" />
+    <Compile Include="Helper\FileDownloadGateway.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Helper\GlobalVars.cs" />
+    <Compile Include="Helper\ListViewHelper.cs" />
+    <Compile Include="Helper\NetSqlAzManHelper.cs" />
+    <Compile Include="Helper\ToolbarHelper.cs" />
+    <Compile Include="Helper\Utility.cs" />
+    <Compile Include="ListViews\Application.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListViews\Application.Designer.cs">
+      <DependentUpon>Application.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViews\ApplicationGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListViews\ApplicationGroup.Designer.cs">
+      <DependentUpon>ApplicationGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViews\ApplicationGroups.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListViews\ApplicationGroups.Designer.cs">
+      <DependentUpon>ApplicationGroups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViews\ItemAuthorizations.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListViews\ItemAuthorizations.Designer.cs">
+      <DependentUpon>ItemAuthorizations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViews\ItemDefinitions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListViews\ItemDefinitions.Designer.cs">
+      <DependentUpon>ItemDefinitions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViews\OperationAuthorization.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListViews\OperationAuthorization.Designer.cs">
+      <DependentUpon>OperationAuthorization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViews\OperationAuthorizations.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListViews\OperationAuthorizations.Designer.cs">
+      <DependentUpon>OperationAuthorizations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViews\OperationDefinition.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListViews\OperationDefinition.Designer.cs">
+      <DependentUpon>OperationDefinition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViews\OperationDefinitions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListViews\OperationDefinitions.Designer.cs">
+      <DependentUpon>OperationDefinitions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViews\RoleAuthorization.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListViews\RoleAuthorization.Designer.cs">
+      <DependentUpon>RoleAuthorization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViews\RoleAuthorizations.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListViews\RoleAuthorizations.Designer.cs">
+      <DependentUpon>RoleAuthorizations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViews\RoleDefinition.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListViews\RoleDefinition.Designer.cs">
+      <DependentUpon>RoleDefinition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViews\RoleDefinitions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListViews\RoleDefinitions.Designer.cs">
+      <DependentUpon>RoleDefinitions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViews\Storage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListViews\Storage.Designer.cs">
+      <DependentUpon>Storage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViews\Store.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListViews\Store.Designer.cs">
+      <DependentUpon>Store.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViews\StoreGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListViews\StoreGroup.Designer.cs">
+      <DependentUpon>StoreGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViews\StoreGroups.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListViews\StoreGroups.Designer.cs">
+      <DependentUpon>StoreGroups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViews\TaskAuthorization.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListViews\TaskAuthorization.Designer.cs">
+      <DependentUpon>TaskAuthorization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViews\TaskAuthorizations.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListViews\TaskAuthorizations.Designer.cs">
+      <DependentUpon>TaskAuthorizations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViews\TaskDefinition.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListViews\TaskDefinition.Designer.cs">
+      <DependentUpon>TaskDefinition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViews\TaskDefinitions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListViews\TaskDefinitions.Designer.cs">
+      <DependentUpon>TaskDefinitions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebConsole.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WebConsole.Designer.cs">
+      <DependentUpon>WebConsole.cs</DependentUpon>
+    </Compile>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\Application\HierarchyView.resx">
+      <DependentUpon>HierarchyView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Application\ApplicationGroupsList.resx">
+      <DependentUpon>ApplicationGroupsList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Application\AttributeItem.resx">
+      <DependentUpon>AttributeItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Application\Attributes.resx">
+      <DependentUpon>Attributes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Application\DBUsersList.resx">
+      <DependentUpon>DBUsersList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Application\Permissions.resx">
+      <DependentUpon>Permissions.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Application\ApplicationGroupEdit.resx">
+      <DependentUpon>ApplicationGroupEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Application\CheckAccess.resx">
+      <DependentUpon>CheckAccess.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Application\StoreGroupsList.resx">
+      <DependentUpon>StoreGroupsList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Definition\BizRule.resx">
+      <DependentUpon>BizRule.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Definition\Attributes.resx">
+      <DependentUpon>Attributes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Definition\AttributeItem.resx">
+      <DependentUpon>AttributeItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Definition\OperationEdit.resx">
+      <DependentUpon>OperationEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Definition\TaskEdit.resx">
+      <DependentUpon>TaskEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Definition\Task.resx">
+      <DependentUpon>Task.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Definition\ItemList.resx">
+      <DependentUpon>ItemList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Authorization\Attributes.resx">
+      <DependentUpon>Attributes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Authorization\AttributeItem.resx">
+      <DependentUpon>AttributeItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Authorization\DBUsersList.resx">
+      <DependentUpon>DBUsersList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Authorization\ApplicationGroupsList.resx">
+      <DependentUpon>ApplicationGroupsList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Authorization\AuthorizationItem.resx">
+      <DependentUpon>AuthorizationItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Definition\RoleEdit.resx">
+      <DependentUpon>RoleEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Authorization\StoreGroupsList.resx">
+      <DependentUpon>StoreGroupsList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Definition\Operation.resx">
+      <DependentUpon>Operation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Authorization\ManageAuthorization.resx">
+      <DependentUpon>ManageAuthorization.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Definition\Role.resx">
+      <DependentUpon>Role.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Application\ApplicationGroup.resx">
+      <DependentUpon>ApplicationGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Application\Application.resx">
+      <DependentUpon>Application.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Import.resx">
+      <DependentUpon>Import.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Export.resx">
+      <DependentUpon>Export.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Store\DBUsersList.resx">
+      <DependentUpon>DBUsersList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Store\HierarchyView.resx">
+      <DependentUpon>HierarchyView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Store\StoreGroupEdit.resx">
+      <DependentUpon>StoreGroupEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Store\StoreGroup.resx">
+      <DependentUpon>StoreGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Store\AttributeItem.resx">
+      <DependentUpon>AttributeItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Store\Attributes.resx">
+      <DependentUpon>Attributes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Store\Permissions.resx">
+      <DependentUpon>Permissions.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Store\Store.resx">
+      <DependentUpon>Store.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Store\StoreGroupsList.resx">
+      <DependentUpon>StoreGroupsList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListViews\Application.resx">
+      <DependentUpon>Application.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListViews\ApplicationGroup.resx">
+      <DependentUpon>ApplicationGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListViews\ApplicationGroups.resx">
+      <DependentUpon>ApplicationGroups.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListViews\ItemAuthorizations.resx">
+      <DependentUpon>ItemAuthorizations.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListViews\ItemDefinitions.resx">
+      <DependentUpon>ItemDefinitions.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListViews\OperationAuthorization.resx">
+      <DependentUpon>OperationAuthorization.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListViews\OperationAuthorizations.resx">
+      <DependentUpon>OperationAuthorizations.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListViews\OperationDefinition.resx">
+      <DependentUpon>OperationDefinition.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListViews\OperationDefinitions.resx">
+      <DependentUpon>OperationDefinitions.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListViews\RoleAuthorization.resx">
+      <DependentUpon>RoleAuthorization.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListViews\RoleAuthorizations.resx">
+      <DependentUpon>RoleAuthorizations.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListViews\RoleDefinition.resx">
+      <DependentUpon>RoleDefinition.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListViews\RoleDefinitions.resx">
+      <DependentUpon>RoleDefinitions.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListViews\Storage.resx">
+      <DependentUpon>Storage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListViews\Store.resx">
+      <DependentUpon>Store.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListViews\StoreGroup.resx">
+      <DependentUpon>StoreGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListViews\StoreGroups.resx">
+      <DependentUpon>StoreGroups.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListViews\TaskAuthorization.resx">
+      <DependentUpon>TaskAuthorization.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListViews\TaskAuthorizations.resx">
+      <DependentUpon>TaskAuthorizations.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListViews\TaskDefinition.resx">
+      <DependentUpon>TaskDefinition.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListViews\TaskDefinitions.resx">
+      <DependentUpon>TaskDefinitions.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WebConsole.resx">
+      <DependentUpon>WebConsole.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Condition="" Project="$(MSBuildExtensionsPath)\Gizmox\v14.0\Net4.5.2\Gizmox.VWGLibrary.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

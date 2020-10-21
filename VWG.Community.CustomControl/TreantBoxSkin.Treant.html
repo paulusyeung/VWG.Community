@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="Context.Language">
+<head>
+    <title>Treant Box</title>
+    <script type="text/javascript" src="[Skin.Path]jquery-1.9.1.min.js.wgx"></script>
+    <script type="text/javascript" src="[Skin.Path]xonomy.js.wgx"></script>
+    <link type="text/css" rel="stylesheet" href="[Skin.Path]xonomy.css.wgx"/>
+    <script src="Resources.Gizmox.WebGUI.Forms.Skins.CommonSkin.Interfaces.js.wgx" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+    </script>
+    <script language="javascript" type="text/javascript">
+        debugger;
+        // Get applicaion reference
+        window.mobjApp = parent.mobjApp;
+
+        // Get control id
+        var mstrControlId = mobjApp.Web_GetQueryStringParam(document.location.href, "id");
+        var mstrUrl = mobjApp.Data_GetAttribute(mstrControlId, "sUrl", "");
+        alert(mstrUrl);
+
+        function start() {
+            //alert(mstrUrl);
+            var xml = "<list><item label='one'/><item label='two'/></list>";
+            var editor = document.getElementById("editor");
+            Treant.render(xml, editor, null);
+        }
+    </script>
+</head>
+<body onload="start()">
+<div id="editor"></div>
+</body>
+</html>

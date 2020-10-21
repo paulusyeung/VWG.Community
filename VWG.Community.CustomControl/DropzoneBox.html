@@ -1,0 +1,102 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml" lang="Context.Language">
+<head>
+    <title>Dropzone Page</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+    <script type="text/javascript" src="Resources.Includes.js.wgx"></script>
+    <script type="text/javascript" src="Resources.Browser.Form.js.wgx"></script>
+    <script type="text/javascript" src="Resources.Gizmox.WebGUI.Forms.Skins.CommonSkin.Interfaces.js.wgx"></script>
+    <!-- 因為 VisualWebGUI 6.4+ 就已經用緊 jQuery，Xonomy 可以直接用，好似冇問題
+    <script type="text/javascript" src="[Skin.Path]jquery-1.11.2.min.js.wgx"></script> -->
+    <link type="text/css" rel="stylesheet" href="[Skin.Path]dropzone.min.css.wgx" />
+    <script type="text/javascript" src="[Skin.Path]dropzone.min.js.wgx"></script>
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function () {
+            Dropzone.autoDiscover = false;
+            //Simple Dropzonejs
+            $("#dZUpload").dropzone({
+                url: "",    //SimpeFileUploader.ashx",
+                acceptedFiles: "application/xml",
+                addRemoveLinks: true,
+                autoDiscover: false,
+                maxFilesize: 2, // MB
+                previewsContainer: "#previews", // Define the container to display the previews
+                success: function (file, response) {
+                    var imgName = response;
+                    file.previewElement.classList.add("dz-success");
+                    console.log("Successfully uploaded :" + imgName);
+                },
+                error: function (file, response) {
+                    file.previewElement.classList.add("dz-error");
+                },
+                accept: function (file, done) {
+                    console.log(file.name);
+                    filename = file.name;
+                    done();    // !Very important
+                },
+                init: function () {
+                    var myDropzone = this,
+                    submitButton = document.querySelector("[type=submit]");
+                    submitButton.addEventListener('click', function (e) {
+                        var isValid = document.querySelector('#warehouse').reportValidity();
+                        e.preventDefault();
+                        e.stopPropagation();
+                        if (isValid)
+                            myDropzone.processQueue();
+                    });
+                    this.on("sending", function (file, xhr, formData) {
+                        formData.append("data", "loremipsum");
+                        formData.append("uploadFolder", $("#pathInput")[0].value);
+                    });
+                    this.on('sendingmultiple', function (data, xhr, formData) {
+                        formData.append("warehouse", jQuery("#warehouse option:selected").val());
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="dZUpload" class="dropzone" style="width:100%;height:100%;">
+        <div class="dz-default dz-message">Click or Drag your file here</div>
+        <!-- HTML heavily inspired by http://blueimp.github.io/jQuery-File-Upload/ -->
+        <div class="table table-striped" class="files" id="previews">
+
+            <div id="template" class="file-row">
+                <!-- This is used as the file preview template -->
+                <div>
+                    <span class="preview"><img data-dz-thumbnail /></span>
+                </div>
+                <div>
+                    <p class="name" data-dz-name></p>
+                    <strong class="error text-danger" data-dz-errormessage></strong>
+                </div>
+                <div>
+                    <p class="size" data-dz-size></p>
+                    <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                        <div class="progress-bar progress-bar-success" style="width:0%;" data-dz-uploadprogress></div>
+                    </div>
+                </div>
+                <div>
+                    <button class="btn btn-primary start">
+                        <i class="glyphicon glyphicon-upload"></i>
+                        <span>Start</span>
+                    </button>
+                    <button data-dz-remove class="btn btn-warning cancel">
+                        <i class="glyphicon glyphicon-ban-circle"></i>
+                        <span>Cancel</span>
+                    </button>
+                    <button data-dz-remove class="btn btn-danger delete">
+                        <i class="glyphicon glyphicon-trash"></i>
+                        <span>Delete</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+﻿.UploadBox-Body {
+	overflow:hidden;
+	[Skin.ForeGround];
+    [Skin.Font];
+	[Skin.Padding];
+	[Skin.Margin];
+	[Skin.Background];
+	cursor:[Skin.Cursor];
+
+    font:normal normal normal 14.25pt Tahoma ;text-decoration:none;
+    padding:0px 5px 0px 5px;
+    margin:0px;
+    background-color:#F0F0F0;
+}
+
+.UploadBox-Container
+{
+	text-align:center;
+    /*padding-right:5px;*/
+    /*padding-left:5px;*/
+    margin-right:auto;
+    margin-left:auto;
+	cursor:[Skin.Cursor];
+
+    color: white;
+}
+
+.UploadBox-Text
+{
+	[Skin.ForeGround];
+    [Skin.Font];
+	/*[Skin.Background];*/
+	cursor:[Skin.Cursor];
+	width: 100%;
+
+    font:normal normal normal 12pt Tahoma ;text-decoration:none;
+    color: inherit;
+}
+
+.UploadBox-Button
+{
+	[Skin.UploadButtonStyle];
+	cursor:[Skin.UploadButtonCursor];
+	width: [Skin.UploadButtonWidth]px;
+    vertical-align:middle;
+    display:inline-block;
+    white-space:nowrap;
+    -ms-user-select:none;
+	position: relative;
+	overflow: hidden;
+
+    border: none;
+    border-radius: 4px;
+    min-height: 20px;
+    min-width: 32px;
+    background-color:[Skin.BackgroundColor];
+    background-image: none;
+}
+
+.UploadBox-Button input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  -ms-filter: 'alpha(opacity=0)';
+  font-size: 200px;
+  cursor: pointer;
+  height: 100%;
+}
+
+.UploadBox-Progress{
+    overflow:hidden;
+    background-color:[Skin.BackgroundColor];
+    border-radius: 4px;
+    height: 100vh;  /* 全高 */
+}
+
+.UploadBox-ProgressBar{
+	[Skin.UploadBarStyle];
+	cursor:[Skin.Cursor];
+    width:100%;
+    color:#cff;
+    float:left;
+}
+
+.UploadBox-ProgressBarFile
+{
+	[Skin.UploadBarCompletedStyle];
+	cursor:[Skin.Cursor];
+    font:normal normal normal 10pt Tahoma ;text-decoration:none;
+    height:100%;
+    text-align:left;
+	width:100%;
+}
+
+

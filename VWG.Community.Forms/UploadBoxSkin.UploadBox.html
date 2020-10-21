@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="Context.Language">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title></title>
+
+	<script type="text/javascript">
+
+	    // Get applicaion and client API reference
+	    window.mobjApp = parent.mobjApp;
+	    window.vwgContext = parent.vwgContext;
+
+	    // Get control id
+	    var mstrControlId = mobjApp.Web_GetQueryStringParam(document.location.href, "id");
+
+	</script>
+
+	<script type="text/javascript" src="Assemblies.Resources.Scripts.jQuery.min.js.wgx?assembly=Gizmox.WebGUI.Forms"></script>
+	<script type="text/javascript" src="Assemblies.Resources.Scripts.jQuery-UI.min.js.wgx?assembly=Gizmox.WebGUI.Forms"></script>
+    <!-- 用 online js 檔案，uncomment -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/10.31.0/js/jquery.fileupload.min.js" integrity="sha512-qPkNWpUqYz8bhO5bGNPBvlCB9hPZBil2ez5Mo8yVmpCKI315UDDPQeg/TE7KwZ+U/wdSO8JguwVxYY/Ha7U+vQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/10.31.0/js/jquery.iframe-transport.min.js" integrity="sha512-nPWpXBDIYz79dENtnSj+4vttX5zcmZ4RE2pLj24hdMjFqNxEh5TNwjnyhpdJJxq9cxMy7NLgG06w5s6wytsOiw==" crossorigin="anonymous"></script>
+    <!-- 用 embedded js 檔案
+	<script type="text/javascript" src="[Skin.Path]jquery.iframe-transport.js.wgx"></script>
+	<script type="text/javascript" src="[Skin.Path]jquery.fileupload.js.wgx"></script>
+    -->
+	<script type="text/javascript" src="[Skin.Path]UploadBox.Frame.js.wgx"></script>
+    <link rel="stylesheet" href="[Skin.Path]UploadBox.Frame.css.wgx" />
+
+</head>
+<body class="UploadBox-Body" onload="UploadBox_Initialize(mstrControlId);">
+
+<div id="uploadbox-container" class="UploadBox-Container">
+    <div id="progress" class="UploadBox-Progress">
+        <table>
+            <tr>
+                <td>
+                    <span id="uploadbox-button" class="UploadBox-Button">
+                        +
+                        <input id="fileupload" type="file" name="files[]" multiple>
+                    </span>
+                </td>
+                <td class="UploadBox-Text">
+                    <span id="drop_text">select or drop files here</span>
+                </td>
+            </tr>
+        </table>
+        <div id="progress-bar" class="UploadBox-ProgressBar"><span id="progress-bar-file" class="UploadBox-ProgressBarFile" /></div>
+    </div>
+</div>
+</body> 
+</html>
+

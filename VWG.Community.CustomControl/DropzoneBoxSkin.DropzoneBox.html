@@ -1,0 +1,194 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml" lang="Context.Language">
+<head>
+    <title>Dropzone Page</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+    <script type="text/javascript" src="Resources.Includes.js.wgx"></script>
+    <script type="text/javascript" src="Resources.Browser.Form.js.wgx"></script>
+    <script type="text/javascript" src="Resources.Gizmox.WebGUI.Forms.Skins.CommonSkin.Interfaces.js.wgx"></script>
+    <!-- 因為 VisualWebGUI 6.4+ 就已經用緊 jQuery，Xonomy 可以直接用，好似冇問題
+    <script type="text/javascript" src="[Skin.Path]jquery-1.11.2.min.js.wgx"></script> -->
+    <!--
+    <link type="text/css" rel="stylesheet" href="[Skin.Path]dropzone.min.css.wgx" />
+    <script type="text/javascript" src="[Skin.Path]dropzone.min.js.wgx"></script>
+    -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.1/min/dropzone.min.js" integrity="sha512-En/Po50Bl8kIECa2WkhxhdYeoKDcrJpBKMo9tmbuwbm9RxHWZV8/Y5xM9sh3QbrnFgM3hVR/2umJ33qGJk45pQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.1/dropzone.css" integrity="sha512-CmjeEOiBCtxpzzfuT2remy8NP++fmHRxR3LnsdQhVXzA3QqRMaJ3heF9zOB+c1lCWSwZkzSOWfTn1CdqgkW3EQ==" crossorigin="anonymous" />
+    <!-- <script type="text/javascript" src="[Skin.Path]jquery-dropzone.js.wgx"></script> -->
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function () {
+            Dropzone.autoDiscover = false;
+            //Simple Dropzonejs
+            $("#dZUpload").dropzone({
+                //url: "SimpeFileUploader.ashx",
+                acceptedFiles: ".xml",
+                addRemoveLinks: true,
+                autoProcessQueue: false,        // If false, files will be added to the queue but the queue will not be processed automatically.
+                autoDiscover: false,
+                maxFilesize: 2, // MB
+                previewsContainer: "#previews", // Define the container to display the previews
+                //
+                accept: function (file, done) {
+                    console.log("Accepted: " + file.name);
+                    filename = file.name;
+                    done();    // !Very important
+                },
+                success: function (file, response) {
+                    var imgName = response;
+                    file.previewElement.classList.add("dz-success");
+                    console.log("Successfully uploaded: " + imgName);
+                },
+                error: function (file, response) {
+                    file.previewElement.classList.add("dz-error");
+                    console.log("Upload failed: " + file.name);
+                    console.log("Error: " + response);
+                },
+                //
+                init: function () {
+                    myDropzone = this; // closure
+
+                    // 𥄫實 button_click [id=submit-all]
+                    var submitButton = document.querySelector("#submit-all")
+                    submitButton.addEventListener("click", function () {
+                        var files = myDropzone.getQueuedFiles();
+                        myDropzone.uploadFiles(files);
+                        //myDropzone.processQueue(); // Tell Dropzone to process all queued files.
+                        //uploadFile();
+                        //if (typeof (VWG) == 'undefined' || VWG == null || VWG.Events == null) return;
+                        //var files = myDropzone.getQueuedFiles();
+                        //console.log(files);
+                        //var formId = "VWG_3";   //document.getElementById("dZUpload");
+                        //var dzFiles = myDropzone.getQueuedFiles();
+                        //var eventType = "Dropzone_ProcessQueue";
+                        //var oEvent = VWG.Events.CreateEvent(formId, eventType);
+                        //for (var i = 0; i < dzFiles.length; i++) {
+                        //    var dzFile = dzFiles[i];
+                        //    var dzFileStr = JSON.stringify(dzFile);
+                        //    console.log(dzFileStr);
+                        //    VWG.Events.SetEventAttribute(oEvent, "Value", dzFileStr);
+                        //    VWG.Events.RaiseEvents();
+                        //}
+                    });
+                    // 𥄫實 button_click [id=delete-all]
+                    var deleteButton = document.querySelector("#delete-all")
+                    deleteButton.addEventListener("click", function () {
+                        myDropzone.removeAllFiles(); // Tell Dropzone to remove all queued files.
+                    });
+
+                    myDropzone.on("addedfile", function (file) {
+                        console.log("Added File: " + file.name);
+                        if (!file.type.match(/image.*/)) {
+                            if (file.type.match(/application.zip/)) {
+                                //myDropzone.emit("thumbnail", file, "path/to/img");
+                            } else {
+                                //myDropzone.emit("thumbnail", file, "path/to/img");
+                            }
+                        }
+
+                        //if (typeof (VWG) == 'undefined' || VWG == null || VWG.Events == null) return;
+                        //var formId = "VWG_3";   //document.getElementById("dZUpload");
+                        //var dzPq = myDropzone.processQueue();
+                        //var eventType = "Dropzone_ProcessQueue";
+                        //var oEvent = VWG.Events.CreateEvent(formId, eventType);
+                        //VWG.Events.SetEventAttribute(oEvent, "Value", dzPq);
+                        //VWG.Events.RaiseEvents();
+
+                        //myDropzone.processQueue();
+                    });
+
+                    myDropzone.on("sending", function (file, xhr, formData) {
+                        console.log("sending: " + file.name);
+                        formData.append("data", "loremipsum");
+                        formData.append("uploadFolder", $("#pathInput")[0].value);
+                    });
+
+                    myDropzone.on('sendingmultiple', function (data, xhr, formData) {
+                        console.log("sending Multiple: " + JSON.stringify(data));
+                        formData.append("warehouse", jQuery("#warehouse option:selected").val());
+                    });
+
+                    myDropzone.on("complete", function (file) {
+                        console.log("Completed File: " + file.name);
+                        myDropzone.removeFile(file);
+                    });
+                }
+            });
+        });
+
+        function uploadFile() {
+            var dz = Dropzone.forElement("#dZUpload");
+            for (var i = 0; i < dz.files.length; i++) {
+                dz.filesQueue.push(dz.files[i]);
+            }
+            dz.processQueue(dz);
+            $('#innerQue').empty();
+        }
+    </script>
+</head>
+<body>
+    <form id="dZUpload" action="SimpeFileUploader.ashx" class="dropzone needsclick dz-clickabl" style="width:100%;height:100%;">
+        <div class="dz-default dz-message">Click or Drag your file here</div>
+        <!-- refer: https://www.dropzonejs.com/bootstrap.html -->
+        <div id="drop-area">
+            <div class="table table-striped" class="files" id="previews">
+
+                <div id="template" class="file-row">
+                    <!-- This is used as the file preview template -->
+                    <div>
+                        <span class="preview"><img data-dz-thumbnail /></span>
+                    </div>
+                    <div>
+                        <p class="name" data-dz-name></p>
+                        <strong class="error text-danger" data-dz-errormessage></strong>
+                    </div>
+                    <div>
+                        <p class="size" data-dz-size></p>
+                        <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                            <div class="progress-bar progress-bar-success" style="width:0%;" data-dz-uploadprogress></div>
+                        </div>
+                    </div>
+                    <div>
+                        <button id="submit-all" class="btn btn-primary start">
+                            <i class="glyphicon glyphicon-upload"></i>
+                            <span>Start</span>
+                        </button>
+                        <button data-dz-remove class="btn btn-warning cancel">
+                            <i class="glyphicon glyphicon-ban-circle"></i>
+                            <span>Cancel</span>
+                        </button>
+                        <button id="delete-all" data-dz-remove class="btn btn-danger delete">
+                            <i class="glyphicon glyphicon-trash"></i>
+                            <span>Delete</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+    <style>
+        #drop-area {
+            border: 1px dashed #007bff;
+            border-radius: 20px;
+            padding: 20px;
+            min-height: 240px;
+            width: 100%;
+            position: relative;
+        }
+
+            #drop-area:before {
+                /* content: "Drop your image files here."; */
+                position: absolute;
+                left: 50%;
+                width: 300px;
+                margin-left: -150px;
+                margin-top: -10px;
+                top: 50%;
+                height: 20px;
+            }
+    </style>
+</body>
+</html>

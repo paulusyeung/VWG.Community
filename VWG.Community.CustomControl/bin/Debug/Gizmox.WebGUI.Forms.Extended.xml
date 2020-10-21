@@ -1,0 +1,2535 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gizmox.WebGUI.Forms.Extended</name>
+    </assembly>
+    <members>
+        <member name="T:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell.mcntPromptChar">
+            <summary>
+            The prompt character to use in the displayed masked text
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell.menumTextMaskFormat">
+            <summary>
+            Provides a property reference to TextMaskFormat property.
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell.mblnUseTextMaskFormat">
+            <summary>
+            Provides a property reference to UseTextMaskFormat property.
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell.mblnHidePromptOnLeave">
+            <summary>
+            Provides a property reference to HidePromptOnLeave property.
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell.mchrPromptChar">
+            <summary>
+            Provides a property reference to PromptChar property.
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell.mstrMask">
+            <summary>
+            Provides a property reference to Mask property.
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell.mblnResetOnPrompt">
+            <summary>
+            Provides a property reference to ResetOnPrompt property.
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell.mblnAllowPromptAsInput">
+            <summary>
+            Provides a property reference to AllowPromptAsInput property.
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell.mblnResetOnSpace">
+            <summary>
+            Provides a property reference to ResetOnSpace property.
+            </summary>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell.#cctor">
+            <summary>
+            Initializes the <see cref="T:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell"/> class.
+            </summary>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell"></see> class.
+            </summary>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell.Clone">
+            <summary>Creates an exact copy of this cell.</summary>
+            <returns>An <see cref="T:System.Object"></see> that represents the cloned <see cref="T:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell"></see>.</returns>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell.ToString">
+            <summary>
+            Returns a string that describes the current object.
+            </summary>
+            <returns>
+            A string that represents the current object.
+            </returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell.GetTextOutput">
+            <summary>Returns the formatted string that includes all the assigned character values.</summary>
+            <returns>The formatted <see cref="T:System.String"></see> that includes all the assigned character values.</returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell.GetTextOutput(System.String)">
+            <summary>
+            Gets the text output.
+            </summary>
+            <param name="strValue">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell.GetTextOutput(System.String,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Gets the text output.
+            </summary>
+            <param name="strValue">The STR value.</param>
+            <param name="strMask">The STR mask.</param>
+            <param name="chrPromptChar">The CHR prompt char.</param>
+            <param name="blnIncludeLiterals">if set to <c>true</c> [BLN include literals].</param>
+            <param name="blnIncludePrompt">if set to <c>true</c> [BLN include prompt].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell.GetMaskedTextProvider(System.String,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Gets the masked text provider.
+            </summary>
+            <param name="strValue">The text value.</param>
+            <param name="strMask">The mask value.</param>
+            <param name="chrPromptChar">The prompt char.</param>
+            <param name="blnIncludeLiterals">if set to <c>true</c> [BLN include literals].</param>
+            <param name="blnIncludePrompt">if set to <c>true</c> [include prompt].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell.GetFormatedMask">
+            <summary>
+            Gets formated cultured mask.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell.SetValue(System.Int32,System.Object)">
+            <summary>Sets the value of the cell. </summary>
+            <returns>true if the value has been set; otherwise, false.</returns>
+            <param name="intRowIndex">The index of the cell's parent row. </param>
+            <param name="objValue">The cell value to set. </param>
+            <exception cref="T:System.InvalidOperationException"><see cref="P:Gizmox.WebGUI.Forms.DataGridViewCell.ColumnIndex"></see> is less than 0.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">rowIndex is less than 0 or greater than or equal to the number of rows in the parent <see cref="T:Gizmox.WebGUI.Forms.DataGridView"></see>.</exception>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell.GetValue(System.Int32)">
+            <summary>
+            Gets the value of the cell.
+            </summary>
+            <param name="intRowIndex">The index of the cell's parent row.</param>
+            <returns>
+            The value contained in the <see cref="T:Gizmox.WebGUI.Forms.DataGridViewCell"></see>.
+            </returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">The value of the <see cref="P:Gizmox.WebGUI.Forms.DataGridViewElement.DataGridView"></see> property of the cell is not null and rowIndex is less than 0 or greater than or equal to the number of rows in the parent <see cref="T:Gizmox.WebGUI.Forms.DataGridView"></see>.</exception>
+            <exception cref="T:System.InvalidOperationException">The value of the <see cref="P:Gizmox.WebGUI.Forms.DataGridViewElement.DataGridView"></see> property of the cell is not null and the value of the <see cref="P:Gizmox.WebGUI.Forms.DataGridViewCell.ColumnIndex"></see> property is less than 0, indicating that the cell is a row header cell.</exception>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell.RenderCellValue(Gizmox.WebGUI.Common.Interfaces.IContext,Gizmox.WebGUI.Common.Interfaces.IAttributeWriter,System.Object)">
+            <summary>
+            Renders the cell text/value.
+            </summary>
+            <param name="objContext">The context.</param>
+            <param name="objWriter">The writer.</param>
+            <param name="objFormatedValue">The formated value.</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell.RenderAttributes(Gizmox.WebGUI.Common.Interfaces.IContext,Gizmox.WebGUI.Common.Interfaces.IAttributeWriter,System.Boolean)">
+            <summary>
+            </summary>
+            <param name="objContext"></param>
+            <param name="objWriter"></param>
+            <param name="blnRenderOwner"></param>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell.Mask">
+            <summary>
+            Gets or sets the mask.
+            </summary>
+            <value>The mask.</value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell.PromptChar">
+            <summary>Gets or sets the character used to represent the absence of user input in <see cref="T:System.Windows.Forms.MaskedComboBox"></see>.</summary>
+            <returns>The character used to prompt the user for input. The default is an underscore (_). </returns>
+            <exception cref="T:System.InvalidOperationException">The prompt character specified is the same as the current password character, <see cref="P:System.Windows.Forms.MaskedComboBox.PasswordChar"></see>. The two are required to be different.</exception>
+            <exception cref="T:System.ArgumentException">The character specified when setting this property is not a valid prompt character, as determined by the <see cref="M:System.ComponentModel.MaskedTextProvider.IsValidPasswordChar(System.Char)"></see> method of the <see cref="T:System.ComponentModel.MaskedTextProvider"></see> class.</exception>
+            <filterpriority>1</filterpriority>
+            <PermissionSet><IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" /><IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" /><IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" /><IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" /></PermissionSet>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell.HidePromptOnLeave">
+            <summary>Gets or sets a value indicating whether the prompt characters in the input mask are hidden when the masked text box loses focus.</summary>
+            <returns>true if <see cref="P:System.Windows.Forms.MaskedComboBox.PromptChar"></see> is hidden when <see cref="T:System.Windows.Forms.MaskedComboBox"></see> does not have focus; otherwise, false. The default is false.</returns>
+            <filterpriority>1</filterpriority>
+            <PermissionSet><IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" /><IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" /><IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" /><IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" /></PermissionSet>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell.UseTextMaskFormat">
+            <summary>
+            Gets or sets a value indicating whether to use text mask format.
+            </summary>
+            <value><c>true</c> if use text mask format; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell.TextMaskFormat">
+            <summary>
+            Defines how Text property should be formatted
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell.AllowPromptAsInput">
+            <summary>
+            Gets or sets a value indicating whether System.Windows.Forms.MaskedTextBox.PromptChar
+            can be entered as valid data by the user.
+            </summary>
+            <value>
+              <c>true</c> if the user can enter the prompt character into the control; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell.ResetOnPrompt">
+            <summary>
+            Gets or sets a value that determines how an input character that matches
+            the prompt character should be handled.
+            </summary>
+            <value>
+              <c>true</c> if the prompt character entered as input causes the current editable
+                position in the mask to be reset; otherwise, <c>false</c>.to indicate that the prompt
+                character is to be processed as a normal input character
+            </value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxCell.ResetOnSpace">
+            <summary>
+            Gets or sets a value that determines how a space input character should be
+            handled.
+            </summary>
+            <value>
+              <c>true</c> if the space input character causes the current editable position in
+                the mask to be reset; otherwise, <c>false</c> to indicate that it is to be processed
+                as a normal input character. The default is true.
+            </value>
+        </member>
+        <member name="T:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxColumn">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxColumn.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxColumn"></see> class to the default state.</summary>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxColumn.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxColumn.CellTemplate">
+            <summary>Gets or sets the template used to model cell appearance.</summary>
+            <returns>A <see cref="T:Gizmox.WebGUI.Forms.DataGridViewCell"></see> that all other cells in the column are modeled after.</returns>
+            <exception cref="T:System.InvalidCastException">The set type is not compatible with type <see cref="T:Gizmox.WebGUI.Forms.DataGridViewTextBoxCell"></see>. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxColumn.MaskedTextBoxCellTemplate">
+            <summary>
+            Gets the masked text box cell template.
+            </summary>
+            <value>The masked text box cell template.</value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxColumn.Mask">
+            <summary>
+            Gets or sets the mask.
+            </summary>
+            <value>The mask.</value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxColumn.PromptChar">
+            <summary>
+            Gets or sets the prompt char.
+            </summary>
+            <value>The prompt char.</value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxColumn.HidePromptOnLeave">
+            <summary>
+            Gets or sets a value indicating whether [hide prompt on leave].
+            </summary>
+            <value><c>true</c> if [hide prompt on leave]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxColumn.TextMaskFormat">
+            <summary>
+            Gets or sets the text mask format.
+            </summary>
+            <value>The text mask format.</value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxColumn.AllowPromptAsInput">
+            <summary>
+            Gets or sets a value indicating whether System.Windows.Forms.MaskedTextBox.PromptChar
+            can be entered as valid data by the user.
+            </summary>
+            <value>
+              <c>true</c> if the user can enter the prompt character into the control; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.DataGridViewMaskedTextBoxColumn.ResetOnPrompt">
+            <summary>
+            Gets or sets a value that determines how an input character that matches
+            the prompt character should be handled.
+            </summary>
+            <value>
+              <c>true</c> if the prompt character entered as input causes the current editable
+                position in the mask to be reset; otherwise, <c>false</c>.to indicate that the prompt
+                character is to be processed as a normal input character
+            </value>
+        </member>
+        <member name="T:Gizmox.WebGUI.Forms.Extended.FCKeditorLanguageDirection">
+            <summary>
+            Defines constants that specify the content flow direction for text in FCKeditor
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.Extended.FCKeditorLanguageDirection.LeftToRight">
+            <summary>
+            Indicates that content should flow from left to right.
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.Extended.FCKeditorLanguageDirection.RightToLeft">
+            <summary>
+            Indicates that content should flow from right to left.
+            </summary>
+        </member>
+        <member name="T:Gizmox.WebGUI.Forms.Extended.FCKEditor">
+            <summary>
+            Summary description for FCKEditor
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ValueChangedHandler">
+            <summary>
+            Gets the hanlder for the ValueChanged event.
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.Extended.FCKEditor.ValueChangedEvent">
+            <summary>
+            The ValueChanged event registration.
+            </summary>
+        </member>
+        <member name="E:Gizmox.WebGUI.Forms.Extended.FCKEditor.ValueChanged">
+            <summary>
+            Occurs when the Value property changes.
+            </summary>
+        </member>
+        <member name="E:Gizmox.WebGUI.Forms.Extended.FCKEditor.ClientValueChanged">
+            <summary>
+            Occurs when [client value changed].
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ValueChangedQueuedHandler">
+            <summary>
+            Gets the hanlder for the ValueChangedQueued event.
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.Extended.FCKEditor.ValueChangedQueuedEvent">
+            <summary>
+            The ValueChange event registration.
+            </summary>
+        </member>
+        <member name="E:Gizmox.WebGUI.Forms.Extended.FCKEditor.ValueChangedQueued">
+            <summary>
+            Occurs when the Value property changes (Queued).
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.SaveHandler">
+            <summary>
+            Gets the save handler.
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.Extended.FCKEditor.SaveEvent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:Gizmox.WebGUI.Forms.Extended.FCKEditor.Save">
+            <summary>
+            Occurs when [save].
+            </summary>
+        </member>
+        <member name="E:Gizmox.WebGUI.Forms.Extended.FCKEditor.ClientSave">
+            <summary>
+            Occurs when Save button is clicked.
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.Extended.FCKEditor.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.Extended.FCKEditor.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gizmox.WebGUI.Forms.Extended.FCKEditor"/> class.
+            </summary>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.Extended.FCKEditor.RenderAttributes(Gizmox.WebGUI.Common.Interfaces.IContext,Gizmox.WebGUI.Common.Interfaces.IAttributeWriter)">
+            <summary>
+            Renders the attributes.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="writer">The writer.</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.Extended.FCKEditor.RenderUpdatedAttributes(Gizmox.WebGUI.Common.Interfaces.IContext,Gizmox.WebGUI.Common.Interfaces.IAttributeWriter,System.Int64)">
+            <summary>
+            Renders updated attributes
+            </summary>
+            <param name="objContext"></param>
+            <param name="objWriter"></param>
+            <param name="lngRequestID"></param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.Extended.FCKEditor.FireEvent(Gizmox.WebGUI.Common.Interfaces.IEvent)">
+            <summary>
+            Fires an event.
+            </summary>
+            <param name="objEvent">event.</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.Extended.FCKEditor.OnValueChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:ValueChanged"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.Extended.FCKEditor.OnSave(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:ValueChanged"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.Extended.FCKEditor.GetCriticalEventsData">
+            <summary>
+            Gets the critical events.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.Extended.FCKEditor.GetCriticalClientEventsData">
+            <summary>
+            Gets the critical client events.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.BasePath">
+            <summary>
+            <p>
+            	Sets or gets the virtual path to the editor's directory. It is
+            	relative to the current page.
+            </p>
+            <p>
+            	The default value is "/FCKeditor/".
+            </p>
+            <p>
+            	The base path can be also set in the Web.config file using the 
+            	appSettings section. Just set the "FCKeditor:BasePath" for that. 
+            	For example:
+            	<code>
+            	&lt;configuration&gt;
+            		&lt;appSettings&gt;
+            			&lt;add key="FCKeditor:BasePath" value="/scripts/FCKeditor/" /&gt;
+            		&lt;/appSettings&gt;
+            	&lt;/configuration&gt;
+            	</code>
+            </p>
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.Config">
+            <summary>
+            Gets the config.
+            </summary>
+            <value>The config.</value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.AutoDetectLanguage">
+            <summary>
+            Sets a value indicating whether [auto detect language].
+            </summary>
+            <value>
+              <c>true</c> if [auto detect language]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.Debug">
+            <summary>
+            Sets a value indicating whether this <see cref="T:Gizmox.WebGUI.Forms.Extended.FCKEditor"/> is debug.
+            </summary>
+            <value>
+              <c>true</c> if debug; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.EnableSourceXHTML">
+            <summary>
+            Sets a value indicating whether [enable source XHTML].
+            </summary>
+            <value>
+              <c>true</c> if [enable source XHTML]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.FontColors">
+            <summary>
+            Sets the font colors.
+            </summary>
+            <value>
+            The font colors.
+            </value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.FormatIndentator">
+            <summary>
+            Sets the format indentator.
+            </summary>
+            <value>
+            The format indentator.
+            </value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.FormatOutput">
+            <summary>
+            Sets the format output.
+            </summary>
+            <value>
+            The format output.
+            </value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.FormatSource">
+            <summary>
+            Sets the format source.
+            </summary>
+            <value>
+            The format source.
+            </value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.CustomConfigurationsPath">
+            <summary>
+            Sets the custom configurations path.
+            </summary>
+            <value>
+            The custom configurations path.
+            </value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.EditorAreaCSS">
+            <summary>
+            Sets the editor area CSS.
+            </summary>
+            <value>
+            The editor area CSS.
+            </value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.EnableXHTML">
+            <summary>
+            Sets a value indicating whether [enable XHTML].
+            </summary>
+            <value>
+              <c>true</c> if [enable XHTML]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.FontFormats">
+            <summary>
+            Sets the font formats.
+            </summary>
+            <value>
+            The font formats.
+            </value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.GeckoUseSPAN">
+            <summary>
+            Sets a value indicating whether [gecko use SPAN].
+            </summary>
+            <value>
+              <c>true</c> if [gecko use SPAN]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.LinkBrowserURL">
+            <summary>
+            Sets the link browser URL.
+            </summary>
+            <value>
+            The link browser URL.
+            </value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.PluginsPath">
+            <summary>
+            Sets the plugins path.
+            </summary>
+            <value>
+            The plugins path.
+            </value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.SkinPath">
+            <summary>
+            Sets the skin path.
+            </summary>
+            <value>
+            The skin path.
+            </value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.StylesXmlPath">
+            <summary>
+            Sets the styles XML path.
+            </summary>
+            <value>
+            The styles XML path.
+            </value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ToolbarSet">
+            <summary>
+            Sets the toolbar set.
+            </summary>
+            <value>
+            The toolbar set.
+            </value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ToolbarStartExpanded">
+            <summary>
+            Sets a value indicating whether [toolbar start expanded].
+            </summary>
+            <value>
+            	<c>true</c> if [toolbar start expanded]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.AutoGrowBottomSpace">
+            <summary>
+             Extra height in pixel to leave between the bottom boundary of content with document size when auto resizing.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.AutoGrowMaxHeight">
+            <summary>
+            The maximum height that the editor can reach using the AutoGrow feature. Zero means unlimited.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.AutoGrowMinHeight">
+            <summary>
+            The minimum height that the editor can reach using the AutoGrow feature.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.AutoGrowOnStartup">
+            <summary>
+            Whether to have the auto grow happen on editor creation.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.AutoParagraph">
+            <summary>
+            Whether automatically create wrapping blocks around inline contents inside document body.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Gizmox.WebGUI.Forms.Extended.FCKEditor.AutoUpdateElement" -->
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.BaseFloatZIndex">
+            <summary>
+            The base Z-index for floating dialog windows and popups.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.BaseHref">
+            <summary>
+            The base href URL used to resolve relative and absolute URLs in the editor content.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.BasicEntities">
+            <summary>
+            Whether to escape basic HTML entities in the document, including: nbsp gt lt amp. Note: It should not be subject to change unless when outputting a non-HTML data format like BBCode.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.BodyClass">
+            <summary>
+            Sets the class attribute to be used on the body element of the editing area.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.BodyId">
+            <summary>
+            Sets the id attribute to be used on the body element of the editing area.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.BrowserContextMenuOnCtrl">
+            <summary>
+            Whether to show the browser native context menu when the Ctrl or Meta (Mac) key is pressed on opening the context menu with the right mouse button click or the Menu key.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ColorButtonColors">
+            <summary>
+            Defines the colors to be displayed in the color selectors. This is a string containing hexadecimal notation for HTML colors, without the '#' prefix.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ColorButtonEnableMore">
+            <summary>
+            Whether to enable the More Colors button in the color selectors.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ContentsCss">
+            <summary>
+            The CSS file(s) to be used to apply style to the contents.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ContentLangDirection">
+            <summary>
+            The writting direction of the language used to write the editor contents.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ContentsLanguage">
+            <summary>
+            Language code of the writting language which is used to author the editor contents.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.CustomConfig">
+            <summary>
+            The URL path for the custom configuration file to be loaded.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.DataIndentationChars">
+            <summary>
+            The characters to be used for indenting the HTML produced by the editor.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.DefaultLanguage">
+            <summary>
+            The language to be used if the language setting is left empty and it is not possible to localize the editor to the user language
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.DevtoolsStyles">
+            <summary>
+            A setting that stores CSS rules to be injected into the page with styles to be applied to the tooltip element.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.DialogBackgroundCoverColor">
+            <summary>
+            The color of the dialog background cover.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.DialogBackgroundCoverOpacity">
+            <summary>
+            The opacity of the dialog background cover.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.DialogButtonsOrder">
+            <summary>
+            The guideline to follow when generating the dialog buttons.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.DialogMagnetDistance">
+            <summary>
+            The distance of magnetic borders used in moving and resizing dialogs, measured in pixels.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.DialogStartupFocusTab">
+            <summary>
+            If the dialog has more than one tab, put focus into the first tab as soon as dialog is opened.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.DisableNativeSpellChecker">
+            <summary>
+            Disables the built-in words spell checker if browser provides one.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.DisableNativeTableHandles">
+            <summary>
+            Disables the "table tools" offered natively by the browser (currently Firefox only) to make quick table editing operations, like adding or deleting rows and columns.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.DisableObjectResizing">
+            <summary>
+            Disables the ability of resize objects (image and tables) in the editing area.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.DisableReadonlyStyling">
+            <summary>
+            Disables inline styling on read-only elements.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Gizmox.WebGUI.Forms.Extended.FCKEditor.DivWrapTable" -->
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.DocType">
+            <summary>
+            Sets the DOCTYPE to be used when loading the editor content as HTML.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.EmailProtection">
+            <summary>
+            The e-mail address anti-spam protection option.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.EnableTabKeyTools">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.EnterMode">
+            <summary>
+            Sets the behavior of the Enter key.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.Entities">
+            <summary>
+            Whether to use HTML entities in the output.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.EntitiesAdditional">
+            <summary>
+            A comma separated list of additional entities to be used.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.EntitiesGreek">
+            <summary>
+            Whether to convert some symbols, mathematical symbols, and Greek letters to HTML entities.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.EntitiesLatin">
+            <summary>
+            Whether to convert some Latin characters (Latin alphabet No. 1, ISO 8859-1) to HTML entities. The list of entities can be found in the W3C HTML 4.01 Specification, section 24.2.1.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.EntitiesProcessNumerical">
+            <summary>
+            Whether to convert all remaining characters not included in the ASCII character table to their relative decimal numeric representation of HTML entity.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ExtraPlugins">
+            <summary>
+            A list of additional plugins to be loaded.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.FilebrowserBrowseUrl">
+            <summary>
+            The location of an external file browser that should be launched when the Browse Server button is pressed.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.FilebrowserFlashBrowseUrl">
+            <summary>
+            The location of an external file browser that should be launched when the Browse Server button is pressed in the Flash dialog window.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.FilebrowserFlashUploadUrl">
+            <summary>
+            The location of the script that handles file uploads in the Flash dialog window.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.FilebrowserImageBrowseLinkUrl">
+            <summary>
+            The location of an external file browser that should be launched when the Browse Server button is pressed in the Link tab of the Image dialog window.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.FilebrowserImageBrowseUrl">
+            <summary>
+            The location of an external file browser that should be launched when the Browse Server button is pressed in the Image dialog window.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.FilebrowserImageUploadUrl">
+            <summary>
+            The location of the script that handles file uploads in the Image dialog window.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.FilebrowserUploadUrl">
+            <summary>
+            The location of the script that handles file uploads.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.FilebrowserWindowFeatures">
+            <summary>
+            The features to use in the file browser popup window.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.FilebrowserWindowHeight">
+            <summary>
+            The height of the file browser popup window. 
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.FilebrowserWindowWidth">
+            <summary>
+            The width of the file browser popup window.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Gizmox.WebGUI.Forms.Extended.FCKEditor.FillEmptyBlocks" -->
+        <!-- Badly formed XML comment ignored for member "P:Gizmox.WebGUI.Forms.Extended.FCKEditor.FlashAddEmbedTag" -->
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.FlashConvertOnEdit">
+            <summary>
+            Use flashEmbedTagOnly and flashAddEmbedTag values on edit.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Gizmox.WebGUI.Forms.Extended.FCKEditor.FlashEmbedTagOnly" -->
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.FloatSpaceDockedOffsetX">
+            <summary>
+            Along with floatSpaceDockedOffsetY it defines the amount of offset (in pixels) between float space and the editable left/right boundaries when space element is docked at either side of the editable.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.FloatSpaceDockedOffsetY">
+            <summary>
+            Along with floatSpaceDockedOffsetX it defines the amount of offset (in pixels) between float space and the editable top/bottom boundaries when space element is docked at either side of the editable.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.FloatSpacePinnedOffsetX">
+            <summary>
+            Along with floatSpacePinnedOffsetY it defines the amount of offset (in pixels) between float space and the view port boundaries when space element is pinned.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.FloatSpacePinnedOffsetY">
+            <summary>
+            Along with floatSpacePinnedOffsetX it defines the amount of offset (in pixels) between float space and the view port boundaries when space element is pinned.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.FontSizeDefaultLabel">
+            <summary>
+            The text to be displayed in the Font Size combo is none of the available values matches the current cursor position or text selection.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.FontSizes">
+            <summary>
+            The list of fonts size to be displayed in the Font Size combo in the toolbar.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.FontDefaultLabel">
+            <summary>
+            The text to be displayed in the Font combo is none of the available values matches the current cursor position or text selection.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.FontNames">
+            <summary>
+            The list of fonts names to be displayed in the Font combo in the toolbar.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ForceEnterMode">
+            <summary>
+            Force the use of enterMode as line break regardless of the context.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ForcePasteAsPlainText">
+            <summary>
+            Whether to force all pasting operations to insert on plain text into the editor, loosing any formatting information possibly available in the source text.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ForceSimpleAmpersand" -->
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.FormatTags">
+            <summary>
+            A list of semi colon separated style names (by default tags) representing the style definition for each entry to be displayed in the Format combo in the toolbar. Each entry must have its relative definition configuration in a setting named 'format_(tagName)'. For example, the 'p' entry has its definition taken from config.format_p.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.FullPage">
+            <summary>
+            Indicates whether the contents to be edited are being input as a full HTML page.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.HtmlEncodeOutput">
+            <summary>
+            Whether to escape HTML when the editor updates the original input element.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.IgnoreEmptyParagraph">
+            <summary>
+            Whether the editor must output an empty value ('') if it's contents is made by an empty paragraph only.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ImagePreviewText">
+            <summary>
+            Padding text to set off the image in preview area.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ImageRemoveLinkByEmptyURL">
+            <summary>
+            Whether to remove links when emptying the link URL field in the image dialog.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.IndentOffset">
+            <summary>
+            Size of each indentation step.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.IndentUnit">
+            <summary>
+            Unit for the indentation style.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.Language">
+            <summary>
+            The user interface language localization to use.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.LinkShowAdvancedTab">
+            <summary>
+            Whether to show 'Advanced' tab.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.LinkShowTargetTab">
+            <summary>        
+             Whether to show 'Target' tab
+             </summary>       
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.MagiclineColor">
+            <summary>
+            Defines box color.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.MagiclineHoldDistance">
+            <summary>
+            Defines the distance between mouse pointer and the box, within which the box stays revealed and no other focus space is offered to be accessed. The value is relative to magicline_triggerOffset.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.MagiclineKeystrokeNext">
+            <summary>
+            Defines default keystroke that access the closest unreachable focus space after the caret (start of the selection).
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.MagiclineKeystrokePrevious">
+            <summary>
+            Defines default keystroke that access the closest unreachable focus space before the caret (start of the selection). 
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.MagiclinePutEverywhere">
+            <summary>
+            Activates plugin mode that considers all focus spaces between CKEDITOR.dtd.$block elements as accessible by the box.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.MagiclineTriggerOffset">
+            <summary>
+            Sets the default vertical distance between element edge and mouse pointer that causes the box to appear.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.MenuGroups">
+            <summary>
+            A comma separated list of items group names to be displayed in the context menu.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.MenuSubMenuDelay">
+            <summary>
+            The amount of time, in milliseconds, the editor waits before displaying submenu options when moving the mouse over options that contain submenus, like the "Cell Properties" entry for tables.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.NewpageHtml">
+            <summary>
+            The HTML to load in the editor when the "new page" command is executed.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.PasteFromWordCleanupFile">
+            <summary>
+            The file that provides the MS Word cleanup function for pasting operations.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.PasteFromWordNumberedHeadingToList">
+            <summary>
+            Whether to transform MS Word outline numbered headings into lists.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.PasteFromWordPromptCleanup">
+            <summary>
+            Whether to prompt the user about the clean up of content being pasted from MS Word.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.PasteFromWordRemoveFontStyles">
+            <summary>
+            Whether to ignore all font related formatting styles, including: font size; font family; font foreground/background color.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.PasteFromWordRemoveStyles">
+            <summary>
+            Whether to remove element styles that can't be managed with the editor.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.Plugins">
+            <summary>
+            Comma separated list of plugins to be used for an editor instance, besides, the actual plugins that to be loaded could be still affected by two other settings: extraPlugins and removePlugins.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ReadOnly">
+            <summary>
+            If true, makes the editor start in read-only state.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.RemoveButtons">
+            <summary>
+            List of toolbar button names that must not be rendered.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.RemoveDialogTabs">
+            <summary>
+            The dialog contents to removed.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.RemoveFormatAttributes">
+            <summary>
+            A comma separated list of elements attributes to be removed when executing the remove format command.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.RemoveFormatTags">
+            <summary>
+            A comma separated list of elements to be removed when executing the remove format command.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.RemovePlugins">
+            <summary>
+            A list of plugins that must not be loaded.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ResizeDir">
+            <summary>
+            The dimensions for which the editor resizing is enabled.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ResizeEnabled">
+            <summary>
+            Whether to enable the resizing feature.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ResizeMaxHeight">
+            <summary>
+            The maximum editor height, in pixels, when resizing the editor interface by using the resize handle.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ResizeMaxWidth">
+            <summary>
+            The maximum editor width, in pixels, when resizing the editor interface by using the resize handle.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ResizeMinHeight">
+            <summary>
+            The minimum editor height, in pixels, when resizing the editor interface by using the resize handle.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ResizeMinWidth">
+            <summary>
+            The minimum editor width, in pixels, when resizing the editor interface by using the resize handle.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ScaytAutoStartup">
+            <summary>
+            If enabled (set to true), turns on SCAYT automatically after loading the editor.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ScaytContextCommands">
+            <summary>
+            Customizes the display of SCAYT context menu commands ("Add Word", "Ignore" and "Ignore All").
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ScaytContextMenuItemsOrder">
+            <summary>
+            Defines the order SCAYT context menu items by groups.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ScaytCustomDictionaryIds">
+            <summary>
+            Links SCAYT to custom dictionaries.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ScaytCustomerid">
+            <summary>
+            Sets the customer ID for SCAYT.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ScaytMaxSuggestions">
+            <summary>
+            Defines the number of SCAYT suggestions to show in the main context menu.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ScaytMoreSuggestions">
+            <summary>
+            Enables/disables the "More Suggestions" sub-menu in the context menu.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ScaytSpellCheckLanguage">
+            <summary>
+            Sets the default spell checking language for SCAYT.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ScaytSrcUrl">
+            <summary>
+            Sets the URL to SCAYT core.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ScaytUiTabs">
+            <summary>
+            Sets the visibility of particular tabs in the SCAYT dialog window and toolbar button.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ScaytUserDictionaryName">
+            <summary>
+            Makes it possible to activate a custom dictionary in SCAYT.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ShiftEnterMode">
+            <summary>
+            Similarly to the enterMode setting, it defines the behavior of the Shift+Enter key combination. 
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.Skin">
+            <summary>
+            The editor skin name.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.SmileyColumns">
+            <summary>
+            The number of columns to be generated by the smilies matrix.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.SmileyPath">
+            <summary>
+            The base path used to build the URL for the smiley images.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.SourceAreaTabSize">
+            <summary>
+            Controls CSS tab-size property of the sourcearea view.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.StartupFocus">
+            <summary>
+            Sets whether the editable should have the focus when editor is loading for the first time.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.StartupMode">
+            <summary>
+            The mode to load at the editor startup.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.StartupOutlineBlocks">
+            <summary>
+            Whether to automaticaly enable the show block command when the editor loads.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.StartupShowBorders">
+            <summary>
+            Whether to automatically enable the "show borders" command when the editor loads.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.StylesSet">
+            <summary>
+            The "styles definition set" to use in the editor.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.TabIndex">
+            <summary>
+            The editor tabindex value.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Gizmox.WebGUI.Forms.Extended.FCKEditor.TabSpaces" -->
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.Templates">
+            <summary>
+            The templates definition set to use.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.TemplatesReplaceContent">
+            <summary>
+            Whether the "Replace actual contents" checkbox is checked by default in the Templates dialog.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.Toolbar">
+            <summary>
+            The toolbox (alias toolbar) definition.
+            </summary>
+            <value>
+            The toolbar.
+            </value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ToolbarGroups">
+            <summary>
+            Sets the toolbar groups.
+            </summary>
+            <value>
+            The toolbar groups.
+            </value>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.Extended.FCKEditor.SetConfigValue``1(System.String,``0)">
+            <summary>
+            Sets the config value.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="strKey">The STR key.</param>
+            <param name="objValue">The obj value.</param>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ToolbarCanCollapse">
+            <summary>
+            Whether the toolbar can be collapsed by the user.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ToolbarGroupCycling">
+            <summary>
+            When enabled, makes the arrow keys navigation cycle within the current toolbar group.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ToolbarLocation">
+            <summary>
+            The "UI space" to which rendering the toolbar.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.ToolbarStartupExpanded">
+            <summary>
+            Whether the toolbar must start expanded when the editor is loaded.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.UiColor">
+            <summary>
+            The base user interface color to be used by the editor.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.UndoStackSize">
+            <summary>
+            The number of undo steps to be saved.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Extended.FCKEditor.UseComputedState">
+            <summary>
+            Indicates that some of the editor features, like alignment and text direction, should use the "computed value" of the feature to indicate its on/off state instead of using the "real value".
+            </summary>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.Extended.FCKEditor.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.Extended.FCKEditor.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Gizmox.WebGUI.Forms.Editors.FCKEditor">
+            <summary>
+            Summary description for FCKEditor
+            </summary>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.Editors.FCKEditor.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gizmox.WebGUI.Forms.Editors.FCKEditor"/> class.
+            </summary>
+        </member>
+        <member name="T:Gizmox.WebGUI.Forms.Editors.FCKeditorConfigurations">
+            <summary>
+            Hold the FCK editor Configurations
+            </summary>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.Editors.FCKeditorConfigurations.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gizmox.WebGUI.Forms.Editors.FCKeditorConfigurations"/> class.
+            </summary>
+            <param name="info">The info.</param>
+            <param name="context">The context.</param>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Editors.FCKeditorConfigurations.Item(System.String)">
+            <summary>
+            Gets or sets the <see cref="T:System.String"/> with the specified configuration name.
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.Editors.FCKeditorConfigurations.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a <see cref="T:System.Runtime.Serialization.SerializationInfo"/> with the data needed to serialize the target object.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> to populate with data.</param>
+            <param name="context">The destination (see <see cref="T:System.Runtime.Serialization.StreamingContext"/>) for this serialization.</param>
+            <exception cref="T:System.Security.SecurityException">
+            The caller does not have the required permission.
+            </exception>
+        </member>
+        <member name="T:Gizmox.WebGUI.Forms.Editors.Skins.FCKEditorSkin">
+            <summary>
+            FCKEditor Skin
+            </summary>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.ExtendedToolTip.GetHeader(Gizmox.WebGUI.Forms.Control)">
+            <summary>
+            Gets the header.
+            </summary>
+            <param name="objControl">The obj control.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.ExtendedToolTip.SetHeader(Gizmox.WebGUI.Forms.Control,System.String)">
+            <summary>
+            Sets the header.
+            </summary>
+            <param name="objControl">The obj control.</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.ExtendedToolTip.ShouldSerializeHeader(Gizmox.WebGUI.Forms.Control)">
+            <summary>
+            Determines whether to serialize the header.
+            </summary>
+            <param name="objControl">The obj control.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.ExtendedToolTip.ResetHeader(Gizmox.WebGUI.Forms.Control)">
+            <summary>
+            Resets the header.
+            </summary>
+            <param name="objControl">The obj control.</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.ExtendedToolTip.GetContent(Gizmox.WebGUI.Forms.Control)">
+            <summary>
+            Gets the content.
+            </summary>
+            <param name="objControl">The obj control.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.ExtendedToolTip.SetContent(Gizmox.WebGUI.Forms.Control,System.String)">
+            <summary>
+            Sets the content.
+            </summary>
+            <param name="objControl">The obj control.</param>
+            <param name="strValue">The STR value.</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.ExtendedToolTip.ShouldSerializeContent(Gizmox.WebGUI.Forms.Control)">
+            <summary>
+            Determines whether to serialize the content.
+            </summary>
+            <param name="objControl">The obj control.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.ExtendedToolTip.ResetContent(Gizmox.WebGUI.Forms.Control)">
+            <summary>
+            Resets the content.
+            </summary>
+            <param name="objControl">The obj control.</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.ExtendedToolTip.GetToolTipTemplateName(Gizmox.WebGUI.Forms.Control)">
+            <summary>
+            Gets the name of the tool tip template.
+            </summary>
+            <param name="objControl">The obj control.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.ExtendedToolTip.SetToolTipTemplateName(Gizmox.WebGUI.Forms.Control,System.String)">
+            <summary>
+            Sets the name of the tool tip template.
+            </summary>
+            <param name="objControl">The obj control.</param>
+            <param name="strValue">The STR value.</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.ExtendedToolTip.ShouldSerializeToolTipTemplateName(Gizmox.WebGUI.Forms.Control)">
+            <summary>
+            Determines whether to serialize the tooltip template name.
+            </summary>
+            <param name="objControl">The obj control.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.ExtendedToolTip.ResetToolTipTemplateName(Gizmox.WebGUI.Forms.Control)">
+            <summary>
+            Resets the tooltip template name.
+            </summary>
+            <param name="objControl">The obj control.</param>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.ExtendedToolTip.ToolTipKey">
+            <summary>
+            Gets the tool tip key.
+            </summary>
+        </member>
+        <member name="T:Gizmox.WebGUI.Forms.ExtendedToolTipSkin">
+            <summary>
+            Label Skin
+            </summary>
+        </member>
+        <member name="T:Gizmox.WebGUI.Forms.MaskedComboBox">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.MaskedComboBox.TextMaskFormatProperty">
+            <summary>
+            Provides a property reference to TextMaskFormat property.
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.MaskedComboBox.UseTextMaskFormatProperty">
+            <summary>
+            Provides a property reference to UseTextMaskFormat property.
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.MaskedComboBox.HidePromptOnLeaveProperty">
+            <summary>
+            Provides a property reference to HidePromptOnLeave property.
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.MaskedComboBox.PromptCharProperty">
+            <summary>
+            Provides a property reference to PromptChar property.
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.MaskedComboBox.MaskProperty">
+            <summary>
+            Provides a property reference to Mask property.
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.MaskedComboBox.ResetOnPromptProperty">
+            <summary>
+            Provides a property reference to ResetOnPrompt property.
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.MaskedComboBox.AllowPromptAsInputProperty">
+            <summary>
+            Provides a property reference to AllowPromptAsInput property.
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.MaskedComboBox.ResetOnSpaceProperty">
+            <summary>
+            Provides a property reference to ResetOnSpace property.
+            </summary>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.MaskedComboBox.FireEvent(Gizmox.WebGUI.Common.Interfaces.IEvent)">
+            <summary>
+            Fires an event.
+            </summary>
+            <param name="objEvent">event.</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.MaskedComboBox.RenderText(Gizmox.WebGUI.Common.Interfaces.IAttributeWriter)">
+            <summary>
+            Render the text attrbute.
+            </summary>
+            <param name="objWriter">The obj writer.</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.MaskedComboBox.RenderAttributes(Gizmox.WebGUI.Common.Interfaces.IContext,Gizmox.WebGUI.Common.Interfaces.IAttributeWriter)">
+            <summary>
+            Renders the current control attributes.
+            </summary>
+            <param name="objContext">Request context.</param>
+            <param name="objWriter">The response writer object.</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.MaskedComboBox.RenderUpdatedAttributes(Gizmox.WebGUI.Common.Interfaces.IContext,Gizmox.WebGUI.Common.Interfaces.IAttributeWriter,System.Int64)">
+            <summary>
+            Render updated control params
+            </summary>
+            <param name="objContext">Request context.</param>
+            <param name="objWriter">The response writer object.</param>
+            <param name="lngRequestID">Request ID.</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.MaskedComboBox.RenderResetOnSpaceAttribute(Gizmox.WebGUI.Common.Interfaces.IAttributeWriter,System.Boolean)">
+            <summary>
+            Renders the ResetOnSpace attribute.
+            </summary>
+            <param name="objWriter">The obj writer.</param>
+            <param name="blnForceRender">if set to <c>true</c> [BLN force render].</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.MaskedComboBox.RenderResetOnPromptAttribute(Gizmox.WebGUI.Common.Interfaces.IAttributeWriter,System.Boolean)">
+            <summary>
+            Renders the ResetOnPrompt attribute.
+            </summary>
+            <param name="objWriter">The obj writer.</param>
+            <param name="blnForceRender">if set to <c>true</c> [BLN force render].</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.MaskedComboBox.RenderAllowPromptAsInputAttribute(Gizmox.WebGUI.Common.Interfaces.IAttributeWriter,System.Boolean)">
+            <summary>
+            Renders the AllowPromptAsInput attribute.
+            </summary>
+            <param name="objWriter">The obj writer.</param>
+            <param name="blnForceRender">if set to <c>true</c> [BLN force render].</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.MaskedComboBox.RenderValue(Gizmox.WebGUI.Common.Interfaces.IAttributeWriter)">
+            <summary>
+            Renders the value.
+            </summary>
+            <param name="objWriter">The writer.</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.MaskedComboBox.InvokeSelection(System.Int32,System.Int32)">
+            <summary>
+            Implements the actual client side selection
+            </summary>
+            <param name="intStart"></param>
+            <param name="intLength"></param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.MaskedComboBox.GetTextOutput">
+            <summary>Returns the formatted string that includes all the assigned character values.</summary>
+            <returns>The formatted <see cref="T:System.String"></see> that includes all the assigned character values.</returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.MaskedComboBox.GetTextOutput(System.String,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Gets the text output.
+            </summary>
+            <param name="strValue">The STR value.</param>
+            <param name="strMask">The STR mask.</param>
+            <param name="chrPromptChar">The CHR prompt char.</param>
+            <param name="blnIncludeLiterals">if set to <c>true</c> [BLN include literals].</param>
+            <param name="blnIncludePrompt">if set to <c>true</c> [BLN include prompt].</param>
+            <param name="blnAllowPromptAsInput">if set to <c>true</c> [BLN allow prompt as input].</param>
+            <param name="blnResetOnPrompt">if set to <c>true</c> [BLN reset on prompt].</param>
+            <param name="blnResetOnSpace">if set to <c>true</c> [BLN reset on space].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.MaskedComboBox.GetMaskedTextProvider(System.String,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Gets the masked text provider.
+            </summary>
+            <param name="strValue">The text value.</param>
+            <param name="strMask">The mask value.</param>
+            <param name="chrPromptChar">The prompt char.</param>
+            <param name="blnIncludeLiterals">if set to <c>true</c> [BLN include literals].</param>
+            <param name="blnIncludePrompt">if set to <c>true</c> [include prompt].</param>
+            <param name="blnAllowPromptAsInput">if set to <c>true</c> [BLN allow prompt as input].</param>
+            <param name="blnResetOnPrompt">if set to <c>true</c> [BLN reset on prompt].</param>
+            <param name="blnResetOnSpace">if set to <c>true</c> [BLN reset on space].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.MaskedComboBox.GetFormatedMask(System.String)">
+            <summary>
+            Gets formated cultured mask.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.MaskedComboBox.Mask">
+            <summary>
+            Gets or sets the input mask to use at run time. 
+            </summary>
+            <returns>A <see cref="T:System.String"></see> representing the current mask. The default value is the empty string which allows any input.</returns>
+            <exception cref="T:System.ArgumentException">The string supplied to the <see cref="P:Gizmox.WebGUI.Forms.MaskedComboBox.Mask"></see> property is not a valid mask. Invalid masks include masks containing non-printable characters.</exception> 
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.MaskedComboBox.PromptChar">
+            <summary>Gets or sets the character used to represent the absence of user input in <see cref="T:System.Windows.Forms.MaskedComboBox"></see>.</summary>
+            <returns>The character used to prompt the user for input. The default is an underscore (_). </returns>
+            <exception cref="T:System.InvalidOperationException">The prompt character specified is the same as the current password character, <see cref="P:System.Windows.Forms.MaskedComboBox.PasswordChar"></see>. The two are required to be different.</exception>
+            <exception cref="T:System.ArgumentException">The character specified when setting this property is not a valid prompt character, as determined by the <see cref="M:System.ComponentModel.MaskedTextProvider.IsValidPasswordChar(System.Char)"></see> method of the <see cref="T:System.ComponentModel.MaskedTextProvider"></see> class.</exception>
+            <filterpriority>1</filterpriority>
+            <PermissionSet><IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" /><IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" /><IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" /><IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" /></PermissionSet>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.MaskedComboBox.HidePromptOnLeave">
+            <summary>Gets or sets a value indicating whether the prompt characters in the input mask are hidden when the masked text box loses focus.</summary>
+            <returns>true if <see cref="P:System.Windows.Forms.MaskedComboBox.PromptChar"></see> is hidden when <see cref="T:System.Windows.Forms.MaskedComboBox"></see> does not have focus; otherwise, false. The default is false.</returns>
+            <filterpriority>1</filterpriority>
+            <PermissionSet><IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" /><IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" /><IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" /><IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" /></PermissionSet>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.MaskedComboBox.AllowPromptAsInput">
+            <summary>
+            Gets or sets a value indicating whether System.Windows.Forms.MaskedTextBox.PromptChar
+            can be entered as valid data by the user.
+            </summary>
+            <value>
+              <c>true</c> if the user can enter the prompt character into the control; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.MaskedComboBox.ResetOnPrompt">
+            <summary>
+            Gets or sets a value that determines how an input character that matches
+            the prompt character should be handled.
+            </summary>
+            <value>
+              <c>true</c> if the prompt character entered as input causes the current editable
+                position in the mask to be reset; otherwise, <c>false</c>.to indicate that the prompt
+                character is to be processed as a normal input character
+            </value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.MaskedComboBox.ResetOnSpace">
+            <summary>
+            Gets or sets a value indicating whether [reset on space].
+            </summary>
+            <value>
+              <c>true</c> if [reset on space]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.MaskedComboBox.Text">
+            <summary>
+            Gets or sets the text associated with this control.  
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.MaskedComboBox.UseTextMaskFormat">
+            <summary>
+            Gets or sets a value indicating whether to use text mask format.
+            </summary>
+            <value><c>true</c> if use text mask format; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.MaskedComboBox.CharacterCasing">
+            <summary>
+            Masked ComboBox does not implement CharacterCasing
+            
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.MaskedComboBox.TextMaskFormat">
+            <summary>
+            Defines how Text property should be formatted
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.MaskedComboBox.DropDownStyle">
+            <summary>
+            Gets or sets the drop down style.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.MaskedComboBox.CustomStyle">
+            <summary>
+            Gets or sets the control custom style.
+            </summary>
+            <value></value>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.MaskedComboBox.mcntPromptChar">
+            <summary>
+            The prompt character to use in the displayed masked text
+            </summary>
+        </member>
+        <member name="T:Gizmox.WebGUI.Forms.Skins.SurfacePanelSkin">
+            <summary>
+            SurfacePanel Skin
+            </summary>
+        </member>
+        <member name="T:Gizmox.WebGUI.Forms.Skins.UploadControlSkin">
+            <summary>
+            Summary description for UploadControlSkin
+            </summary>   
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Skins.UploadControlSkin.Cursor">
+            <summary>
+            Gets or sets Cursor for the upload control
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Skins.UploadControlSkin.UploadButtonCursor">
+            <summary>
+            Gets or sets Cursor for the upload control
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Skins.UploadControlSkin.UploadButtonWidth">
+            <summary>
+            Gets or sets the width of the upload button in pixels
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Skins.UploadControlSkin.UploadButtonStyle">
+            <summary>
+            Gets or sets Style of the upload button
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Skins.UploadControlSkin.UploadBarHeight">
+            <summary>
+            Gets or sets the height of progress bar in pixels
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Skins.UploadControlSkin.UploadBarStyle">
+            <summary>
+            Gets or sets Style of the not completed area area of the progress bar bar
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Skins.UploadControlSkin.UploadBarCompletedStyle">
+            <summary>
+            Gets or sets Style of completed area of the progress bar
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Gizmox.WebGUI.Forms.Skins.WorkspaceTabSkin">
+            <summary>
+            WorkspaceTab Skin
+            </summary>
+        </member>
+        <member name="T:Gizmox.WebGUI.Forms.Skins.WorkspaceTabsSkin">
+            <summary>
+            WorkspaceTabs Skin
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.Skins.WorkspaceTabsSkin.TabsTopContainerStyle">
+            <summary>
+            Gets the tabs container style.
+            </summary>
+            <value>The tabs container style.</value>
+        </member>
+        <member name="T:Gizmox.WebGUI.Forms.SurfacePanel">
+            <summary>
+            Summary description for SurfacePanel
+            </summary>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.SurfacePanel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gizmox.WebGUI.Forms.SurfacePanel"/> class.
+            </summary>
+        </member>
+        <member name="T:Gizmox.WebGUI.Forms.UploadControl">
+            <summary>
+            Summary description for UploadControl
+            
+            jQuery File Upload Plugin 5.40.1
+            https://github.com/blueimp/jQuery-File-Upload
+            http://blueimp.github.io/jQuery-File-Upload/
+            
+            Copyright 2010, Sebastian Tschan
+            https://blueimp.net
+            
+            Licensed under the MIT license:
+            http://www.opensource.org/licenses/MIT
+            </summary>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.UploadControl.#ctor">
+            <summary>
+            Constructor for UploadControl
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.UploadControl.UploadMaxNumberOfFiles">
+            <summary>
+            Maximum number of files that can be uploaded in each multiselection. 0 = Unlimited.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.UploadControl.UploadMaxFileSize">
+            <summary>
+            Maximum size of upload file in bytes. 0 = Unlimited
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.UploadControl.UploadMinFileSize">
+            <summary>
+            Minimum size of upload file in bytes. 0 = Unlimited
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.UploadControl.UploadFileTypes">
+            <summary>
+            Regular expression match string for valid filename and extension
+            Default: "^.*$", means all files. 
+            Example: "^.*\.(gif|jpe?g|png)$", means *.gif, *.jpg, *.jpeg, *.png
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.UploadControl.UploadTempFilePath">
+            <summary>
+            Path to store temporary files while being uploaded
+            Files on this path are not deleted by this control and must be cleaned up by the user's code
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.UploadControl.UploadBufferSize">
+            <summary>
+            Buffer size in bytes used by server-side to process uploaded chunks of uploaded files 
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.UploadControl.UploadClientChunkSize">
+            <summary>
+            Size of each chunk the jQuery client uses to upload
+            When increasing client chunk size, make sure to check and/or adjust your web.config's values for:
+              - system.web/httpRuntime/maxRequestLength
+              - system.web/httpRuntime/executionTimeout
+              - system.webServer/security/requestFiltering/requestLimit/maxAllowedContentLength
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.UploadControl.UploadText">
+            <summary>
+            Text used to prompt for files on upload control
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.UploadControl.UploadShowFilenameOnBar">
+            <summary>
+            Show name of file currently being uploaded on progressbar in uploadcontrol
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.UploadControl.UploadShowSpeedOnBar">
+            <summary>
+            Show current upload speed in Kilo bits per second on progressbar in uploadcontrol
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.UploadControl.mstrChunkedFileName">
+            <summary>
+            Internal temporary full name of file being uploaded in chunks.
+            </summary>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.UploadControl.isFirstRange(System.String)">
+            <summary>
+            Detecting if upload chunk gateway request is the first chunk of a file being uploaded
+            </summary>
+            <param name="strRange">Pattern used by jQuery upload control: "bytes 0-116649/116650"</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.UploadControl.isLastRange(System.String)">
+            <summary>
+            Detecting if upload chunk gateway request is the last chunk of a file being uploaded
+            </summary>
+            <param name="strRange">Pattern range used by upload control: "bytes 100000-116649/116650"</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.UploadControl.ProcessGatewayRequest(Gizmox.WebGUI.Hosting.HostContext,System.String)">
+            <summary>
+            Process Ajax gateway upload request posted by the jQuery upload client component
+            </summary>
+            <param name="objHostContext"></param>
+            <param name="strAction">The only supported action is "ULPost", posted by the jQuery upload control as Ajax gateway request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.UploadControl.UploadValidate(System.String,System.Web.HttpPostedFile)">
+            <summary>
+            Simle error checking 
+            </summary>
+            <param name="strFileName"></param>
+            <param name="objFile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.UploadControl.RenderAttributes(Gizmox.WebGUI.Common.Interfaces.IContext,Gizmox.WebGUI.Common.Interfaces.IAttributeWriter)">
+            <summary>
+            Render attributes for UploadControl
+            </summary>
+            <param name="context"></param>
+            <param name="writer"></param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.UploadControl.FireEvent(Gizmox.WebGUI.Common.Interfaces.IEvent)">
+            <summary>
+            Handle and process events raised by the jQuery upload control
+            </summary>
+            <param name="objEvent"></param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.UploadControl.GetCriticalEventsData">
+            <summary>
+            Gets the critical events.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.UploadControl.GetCriticalClientEventsData">
+            <summary>
+            Gets the critical client events.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.UploadControl.UploadBatchStartingEvent">
+            <summary>
+            File has been added to the upload control, uploads will now start
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.UploadControl.UploadChunkRequestCompletedEvent">
+            <summary>
+            The gateway file complete event registration
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.UploadControl.UploadFileCompletedEvent">
+            <summary>
+            The upload file complete event registration
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.UploadControl.UploadBatchCompletedEvent">
+            <summary>
+            The upload batch complete event registration
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.UploadControl.UploadErrorEvent">
+            <summary>
+            The unhandled error event registration
+            </summary>
+        </member>
+        <member name="E:Gizmox.WebGUI.Forms.UploadControl.UploadFileCompleted">
+            <summary>
+            Fires when an upload of a single file has completed. Fired once for every uploaded file.
+            EventArgs have information on the file and the temprary storage of the file.
+            The file is stored on the temporary folder, possibly using name different from the original name.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.UploadControl.UploadFileCompletedHandler">
+            <summary>
+            Get the handler for UploadFileCompleted
+            </summary>
+        </member>
+        <member name="E:Gizmox.WebGUI.Forms.UploadControl.UploadBatchStarting">
+            <summary>
+            Event fired when a file has been added to the jQuery control on the client, and upload is about to start
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.UploadControl.UploadBatchStartingHandler">
+            <summary>
+            Get the handler for UploadStart
+            </summary>
+        </member>
+        <member name="E:Gizmox.WebGUI.Forms.UploadControl.UploadBatchCompleted">
+            <summary>
+            Event fired at the end of each batch of uploaded files, when the batch completes.
+            When multiselecting files, UploadFileCompleted will fire for each individual file, followed by one UploadBatchCompleted.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.UploadControl.UploadBatchCompletedHandler">
+            <summary>
+            Get the handler for UploadBatchCompleted
+            </summary>
+        </member>
+        <member name="E:Gizmox.WebGUI.Forms.UploadControl.UploadError">
+            <summary>
+            Event fired upon detecting an unhandled Exception
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.UploadControl.UploadErrorHandler">
+            <summary>
+            Get the handler for UploadError
+            </summary>
+        </member>
+        <member name="E:Gizmox.WebGUI.Forms.UploadControl.UploadChunkRequestCompleted">
+            <summary>
+            Fired when every chunk of an uploaded file has been received by the gateway. Fired once for each chunk of every uploaded file.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.UploadControl.UploadChunkRequestCompletedHandler">
+            <summary>
+            Get the handler for UploadFileRequestCompleted
+            </summary>
+        </member>
+        <member name="E:Gizmox.WebGUI.Forms.UploadControl.ClientUploadFileCompleted">
+            <summary>
+            Fires when an upload of a single file has completed. Fired once for every uploaded file.
+            EventArgs have a list type for uploaded files, which will contain only one uploaded file.
+            The error property of the file's results indicates the error if not empty.
+            </summary>
+        </member>
+        <member name="E:Gizmox.WebGUI.Forms.UploadControl.ClientUploadBatchStarting">
+            <summary>
+            Event fired when a file has been added to the jQuery control on the client, and upload is about to start
+            </summary>
+        </member>
+        <member name="E:Gizmox.WebGUI.Forms.UploadControl.ClientUploadBatchCompleted">
+            <summary>
+            Event fired at the end of each batch of uploaded files, when the batch completes.
+            When multiselecting files, UploadFileCompleted will fire for each individual file, followed by one UploadBatchCompleted.
+            </summary>
+        </member>
+        <member name="E:Gizmox.WebGUI.Forms.UploadControl.ClientUploadError">
+            <summary>
+            Event fired upon detecting an unhandled Exception
+            </summary>
+        </member>
+        <member name="E:Gizmox.WebGUI.Forms.UploadControl.ClientUploadChunkRequestCompleted">
+            <summary>
+            Fired when every chunk of an uploaded file has been received by the gateway. Fired once for each chunk of every uploaded file.
+            </summary>
+        </member>
+        <member name="T:Gizmox.WebGUI.Forms.UploadChunkRequestCompletedHandler">
+            <summary>
+            Represents chunk uploaded event
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Gizmox.WebGUI.Forms.UploadFileCompletedHandler">
+            <summary>
+            Represents file uploaded event
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Gizmox.WebGUI.Forms.UploadErrorHandler">
+            <summary>
+            Represents error event
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Gizmox.WebGUI.Forms.UploadEventHandler">
+            <summary>
+            Represents generic upload events with no arguments
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Gizmox.WebGUI.Forms.UploadFileResult">
+            <summary>
+            Base EventArg information type for UploadControl
+            </summary>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.UploadFileResult.#ctor(System.String,System.Int64,System.String,System.String)">
+            <summary>
+            Parameterized constructor for UploadFileResult
+            </summary>
+            <param name="strName">The filename without path</param>
+            <param name="lngSize">Size of file in bytes</param>
+            <param name="strType">MIME type of file</param>
+            <param name="strTempFileFullName">Full path name of temporary file (where file is uploaded by the control)</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.UploadFileResult.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.UploadFileResult.Name">
+            <summary>
+            Name of uploaded file as reported by the jQuery upload control
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.UploadFileResult.Size">
+            <summary>
+            The size of the file in bytes
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.UploadFileResult.Type">
+            <summary>
+            The MIME content type for the uploaded file
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.UploadFileResult.TempFileFullName">
+            <summary>
+            The fully qualified name of the uploaded file on temporary storage, saved by the uploade control. 
+            This name does not reflect the original filename, since GUID is used upon conflict.
+            </summary>
+        </member>
+        <member name="T:Gizmox.WebGUI.Forms.UploadChunkRequestResult">
+            <summary>
+            EventArgs for end of gateway/Ajax request of a chunk or a one chunk file upload
+            </summary>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.UploadChunkRequestResult.#ctor(System.String,System.Int64,System.String,System.String,System.String)">
+            <summary>
+            Parameterized constructor for UploadFileResult
+            </summary>
+            <param name="strName">The filename without path</param>
+            <param name="lngSize">Size of file in bytes</param>
+            <param name="strType">MIME type of file</param>
+            <param name="strTempFileFullName">Full path name of temporary file (where file is uploaded by the control)</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.UploadChunkRequestResult.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.UploadChunkRequestResult.Range">
+            <summary>
+            The contained range, for chunked upload. For files uploaded in one chunk, this will be null
+            </summary>
+        </member>
+        <member name="T:Gizmox.WebGUI.Forms.UploadChunkRequestEventArgs">
+            <summary>
+            EventArgs for single gateway/Ajax request
+            </summary>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.UploadChunkRequestEventArgs.#ctor(Gizmox.WebGUI.Forms.UploadChunkRequestResult)">
+            <summary>
+            Initializes the arguments with UploadFileResults
+            </summary>
+            <param name="objResult"></param>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.UploadChunkRequestEventArgs.Result">
+            <summary>
+            The results of a single uploaded file
+            </summary>
+        </member>
+        <member name="T:Gizmox.WebGUI.Forms.UploadCompletedEventArgs">
+            <summary>
+            EventArgs for completed upload of one uploaded files
+            </summary>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.UploadCompletedEventArgs.#ctor(Gizmox.WebGUI.Forms.UploadFileResult)">
+            <summary>
+            Initializes the arguments with the results for the uploaded file
+            </summary>
+            <param name="objList"></param>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.UploadCompletedEventArgs.Result">
+            <summary>
+            The uploaded file's upload results
+            </summary>
+        </member>
+        <member name="T:Gizmox.WebGUI.Forms.UploadErrorEventArgs">
+            <summary>
+            EventArgs for unhandled exceptions
+            </summary>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.UploadErrorEventArgs.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes the arguments with information on the error
+            </summary>
+            <param name="strError"></param>
+            <param name="objException"></param>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.UploadErrorEventArgs.Error">
+            <summary>
+            The error message
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.UploadErrorEventArgs.ErrorException">
+            <summary>
+            The error exception
+            </summary>
+        </member>
+        <member name="T:Gizmox.WebGUI.Forms.WorkspaceTabs">
+            <summary>
+            Manages a related set of tab pages.
+            </summary>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.WorkspaceTabs.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gizmox.WebGUI.Forms.WorkspaceTabs"></see> class.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.WorkspaceTabs.ClientUpdateHandler">
+            <summary>
+            Gets or sets the client update handler.
+            </summary>
+            <value>The client update handler.</value>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.WorkspaceTabs.Appearance">
+            <summary>
+            Gets or sets the visual appearance of the control's tabs.
+            </summary>
+            <returns>One of the <see cref="T:Gizmox.WebGUI.Forms.TabAppearance"></see> values. The default is Normal.</returns>
+              
+            <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">The property value is not a valid <see cref="T:Gizmox.WebGUI.Forms.TabAppearance"></see> value. </exception>
+              
+            <PermissionSet><IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true"/><IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true"/><IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence"/><IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true"/></PermissionSet>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.WorkspaceTabs.Multiline">
+            <summary>
+            Gets or sets a value indicating whether more than one row of tabs can be displayed.
+            </summary>
+            <value></value>
+            <returns>true if more than one row of tabs can be displayed; otherwise, false. The default is true.</returns>
+            <PermissionSet><IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true"/><IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true"/><IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence"/><IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true"/></PermissionSet>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.WorkspaceTabs.TabPages">
+            <summary>
+            Gets the collection of tab pages in this tab control.
+            </summary>
+            <returns>A <see cref="T:Gizmox.WebGUI.Forms.TabPageCollection"></see> that contains the <see cref="T:Gizmox.WebGUI.Forms.TabPage"></see> objects in this <see cref="T:Gizmox.WebGUI.Forms.TabControl"></see>.</returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.WorkspaceTabs.CreateTabPageCollection">
+            <summary>
+            Creates the tab page collection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Gizmox.WebGUI.Forms.WorkspaceTabs.ShowCloseButtonProperty">
+            <summary>
+            Provides a property reference to ShowCloseButton property.
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.WorkspaceTabs.ShowCloseButton">
+            <summary>
+            Gets or Sets value indication if the close button (when Appearance==TabAppearance.Workspace) 
+            should be shown
+            </summary>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.WorkspaceTabs.MaxTabPageHeaders">
+            <summary>
+            Gets or sets the max page headers.
+            </summary>
+            <value>
+            The max page headers.
+            </value>
+        </member>
+        <member name="T:Gizmox.WebGUI.Forms.WorkspaceTab">
+            <summary>
+            Represents a single tab page in a <see cref="T:Gizmox.WebGUI.Forms.WorkspaceTabs"></see>.
+            </summary>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.WorkspaceTab.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gizmox.WebGUI.Forms.WorkspaceTab"></see> class.
+            </summary>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.WorkspaceTab.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gizmox.WebGUI.Forms.WorkspaceTab"></see> class and specifies the text for the tab.
+            </summary>
+            <param name="strText">The text for the tab. </param>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.WorkspaceTab.Appearance">
+            <summary>
+            Gets or sets the appearance.
+            </summary>
+            <value>
+            The appearance.
+            </value>
+        </member>
+        <member name="T:Gizmox.WebGUI.Forms.WorkspaceTabsCollection">
+            <summary>
+            Tab pages collection class
+            </summary>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.WorkspaceTabsCollection.#ctor(Gizmox.WebGUI.Forms.TabControl)">
+            <summary>
+            Creates a new <see cref="T:Gizmox.WebGUI.Forms.TabPageCollection"/> instance.
+            </summary>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.WorkspaceTabsCollection.Add(Gizmox.WebGUI.Forms.TabPage)">
+            <summary>
+            Adds the specified tab page.
+            </summary>
+            <param name="objTabPage">tab page.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Forms.WorkspaceTabsCollection.Remove(Gizmox.WebGUI.Forms.TabPage)">
+            <summary>
+            Removes the specified tab page.
+            </summary>
+            <param name="objTabPage">tab page.</param>
+        </member>
+        <member name="P:Gizmox.WebGUI.Forms.WorkspaceTabsCollection.Item(System.Int32)">
+            <summary>
+            Gets the <see cref="T:Gizmox.WebGUI.Forms.TabPage"/> with the specified int index.
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Gizmox.WebGUI.Common.Resources.GeneralSizeableHandle">
+            <summary>
+            Static gateway that will serve any file or resource accessible by the server
+            
+            Names of file resources are always interpreted relative to application's virtual folder,
+            which means a resource named 'test.jpg' will mean a test.jpg file directly on the application's
+            virtual folder.
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Common.Resources.GeneralSizeableHandle.ResizeMethod.None">
+            <summary>
+            No Scaling
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Common.Resources.GeneralSizeableHandle.ResizeMethod.Propotional">
+            <summary>
+            Scale and keep propotions. 1 = 100% size
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Common.Resources.GeneralSizeableHandle.ResizeMethod.Size">
+            <summary>
+            Scale to absolute width and height in pixels
+            </summary>
+        </member>
+        <member name="M:Gizmox.WebGUI.Common.Resources.GeneralSizeableHandle.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gizmox.WebGUI.Common.Resources.GeneralSizeableHandle"/> class.
+            
+            Required by StaticGatewayResourceHandle derived classes - Best practice: No code should be in here.
+            
+            This constructor is required by the router when serving requests for resources served by this static
+            gateway and should not contain any code.
+            </summary>
+        </member>
+        <member name="M:Gizmox.WebGUI.Common.Resources.GeneralSizeableHandle.#ctor(System.String,System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gizmox.WebGUI.Common.Resources.GeneralSizeableHandle"/> class - Propotional scaling (1=100%) with no rotation or flipping .
+            </summary>
+            <param name="strFileName">The filename to reference</param>
+            <param name="dblScalingFactor">Scaling factor, 1 = no scaling.</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Common.Resources.GeneralSizeableHandle.#ctor(System.String,System.Double,System.Drawing.RotateFlipType)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gizmox.WebGUI.Common.Resources.GeneralSizeableHandle"/> class - Propotional scaling (1=100%).
+            </summary>
+            <param name="strFileName">The filename to reference</param>
+            <param name="dblScalingFactor">Scaling factor, 1 = no scaling.</param>
+            <param name="enmRotateAndFlip">Rotate and Flip method.</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Common.Resources.GeneralSizeableHandle.#ctor(System.String,System.String,System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gizmox.WebGUI.Common.Resources.GeneralSizeableHandle"/> class - Propotional scaling (1=100%) with no rotation or flipping.
+            </summary>
+            <param name="strFileName">The filename to reference</param>
+            <param name="strContentType">The content type to use when serving the gateway request</param>
+            <param name="dblScalingFactor">Scaling factor, 1 = no scaling.</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Common.Resources.GeneralSizeableHandle.#ctor(System.String,System.String,System.Double,System.Drawing.RotateFlipType)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gizmox.WebGUI.Common.Resources.GeneralSizeableHandle"/> class - Propotional scaling (1=100%) .
+            </summary>
+            <param name="strFileName">The filename to reference</param>
+            <param name="strContentType">The content type to use when serving the gateway request</param>
+            <param name="dblScalingFactor">Scaling factor, 1 = no scaling.</param>
+            <param name="enmRotateAndFlip">Rotate and Flip method.</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Common.Resources.GeneralSizeableHandle.#ctor(System.String,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gizmox.WebGUI.Common.Resources.GeneralSizeableHandle"/> class - Absolute scaling to pixels with no rotation or flipping.
+            </summary>
+            <param name="strFileName">The filename to reference</param>
+            <param name="intWidth">Scale to absolute width, 0 = scale in same propotions as Height</param>
+            <param name="intHeight">Scale to absolute height, 0 = scal in same propotions as Width</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Common.Resources.GeneralSizeableHandle.#ctor(System.String,System.Int32,System.Int32,System.Drawing.RotateFlipType)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gizmox.WebGUI.Common.Resources.GeneralSizeableHandle"/> class - Absolute scaling to pixels .
+            </summary>
+            <param name="strFileName">The filename to reference</param>
+            <param name="intWidth">Scale to absolute width, 0 = scale in same propotions as Height</param>
+            <param name="intHeight">Scale to absolute height, 0 = scal in same propotions as Width</param>
+            <param name="enmRotateAndFlip">Rotate and Flip method.</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Common.Resources.GeneralSizeableHandle.#ctor(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gizmox.WebGUI.Common.Resources.GeneralSizeableHandle"/> class - Absolute scaling to pixels with no rotation or flipping.
+            </summary>
+            <param name="strFileName">The filename to reference</param>
+            <param name="strContentType">The content type to use when serving the gateway request</param>
+            <param name="intWidth">Scale to absolute width, 0 = scale in same propotions as Height</param>
+            <param name="intHeight">Scale to absolute height, 0 = scal in same propotions as Width</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Common.Resources.GeneralSizeableHandle.#ctor(System.String,System.String,System.Int32,System.Int32,System.Drawing.RotateFlipType)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gizmox.WebGUI.Common.Resources.GeneralSizeableHandle"/> class - Absolute scaling to pixels .
+            </summary>
+            <param name="strFileName">The filename to reference</param>
+            <param name="strContentType">The content type to use when serving the gateway request</param>
+            <param name="intWidth">Scale to absolute width, 0 = scale in same propotions as Height</param>
+            <param name="intHeight">Scale to absolute height, 0 = scal in same propotions as Width</param>
+            <param name="enmRotateAndFlip">Rotate and Flip method.</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Common.Resources.GeneralSizeableHandle.Gizmox#WebGUI#Common#Interfaces#IStaticGateway#GetGatewayHandler(Gizmox.WebGUI.Common.Interfaces.IContext)">
+            <summary>
+            Gets the gateway handler.
+            </summary>
+            <param name="objContext">Request context.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Common.Resources.GeneralSizeableHandle.ToStream">
+            <summary>
+            Return a Stream object for the resource being served.
+            
+            By providing a Stream object for the resource, you can use ToImage() and ToIcon() for resource types
+            that support them. For instance, it doesn't make sense to to a ToImage() on a text file resource, but
+            it does make sense for PNG file resource.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Common.Resources.GeneralSizeableHandle.GetSpecificResourceHandle">
+            <summary>
+            Gets the specific resource handle  - used for ToString().
+            
+            The returned value will be the Url used for this particular resource/file.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Common.Resources.GeneralSizeableHandle.ScaleToFactor(System.IO.Stream,System.Double,System.Drawing.RotateFlipType)">
+            <summary>
+            Scale an image propotionally to a given factor
+            </summary>
+            <param name="objImageStream">The image stream</param>
+            <param name="dblScaleFactor">The factor of scaling, 1 = no scaling</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Common.Resources.GeneralSizeableHandle.ScaleToSize(System.IO.Stream,System.Int32,System.Int32,System.Drawing.RotateFlipType)">
+            <summary>
+            Scale an image to certain dimensions on width and height
+            </summary>
+            <param name="objImageStream"></param>
+            <param name="Width"></param>
+            <param name="Height"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Common.Resources.GeneralSizeableHandle.ImageToStream(System.Drawing.Image,System.Drawing.Imaging.ImageFormat)">
+            <summary>
+            Convert an image to a stream in given image format.
+            </summary>
+            <param name="objImage">The image to convert</param>
+            <param name="enmFormat">The target image format</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Common.Resources.GeneralSizeableHandle.GetImageFormat(System.String)">
+            <summary>
+            Gets the image format.
+            </summary>
+            <param name="strFullName">Full name of the string.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Gizmox.WebGUI.Common.Resources.GeneralResourceHandleDefaultGranter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Gizmox.WebGUI.Common.Resources.GeneralResourceHandleDefaultGranter.IsGranted(System.String,System.Boolean)">
+            <summary>
+            Determines whether the specified string path is granted.
+            </summary>
+            <param name="strPath">The string path.</param>
+            <param name="blnIsLocalFile">if set to <c>true</c> [BLN is local file].</param>
+            <returns></returns>
+        </member>
+        <member name="T:Gizmox.WebGUI.Common.Resources.GeneralResourceHandle">
+            <summary>
+            Static gateway that will serve any file or resource accessible by the server, provided the
+            IGeneralResourceHandleAccessGranter provider grants access to the resource. By default, access
+            is granted to non-local resources (Urls) and all files under the virtual folder's Resources folder.
+            
+            Custom access granter can be set through Provider in web.config, default being equal to:
+            
+             <WebGUI>
+               <Providers>
+                 <Provider key="IGeneralResourceHandleAccessGranter" value="Gizmox.WebGUI.Common.Resources.GeneralResourceHandleDefaultGranter, Gizmox.WebGUI.Forms.Extended" />
+               </Providers>
+             </WebGUI>
+            
+            Names of file resources are always interpreted relative to application's virtual folder,
+            which means a resource named 'test.jpg' will mean a test.jpg file directly on the application's
+            virtual folder.
+            
+            Default caching is set at application startup according to the VWG_DisableCachingSwitch of web.config, 
+            and if enabled, resources are by default cached for 1 year. 
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Common.Resources.GeneralResourceHandle.mstrFileName">
+            <summary>
+            Full name of file/resource - used for internal processing
+            </summary>
+        </member>
+        <member name="F:Gizmox.WebGUI.Common.Resources.GeneralResourceHandle.mstrContentType">
+            <summary>
+            ContentType of file/resource - used for internal processing
+            </summary>
+        </member>
+        <member name="M:Gizmox.WebGUI.Common.Resources.GeneralResourceHandle.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gizmox.WebGUI.Common.Resources.GeneralResourceHandle"/> class.
+            
+            Required by StaticGatewayResourceHandle derived classes - Best practice: No code should be in here.
+            
+            This constructor is required by the router when serving requests for resources served by this static
+            gateway and should not contain any code.
+            </summary>
+        </member>
+        <member name="M:Gizmox.WebGUI.Common.Resources.GeneralResourceHandle.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gizmox.WebGUI.Common.Resources.GeneralResourceHandle"/> class.
+            </summary>
+            <param name="strFullName">Full name of the string.</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Common.Resources.GeneralResourceHandle.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gizmox.WebGUI.Common.Resources.GeneralResourceHandle"/> class.
+            </summary>
+            <param name="strFullName">Full name of the string.</param>
+            <param name="strContentType">Type of the string content.</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Common.Resources.GeneralResourceHandle.#ctor(System.String,System.String,System.String,System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gizmox.WebGUI.Common.Resources.GeneralResourceHandle"/> class.
+            </summary>
+            <param name="strFullName">The filename to reference</param>
+            <param name="strContentType">The content type to use when serving the gateway request.</param>
+            <param name="strTypeName">The full name of the static gateway class type</param>
+            <param name="objType">The static gateway class type</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Common.Resources.GeneralResourceHandle.Gizmox#WebGUI#Common#Interfaces#IStaticGateway#GetGatewayHandler(Gizmox.WebGUI.Common.Interfaces.IContext)">
+            <summary>
+            Gets the gateway handler.
+            </summary>
+            <param name="objContext">Request context.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Common.Resources.GeneralResourceHandle.Write(Gizmox.WebGUI.Common.Interfaces.IContext,System.String)">
+            <summary>
+            Writes the resource and it's headers to the response stream.
+            Calls WriteCacheHeaders, WriteContentType, WriteContent in this order
+            </summary>
+            <param name="objContext">The response.</param>
+            <param name="strContentType">Type of the string content.</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Common.Resources.GeneralResourceHandle.WriteCacheHeaders(Gizmox.WebGUI.Common.Interfaces.IContext)">
+            <summary>
+            Writes the caching headers.
+            </summary>
+            <param name="objContext">The response.</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Common.Resources.GeneralResourceHandle.WriteContentType(Gizmox.WebGUI.Common.Interfaces.IContext,System.String)">
+            <summary>
+            Writes the content type header.
+            </summary>
+            <param name="objContext">The response.</param>
+            <param name="strContentType">The data reader.</param>
+        </member>
+        <member name="M:Gizmox.WebGUI.Common.Resources.GeneralResourceHandle.WriteContent(Gizmox.WebGUI.Common.Interfaces.IContext)">
+            <summary>
+            Writes the binary content of the file/resource.
+            </summary>
+            <param name="objContext">The response.</param>
+            <param name="strFullName">The data reader.</param>
+        </member>
+        <member name="P:Gizmox.WebGUI.Common.Resources.GeneralResourceHandle.IsServerResource">
+            <summary>
+            Gets a value indicating whether this resource is a local server resource.
+            </summary>
+            <value>
+            <c>true</c> if this instance is a local server resource; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Gizmox.WebGUI.Common.Resources.GeneralResourceHandle.ToStream">
+            <summary>
+            Gets the resource stream
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Common.Resources.GeneralResourceHandle.GetSpecificResourceHandle">
+            <summary>
+            Gets the specific resource handle  - used for ToString().
+            
+            The returned value will be the Url used for this particular resource/file.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gizmox.WebGUI.Common.Resources.GeneralResourceHandle.CopyStream(System.IO.Stream,System.IO.Stream)">
+            <summary>
+            Copy one stream to another. 
+            </summary>
+            <param name="objFromStream"></param>
+            <param name="objToStream"></param>
+        </member>
+    </members>
+</doc>
