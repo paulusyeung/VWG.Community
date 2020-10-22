@@ -81,3 +81,6 @@ C:\Projects\VWG.Community\VWG.Community.CustomControl.Tester\obj\Debug\VWG.Commu
 C:\Projects\VWG.Community\VWG.Community.CustomControl.Tester\bin\VWG.Community.CustomControl.Tester.dll.config
 C:\Projects\VWG.Community\VWG.Community.CustomControl.Tester\bin\VWG.Community.CustomControl.Tester.dll
 C:\Projects\VWG.Community\VWG.Community.CustomControl.Tester\bin\VWG.Community.CustomControl.Tester.pdb
+C:\Projects\VWG.Community\VWG.Community.CustomControl.Tester\obj\Debug\VWG.Community.CustomControl.Tester.UploadBoxTest.resources
+C:\Projects\VWG.Community\VWG.Community.CustomControl.Tester\bin\VWG.Community.Forms.dll
+C:\Projects\VWG.Community\VWG.Community.CustomControl.Tester\bin\VWG.Community.Forms.pdb

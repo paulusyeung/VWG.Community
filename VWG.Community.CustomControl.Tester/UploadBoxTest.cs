@@ -5,16 +5,15 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 
 using Gizmox.WebGUI.Common;
 using Gizmox.WebGUI.Forms;
-using VWG.Community.Forms;
-using Gizmox.WebGUI.Forms.Skins;
 
 #endregion
 
-namespace VWG.Community.FormsTest
+namespace VWG.Community.CustomControl.Tester
 {
     public partial class UploadBoxTest : Form
     {
@@ -22,16 +21,11 @@ namespace VWG.Community.FormsTest
         {
             InitializeComponent();
 
-            VWGContext.Current.CurrentTheme = "Vista";
+            //VWGContext.Current.CurrentTheme = "Graphite";
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void UploadBoxTest_Load(object sender, EventArgs e)
         {
-            //Const_Uploaders();
-        }
-
-        private void Const_Uploaders()
-        { 
             Controls.Clear();
 
             var filter = @".xml";   //"/^image\/(gif|jpe?g|png)$/i"
@@ -68,7 +62,7 @@ namespace VWG.Community.FormsTest
             };
             var dark = ColorTranslator.FromHtml("#414141");
             var light = ColorTranslator.FromHtml("#639CD9");    // Color.Green
-            var dlb = new UploadBox()
+            var dlb = new Forms.UploadBox()
             {
                 BackColor = VWGContext.Current.CurrentTheme == "Vista" ? light : dark,
                 Dock = DockStyle.Fill,

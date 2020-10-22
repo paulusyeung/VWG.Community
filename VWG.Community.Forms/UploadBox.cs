@@ -961,8 +961,8 @@ namespace VWG.Community.Forms
         }
 
         #endregion
+        #endregion
     }
-    #endregion
 
     #region "Delegates and EventArgs"
 
