@@ -28,10 +28,20 @@ namespace VWG.Community.FormsTest
         /// </summary>
         private void InitializeComponent()
         {
+            this.button1 = new Gizmox.WebGUI.Forms.Button();
             this.SuspendLayout();
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(84, 131);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(303, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
             // 
             // UploadBoxTest
             // 
+            this.Controls.Add(this.button1);
             this.Size = new System.Drawing.Size(475, 363);
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -40,5 +50,7 @@ namespace VWG.Community.FormsTest
         }
 
         #endregion
+
+        private Gizmox.WebGUI.Forms.Button button1;
     }
 }

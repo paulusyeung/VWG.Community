@@ -109,12 +109,6 @@
       <Visible>false</Visible>
     </CustomReference>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\VWG.Community.Forms\VWG.Community.Forms.csproj">
-      <Project>{431354e9-3e91-44d9-946b-1d312939c709}</Project>
-      <Name>VWG.Community.Forms</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

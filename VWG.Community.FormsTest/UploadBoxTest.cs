@@ -9,7 +9,7 @@ using System.Text;
 
 using Gizmox.WebGUI.Common;
 using Gizmox.WebGUI.Forms;
-using VWG.Community.Forms;
+//using VWG.Community.Forms;
 using Gizmox.WebGUI.Forms.Skins;
 
 #endregion
@@ -30,6 +30,7 @@ namespace VWG.Community.FormsTest
             //Const_Uploaders();
         }
 
+        /**
         private void Const_Uploaders()
         { 
             Controls.Clear();
@@ -116,5 +117,6 @@ namespace VWG.Community.FormsTest
             MessageBox.Show("File Completed");
         }
         #endregion
+    */
     }
 }
