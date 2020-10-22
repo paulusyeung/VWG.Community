@@ -9,6 +9,8 @@
 5. 個 drop zone 同個 click to browse button 變為同一個 box
 6. 個 drop zone size 可控，可以用 DockStyle.Fill
 
+用嘅時候一定要取消 Disable Obscuring
+
 ### [DropzoneJs](https://github.com/enyo/dropzone)
 
 新款 file uploader，不過未完成，因為我臨時決定改造 UploadBox，已經好靚仔，啲 code 應該可靠，可以減少 debugging。
