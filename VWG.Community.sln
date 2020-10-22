@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VWG.Community.NetSqlAzMan",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VWG.Community.Forms", "VWG.Community.Forms\VWG.Community.Forms.csproj", "{431354E9-3E91-44D9-946B-1D312939C709}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VWG.Community.FormsTest", "VWG.Community.FormsTest\VWG.Community.FormsTest.csproj", "{EAD9F377-9C6A-460C-9100-2EB96F2DABA0}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ABD5DA91-8F19-47FE-A0C2-25893C7679BC}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
@@ -42,10 +40,6 @@ Global
 		{431354E9-3E91-44D9-946B-1D312939C709}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{431354E9-3E91-44D9-946B-1D312939C709}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{431354E9-3E91-44D9-946B-1D312939C709}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EAD9F377-9C6A-460C-9100-2EB96F2DABA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EAD9F377-9C6A-460C-9100-2EB96F2DABA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EAD9F377-9C6A-460C-9100-2EB96F2DABA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EAD9F377-9C6A-460C-9100-2EB96F2DABA0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3A2C8BCE-6A24-4B54-9242-F08DFD034A4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3A2C8BCE-6A24-4B54-9242-F08DFD034A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A2C8BCE-6A24-4B54-9242-F08DFD034A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
