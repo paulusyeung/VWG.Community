@@ -3,7 +3,7 @@
 
 我將佢原本嘅 WebConsole（ASP.NET 版）改為 WebGUI UserControl。
 
-NetSqlAzMan.Tester 係 debug 時候用嘅。
+NetSqlAzManTest 係 debug 時候用嘅。如果你想用，記得抄埋 Test.Recources.Icons，啲 icons 檔案，全部都要用。
 
 ### VWG.Community.CustomControl
 係第一次玩嘅時候整嘅，整咗：
