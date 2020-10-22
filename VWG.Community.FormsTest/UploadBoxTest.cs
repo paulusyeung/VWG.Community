@@ -28,26 +28,6 @@ namespace VWG.Community.FormsTest
         private void Form1_Load(object sender, EventArgs e)
         {
             Const_Uploaders();
-            //Const_Dropzone();
-        }
-
-        private void Const_Dropzone()
-        {
-            Controls.Clear();
-
-            var gbx1 = new GroupBox()
-            {
-                Location = new Point(10, 10),
-                Size = new Size(480, 360)
-            };
-            var dl = new Dropzone()
-            {
-                Cursor = Cursors.WaitCursor,
-                BackColor = Color.DarkSlateGray,
-                Dock = DockStyle.Fill
-            };
-            gbx1.Controls.Add(dl);
-            Controls.Add(gbx1);
         }
 
         private void Const_Uploaders()

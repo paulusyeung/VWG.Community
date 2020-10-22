@@ -21,8 +21,7 @@ C:\Projects\VWG.Community\VWG.Community.Forms\bin\Debug\pt-PT\Gizmox.WebGUI.Form
 C:\Projects\VWG.Community\VWG.Community.Forms\bin\Debug\sv-SE\Gizmox.WebGUI.Forms.resources.dll
 C:\Projects\VWG.Community\VWG.Community.Forms\bin\Debug\tr-TR\Gizmox.WebGUI.Forms.resources.dll
 C:\Projects\VWG.Community\VWG.Community.Forms\bin\Debug\zh-CHS\Gizmox.WebGUI.Forms.resources.dll
+C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.Skins.UploadBoxSkin.resources
+C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.csproj.GenerateResource.Cache
 C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.dll
 C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.pdb
-C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.csproj.GenerateResource.Cache
-C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.Skins.UploadBoxSkin.resources
-C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.csprojResolveAssemblyReference.cache

@@ -72,3 +72,4 @@ C:\Projects\VWG.Community\VWG.Community.CustomControl\obj\Debug\VWG.Community.Cu
 C:\Projects\VWG.Community\VWG.Community.CustomControl\obj\Debug\VWG.Community.CustomControl.csproj.GenerateResource.Cache
 C:\Projects\VWG.Community\VWG.Community.CustomControl\obj\Debug\VWG.Community.CustomControl.dll
 C:\Projects\VWG.Community\VWG.Community.CustomControl\obj\Debug\VWG.Community.CustomControl.pdb
+C:\Projects\VWG.Community\VWG.Community.CustomControl\obj\Debug\VWG.Community.CustomControl.csprojResolveAssemblyReference.cache

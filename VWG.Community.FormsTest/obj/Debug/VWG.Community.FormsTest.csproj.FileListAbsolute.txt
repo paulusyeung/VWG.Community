@@ -3,10 +3,14 @@ C:\Projects\VWG.Community\VWG.Community.FormsTest\bin\VWG.Community.FormsTest.dl
 C:\Projects\VWG.Community\VWG.Community.FormsTest\bin\VWG.Community.FormsTest.pdb
 C:\Projects\VWG.Community\VWG.Community.FormsTest\bin\Gizmox.WebGUI.Common.dll
 C:\Projects\VWG.Community\VWG.Community.FormsTest\bin\Gizmox.WebGUI.Forms.dll
+C:\Projects\VWG.Community\VWG.Community.FormsTest\bin\Gizmox.WebGUI.Forms.Extended.dll
 C:\Projects\VWG.Community\VWG.Community.FormsTest\bin\Gizmox.WebGUI.Forms.Themes.dll
 C:\Projects\VWG.Community\VWG.Community.FormsTest\bin\Gizmox.WebGUI.Server.dll
+C:\Projects\VWG.Community\VWG.Community.FormsTest\bin\VWG.Community.Forms.dll
 C:\Projects\VWG.Community\VWG.Community.FormsTest\bin\Newtonsoft.Json.dll
+C:\Projects\VWG.Community\VWG.Community.FormsTest\bin\VWG.Community.Forms.pdb
 C:\Projects\VWG.Community\VWG.Community.FormsTest\bin\Gizmox.WebGUI.Common.xml
+C:\Projects\VWG.Community\VWG.Community.FormsTest\bin\Gizmox.WebGUI.Forms.Extended.xml
 C:\Projects\VWG.Community\VWG.Community.FormsTest\bin\Gizmox.WebGUI.Forms.xml
 C:\Projects\VWG.Community\VWG.Community.FormsTest\bin\de-AT\Gizmox.WebGUI.Forms.resources.dll
 C:\Projects\VWG.Community\VWG.Community.FormsTest\bin\de-DE\Gizmox.WebGUI.Forms.resources.dll
@@ -24,11 +28,7 @@ C:\Projects\VWG.Community\VWG.Community.FormsTest\bin\sv-SE\Gizmox.WebGUI.Forms.
 C:\Projects\VWG.Community\VWG.Community.FormsTest\bin\tr-TR\Gizmox.WebGUI.Forms.resources.dll
 C:\Projects\VWG.Community\VWG.Community.FormsTest\bin\zh-CHS\Gizmox.WebGUI.Forms.resources.dll
 C:\Projects\VWG.Community\VWG.Community.FormsTest\obj\Debug\VWG.Community.FormsTest.csprojResolveAssemblyReference.cache
+C:\Projects\VWG.Community\VWG.Community.FormsTest\obj\Debug\VWG.Community.FormsTest.UploadBoxTest.resources
 C:\Projects\VWG.Community\VWG.Community.FormsTest\obj\Debug\VWG.Community.FormsTest.csproj.GenerateResource.Cache
 C:\Projects\VWG.Community\VWG.Community.FormsTest\obj\Debug\VWG.Community.FormsTest.dll
 C:\Projects\VWG.Community\VWG.Community.FormsTest\obj\Debug\VWG.Community.FormsTest.pdb
-C:\Projects\VWG.Community\VWG.Community.FormsTest\bin\Gizmox.WebGUI.Forms.Extended.dll
-C:\Projects\VWG.Community\VWG.Community.FormsTest\bin\Gizmox.WebGUI.Forms.Extended.xml
-C:\Projects\VWG.Community\VWG.Community.FormsTest\bin\VWG.Community.Forms.dll
-C:\Projects\VWG.Community\VWG.Community.FormsTest\bin\VWG.Community.Forms.pdb
-C:\Projects\VWG.Community\VWG.Community.FormsTest\obj\Debug\VWG.Community.FormsTest.UploadBoxTest.resources
