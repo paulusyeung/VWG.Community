@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Gizmox.WebGUI.Forms.Design, Version=4.5.25701.0, Culture=neutral, PublicKeyToken=dd2a1fd4d120c769, processorArchitecture=MSIL" />
+    <Reference Include="Gizmox.WebGUI.Forms.Extended, Version=4.5.25701.0, Culture=neutral, PublicKeyToken=85eae29607c9f5f3, processorArchitecture=MSIL" />
+    <Reference Include="Gizmox.WebGUI.Forms.Extended.Design, Version=4.5.25701.0, Culture=neutral, PublicKeyToken=63e79e6cd5280864, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -65,11 +68,21 @@
     <Compile Include="UploadBoxSkin.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="XonomyBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XonomyBoxSkin.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Upload\UploadBox.png" />
     <EmbeddedResource Include="Upload\UploadBox.bmp" />
+    <EmbeddedResource Include="XonomyBoxSkin.resx">
+      <DependentUpon>XonomyBoxSkin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="UploadBoxSkin.resx">
@@ -98,6 +111,40 @@
     </Content>
     <Content Include="UploadBoxSkin.UploadBox.xslt">
       <DependentUpon>UploadBoxSkin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="XonomyBoxSkin.draghandle.gif">
+      <DependentUpon>XonomyBoxSkin.cs</DependentUpon>
+    </Content>
+    <Content Include="XonomyBoxSkin.exclamation.png">
+      <DependentUpon>XonomyBoxSkin.cs</DependentUpon>
+    </Content>
+    <Content Include="XonomyBoxSkin.jquery-1.9.1.min.js">
+      <DependentUpon>XonomyBoxSkin.cs</DependentUpon>
+    </Content>
+    <Content Include="XonomyBoxSkin.minus.gif">
+      <DependentUpon>XonomyBoxSkin.cs</DependentUpon>
+    </Content>
+    <Content Include="XonomyBoxSkin.plus.gif">
+      <DependentUpon>XonomyBoxSkin.cs</DependentUpon>
+    </Content>
+    <Content Include="XonomyBoxSkin.xonomy.css">
+      <DependentUpon>XonomyBoxSkin.cs</DependentUpon>
+    </Content>
+    <Content Include="XonomyBoxSkin.xonomy.html">
+      <DependentUpon>XonomyBoxSkin.cs</DependentUpon>
+    </Content>
+    <Content Include="XonomyBoxSkin.xonomy.js">
+      <DependentUpon>XonomyBoxSkin.cs</DependentUpon>
+    </Content>
+    <Content Include="XonomyBoxSkin.XonomyBox.html">
+      <DependentUpon>XonomyBoxSkin.cs</DependentUpon>
+    </Content>
+    <Content Include="XonomyBoxSkin.XonomyBox.js">
+      <DependentUpon>XonomyBoxSkin.cs</DependentUpon>
+    </Content>
+    <Content Include="XonomyBoxSkin.XonomyBox.xslt">
+      <DependentUpon>XonomyBoxSkin.cs</DependentUpon>
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
