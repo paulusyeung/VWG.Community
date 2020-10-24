@@ -12,24 +12,11 @@ namespace VWG.Community.Forms.Skins
     /// <summary>
     /// Summary description for XonomyBoxSkin
     /// </summary>   
-    public class XonomyBoxSkin : HtmlBoxSkin
+    public class XonomyBoxSkin : ControlSkin
     {
         private void InitializeComponent()
         {
 
-        }
-
-
-        /// <summary>
-        /// Gets the HTML resource.
-        /// </summary>
-        /// <value>The HTML resource.</value>
-        public TextResourceReference HtmlResource
-        {
-            get
-            {
-                return new TextResourceReference(typeof(XonomyBoxSkin), "Xonomy.html");
-            }
         }
 
     }

@@ -21,6 +21,10 @@ namespace VWG.Community.FormsTest
         public XonomyBoxTest()
         {
             InitializeComponent();
+
+            VWGContext.Current.CurrentTheme = "Vista";
+            //VWGContext.Current.CurrentTheme = "Graphite";
+
             this.Load += new EventHandler(Form1_Load);
         }
 
@@ -34,8 +38,8 @@ namespace VWG.Community.FormsTest
         private void cmdLoadXonomyBox_Click(object sender, EventArgs e)
         {
             var box = (XonomyBox)this.rightPanel.Controls[0];
-            box.XmlData = "Resources/UserData/SampleXmlData.xml";
-            box.DocSpec = "Resources/UserData/SampleDocSpec.js";
+            box.XonomyBoxXmlDoc = "Resources/UserData/SampleXmlData.xml";
+            box.XonomyBoxSpecDoc = "Resources/UserData/SampleDocSpec.js";
 
             this.rightPanel.Controls.Add(box);
             this.Update();

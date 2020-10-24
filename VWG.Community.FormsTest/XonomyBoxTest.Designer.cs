@@ -76,7 +76,7 @@ namespace VWG.Community.FormsTest
             this.Controls.Add(this.rightPanel);
             this.Controls.Add(this.leftPanel);
             this.Size = new System.Drawing.Size(800, 600);
-            this.Text = "Form1";
+            this.Text = "XonomyBoxTest";
             this.leftPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
