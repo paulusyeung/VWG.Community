@@ -32,3 +32,4 @@ C:\Projects\VWG.Community\VWG.Community.Forms\bin\Debug\Gizmox.WebGUI.Client.dll
 C:\Projects\VWG.Community\VWG.Community.Forms\bin\Debug\Gizmox.WebGUI.Common.Design.dll
 C:\Projects\VWG.Community\VWG.Community.Forms\bin\Debug\Gizmox.WebGUI.Forms.Extended.xml
 C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.Skins.XonomyBoxSkin.resources
+C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.Skins.TreantBoxSkin.resources

@@ -27,24 +27,25 @@ using VWG.Community.Forms.Skins;
 namespace VWG.Community.Forms
 {
     /// <summary>
-    /// Summary description for XonomyBox
+    /// Summary description for TreantBox
     /// </summary>
     [ToolboxItem(true)]
-    [ToolboxBitmapAttribute(typeof(XonomyBox), "XonomyBox.bmp")]
+    [ToolboxBitmapAttribute(typeof(TreantBox), "TreantBox.bmp")]
     [DesignTimeController("Gizmox.WebGUI.Forms.Design.PlaceHolderController, Gizmox.WebGUI.Forms.Design, Version=4.5.25701.0 , Culture=neutral, PublicKeyToken=dd2a1fd4d120c769")]
     [ClientController("Gizmox.WebGUI.Client.Controllers.PlaceHolderController, Gizmox.WebGUI.Client, Version=4.5.25701.0 , Culture=neutral, PublicKeyToken=0fb8f99bd6cd7e23")]
     [Serializable()]
-    /*! 加 MetadataTag XmlDoc 會變咗係 XonomyBox.html，奇怪？
-        唔加 MetadataTag 就會 call this.Source，可以正常顯示 */
-    //[MetadataTag("XonomyBox")]
-    [Skin(typeof(XonomyBoxSkin))]
-    public partial class XonomyBox : HtmlBox
+    /*! 加 MetadataTag XmlDoc 會變咗係 TreantBox.html，奇怪？
+     *  明明哋：加咗，VWG 會用 TreantBox.xslt
+     *  唔加 MetadataTag 就會 call this.Source，可以正常顯示 */
+    //[MetadataTag("TreantBox")]
+    [Skin(typeof(TreantBoxSkin))]
+    public partial class TreantBox : HtmlBox
     {
         private static String _FormId = String.Empty;
         private static String _BoxId = String.Empty;
 
         #region "C'tor"
-        public XonomyBox()
+        public TreantBox()
         {
             //InitializeComponent();
 
@@ -52,12 +53,11 @@ namespace VWG.Community.Forms
             _BoxId = this.ID.ToString();
         }
 
-        public XonomyBox(String xmlData, String docSpec)
+        public TreantBox(String xmlData)
         {
             //InitializeComponent();
 
-            this.XonomyBoxXmlDoc = xmlData;
-            this.XonomyBoxSpecDoc = docSpec;
+            this.TreantBoxDataFile = xmlData;
 
             _FormId = this.ID.ToString();
             _BoxId = this.ID.ToString();
@@ -67,62 +67,42 @@ namespace VWG.Community.Forms
         #region "Properties"
 
         #region "Serializable property definitions"
-        private static readonly SerializableProperty XonomyBoxXmlDocProperty = SerializableProperty.Register("XonomyBoxXmlDoc", typeof(string), typeof(XonomyBox));
-        private static readonly SerializableProperty XonomyBoxSpecDocProperty = SerializableProperty.Register("XonomyBoxSpecDoc", typeof(string), typeof(XonomyBox));
+        private static readonly SerializableProperty TreantBoxDataFileProperty = SerializableProperty.Register("TreantBoxDataFile", typeof(string), typeof(TreantBox));
 
-        private static readonly SerializableProperty BackColorProperty = SerializableProperty.Register("BackColor", typeof(String), typeof(XonomyBox));
-        private static readonly SerializableProperty ForeColorProperty = SerializableProperty.Register("ForeColor", typeof(String), typeof(XonomyBox));
+        private static readonly SerializableProperty BackColorProperty = SerializableProperty.Register("BackColor", typeof(String), typeof(TreantBox));
+        private static readonly SerializableProperty ForeColorProperty = SerializableProperty.Register("ForeColor", typeof(String), typeof(TreantBox));
         #endregion
 
         /// <summary>
         /// Text used to prompt for files on upload control
         /// </summary>
-        [Category("XonomyBox")]
-        [Description("XML Document to be edited")]
+        [Category("TreantBox")]
+        [Description("Data Json file to be shown")]
         [DefaultValue("")]
-        public string XonomyBoxXmlDoc
+        public string TreantBoxDataFile
         {
             get
             {
-                return this.GetValue<string>(XonomyBox.XonomyBoxXmlDocProperty, String.Empty);
+                return this.GetValue<string>(TreantBox.TreantBoxDataFileProperty, String.Empty);
             }
             set
             {
-                if (this.XonomyBoxXmlDoc != value)
+                if (this.TreantBoxDataFile != value)
                 {
-                    this.SetValue<string>(XonomyBox.XonomyBoxXmlDocProperty, value);
+                    this.SetValue<string>(TreantBox.TreantBoxDataFileProperty, value);
                     this.Update();
                 }
             }
         }
 
-        [Category("XonomyBox")]
-        [Description("Specification used to read the XML Document")]
-        [DefaultValue("")]
-        public string XonomyBoxSpecDoc
-        {
-            get
-            {
-                return this.GetValue<string>(XonomyBox.XonomyBoxSpecDocProperty, String.Empty);
-            }
-            set
-            {
-                if (this.XonomyBoxSpecDoc != value)
-                {
-                    this.SetValue<string>(XonomyBox.XonomyBoxSpecDocProperty, value);
-                    this.Update();
-                }
-            }
-        }
-
-        [Category("XonomyBox")]
-        [Description("Background Color of XonomyBox. Use Color Names only.")]
+        [Category("TreantBox")]
+        [Description("Background Color of TreantBox. Use Color Names only.")]
         [DefaultValue(0)]
         public override Color BackColor
         {
             get
             {
-                var color = this.GetValue<String>(XonomyBox.BackColorProperty, "transparent");
+                var color = this.GetValue<String>(TreantBox.BackColorProperty, "transparent");
                 return Color.FromName(color);
             }
             set
@@ -130,20 +110,20 @@ namespace VWG.Community.Forms
                 if (this.BackColor != value)
                 {
                     var color = (Color)value;
-                    this.SetValue<String>(XonomyBox.BackColorProperty, ColorHelper.SafeColorName(color), "transparent");
+                    this.SetValue<String>(TreantBox.BackColorProperty, ColorHelper.SafeColorName(color), "transparent");
                     this.Update();
                 }
             }
         }
 
-        [Category("XonomyBox")]
-        [Description("Text Color of XonomyBox. Use Color Names only.")]
+        [Category("TreantBox")]
+        [Description("Text Color of TreantBox. Use Color Names only.")]
         [DefaultValue(0)]
         public override Color ForeColor
         {
             get
             {
-                var color = this.GetValue<String>(XonomyBox.ForeColorProperty, "black");
+                var color = this.GetValue<String>(TreantBox.ForeColorProperty, "black");
                 return Color.FromName(color);
             }
             set
@@ -151,7 +131,7 @@ namespace VWG.Community.Forms
                 if (this.BackColor != value)
                 {
                     var color = (Color)value;
-                    this.SetValue<String>(XonomyBox.ForeColorProperty, ColorHelper.SafeColorName(color), "black");
+                    this.SetValue<String>(TreantBox.ForeColorProperty, ColorHelper.SafeColorName(color), "black");
                     this.Update();
                 }
             }
@@ -179,8 +159,11 @@ namespace VWG.Community.Forms
         {
             base.RenderAttributes(context, writer);
 
+            writer.WriteAttributeString("SEL", "SELECTABLE");
+            writer.WriteAttributeString("ANYTHING", "ANYTHING");
+
             //writer.WriteAttributeString(WGAttributes.Text, Text);
-            String url = (new SkinResourceHandle(typeof(Skins.XonomyBoxSkin), "Xonomy.html")).ToString();
+            String url = (new SkinResourceHandle(typeof(TreantBoxSkin), "TreantBox.html")).ToString();
             writer.WriteAttributeString("sUrl", url);   // 冇用嘅，攞嚟試下 Data_GetAttribute work 唔 work
         }
         #endregion
@@ -203,7 +186,7 @@ namespace VWG.Community.Forms
         {
             Boolean result = false;
 
-            String filepath = this.XonomyBoxXmlDoc.StartsWith("~/") ? Context.Server.MapPath(this.XonomyBoxXmlDoc) : Context.Server.MapPath("~/" + this.XonomyBoxXmlDoc);
+            String filepath = this.TreantBoxDataFile.StartsWith("~/") ? Context.Server.MapPath(this.TreantBoxDataFile) : Context.Server.MapPath("~/" + this.TreantBoxDataFile);
             if (File.Exists(filepath))
             {
                 using (StreamWriter sw = new StreamWriter(filepath))
@@ -218,8 +201,8 @@ namespace VWG.Community.Forms
         }
 
         /// <summary>
-        /// Invoke client side XonomyBox.js 的 function harvest(formId)
-        /// 然後，client 會 raise event，我哋（server) 去 XonomyBox.FireEvent 收貨
+        /// Invoke client side TreantBox.js 的 function harvest(formId)
+        /// 然後，client 會 raise event，我哋（server) 去 TreantBox.FireEvent 收貨
         /// HACK: async，掂樣可以等埋 FireEvent 呢？
         /// </summary>
         public void Harvest()
@@ -241,9 +224,10 @@ namespace VWG.Community.Forms
 
         #region Hiding HtmlBox properties
         // Prevent design time serialization and setting of certain HtmlBox properties that could interfere 
-        // with XonomyBox's rendering.
+        // with TreantBox's rendering.
         // 照抄 CKEditor
 
+        #region Not in use
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public override string Html { get { return ""; } }
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -258,6 +242,7 @@ namespace VWG.Community.Forms
         public HtmlBoxType Type { get { return HtmlBoxType.HTML; } }
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string ContentType { get { return "text/html"; } }
+        #endregion
 
         /// <summary>
         /// 直接 inject 啲 html page + Query Strings，原本唔想用 Query Strings，不過掂搞都用唔倒 client side javascript Data_GetAttribute
@@ -268,15 +253,14 @@ namespace VWG.Community.Forms
         {
             get
             {
-                XonomyBoxSkin skin = this.Skin as XonomyBoxSkin;
+                TreantBoxSkin skin = this.Skin as TreantBoxSkin;
                 if (skin != null)
                 {
-                    String src = (new SkinResourceHandle(typeof(XonomyBoxSkin), "XonomyBox.html")).ToString();  // 將 XonomyBoxSkin 中的 XonomyBox.html 轉換為 VWG 式 http url link
+                    String src = (new SkinResourceHandle(typeof(TreantBoxSkin), "TreantBox.html")).ToString();  // 將 TreantBoxSkin 中的 TreantBox.html 轉換為 VWG 式 http url link
 
-                    String xmlFile = (new GeneralResourceHandle(this.XonomyBoxXmlDoc)).ToString();              // 將 XonomyBox.XmlData 轉換為 VWG 式 http url link
-                    String docSpec = (new GeneralResourceHandle(this.XonomyBoxSpecDoc)).ToString();             // 將 XonomyBox.DocSpec 轉換為 VWG 式 http url link
+                    String dataFile = (new GeneralResourceHandle(this.TreantBoxDataFile)).ToString();
 
-                    return String.Format("{0}?xml={1}&spec={2}", src, xmlFile, docSpec);
+                    return String.Format("{0}?datafile={1}", src, dataFile);
                 }
 
                 return base.Source;
@@ -285,4 +269,3 @@ namespace VWG.Community.Forms
         #endregion 
     }
 }
-
