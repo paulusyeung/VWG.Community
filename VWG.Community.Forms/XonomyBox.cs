@@ -35,8 +35,8 @@ namespace VWG.Community.Forms
     [DesignTimeController("Gizmox.WebGUI.Forms.Design.PlaceHolderController, Gizmox.WebGUI.Forms.Design, Version=4.5.25701.0 , Culture=neutral, PublicKeyToken=dd2a1fd4d120c769")]
     [ClientController("Gizmox.WebGUI.Client.Controllers.PlaceHolderController, Gizmox.WebGUI.Client, Version=4.5.25701.0 , Culture=neutral, PublicKeyToken=0fb8f99bd6cd7e23")]
     [Serializable()]
-    /*! 加 MetadataTag XmlData 會變咗係 XonomyBox.html，奇怪？
-        唔加 MetadataTag 就會 call this.Source */
+    /*! 加 MetadataTag XmlDoc 會變咗係 XonomyBox.html，奇怪？
+        唔加 MetadataTag 就會 call this.Source，可以正常顯示 */
     //[MetadataTag("XonomyBox")]
     [Skin(typeof(XonomyBoxSkin))]
     public partial class XonomyBox : HtmlBox
