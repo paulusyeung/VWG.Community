@@ -182,6 +182,8 @@ namespace VWG.Community.Forms
             //writer.WriteAttributeString(WGAttributes.Text, Text);
             String url = (new SkinResourceHandle(typeof(Skins.XonomyBoxSkin), "Xonomy.html")).ToString();
             writer.WriteAttributeString("sUrl", url);   // 冇用嘅，攞嚟試下 Data_GetAttribute work 唔 work
+
+            
         }
         #endregion
 

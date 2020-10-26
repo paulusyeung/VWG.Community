@@ -68,6 +68,7 @@ namespace VWG.Community.Forms
 
         #region "Serializable property definitions"
         private static readonly SerializableProperty TreantBoxDataFileProperty = SerializableProperty.Register("TreantBoxDataFile", typeof(string), typeof(TreantBox));
+        private static readonly SerializableProperty TreantBoxDataJsonProperty = SerializableProperty.Register("TreantBoxDataJson", typeof(string), typeof(TreantBox));
 
         private static readonly SerializableProperty BackColorProperty = SerializableProperty.Register("BackColor", typeof(String), typeof(TreantBox));
         private static readonly SerializableProperty ForeColorProperty = SerializableProperty.Register("ForeColor", typeof(String), typeof(TreantBox));
@@ -90,6 +91,25 @@ namespace VWG.Community.Forms
                 if (this.TreantBoxDataFile != value)
                 {
                     this.SetValue<string>(TreantBox.TreantBoxDataFileProperty, value);
+                    this.Update();
+                }
+            }
+        }
+
+        [Category("TreantBox")]
+        [Description("Data Json string to be shown")]
+        [DefaultValue("")]
+        public string TreantBoxDataJson
+        {
+            get
+            {
+                return this.GetValue<string>(TreantBox.TreantBoxDataJsonProperty, String.Empty);
+            }
+            set
+            {
+                if (this.TreantBoxDataJson != value)
+                {
+                    this.SetValue<string>(TreantBox.TreantBoxDataJsonProperty, value);
                     this.Update();
                 }
             }
@@ -159,12 +179,18 @@ namespace VWG.Community.Forms
         {
             base.RenderAttributes(context, writer);
 
+            #region Custom Attributes
+
             writer.WriteAttributeString("SEL", "SELECTABLE");
-            writer.WriteAttributeString("ANYTHING", "ANYTHING");
+            writer.WriteAttributeString("ANYTHING", "ANYTHING WILL DO");
 
             //writer.WriteAttributeString(WGAttributes.Text, Text);
             String url = (new SkinResourceHandle(typeof(TreantBoxSkin), "TreantBox.html")).ToString();
             writer.WriteAttributeString("sUrl", url);   // 冇用嘅，攞嚟試下 Data_GetAttribute work 唔 work
+
+            writer.WriteAttributeString(WGAttributes.HTML5, TreantBoxDataJson);
+
+            #endregion
         }
         #endregion
 
@@ -260,7 +286,7 @@ namespace VWG.Community.Forms
 
                     String dataFile = (new GeneralResourceHandle(this.TreantBoxDataFile)).ToString();
 
-                    return String.Format("{0}?datafile={1}", src, dataFile);
+                    return String.Format("{0}?datafile={1}&id={2}", src, System.Web.HttpUtility.UrlEncode(dataFile), _FormId);
                 }
 
                 return base.Source;

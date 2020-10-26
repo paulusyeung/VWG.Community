@@ -5,7 +5,45 @@
     <script type="text/javascript" src="Resources.Includes.js.wgx"></script>
     <script type="text/javascript" src="Resources.Browser.Form.js.wgx"></script>
     <script type="text/javascript" src="Resources.Gizmox.WebGUI.Forms.Skins.CommonSkin.Interfaces.js.wgx"></script>
+    <script type="text/javascript">
 
+	    // Get applicaion and client API reference
+	    window.mobjApp = parent.mobjApp;
+	    window.vwgContext = parent.vwgContext;
+
+	    // Get TreantBox control id
+	    var strControlId = mobjApp.Web_GetQueryStringParam(document.location.href, "id");
+	    var objNode = mobjApp.Data_GetNode(strControlId);
+
+	    // 顯示 attributes 數量：default + TreantBox.RenderAttributes()
+	    console.log(strControlId + ": " + JSON.stringify(objNode.attributes));
+
+        // 顯示 attributes key value pairs
+	    var anything = "";
+	    var strBackColor = "transparent";
+	    var strForeColor = "transparent";
+	    var strHtml = "";
+        //
+	    for (i = 0; i < objNode.attributes.length; i++) {
+	        var attr = objNode.attributes[i];
+	        console.log(attr.nodeName + " = " + attr.nodeValue);
+	        switch (attr.nodeName) {
+	            case "Attr.Background":
+	                strBackColor = attr.nodeValue;
+	                break;
+	            case "Attr.Fore":
+	                strForeColor = attr.nodeValue;
+	                break;
+	            case "Attr.HTML5":
+	                strHtml = attr.nodeValue;
+	                break;
+	            case "ANYTHING":    // custom attribute (no leading Attr.)
+	                anything = attr.nodeValue;
+	                break;
+	        }
+	    };
+
+    </script>
     <script type="text/javascript" src="[Skin.Path]TreantBox.js.wgx"></script>
     <link type="text/css" rel="stylesheet" href="[Skin.Path]Treant.css.wgx"/>
     <link rel="stylesheet" href="[Skin.Path]data-dynamic.css.wgx">

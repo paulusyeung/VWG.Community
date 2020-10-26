@@ -1,4 +1,48 @@
-﻿### [UploadBox](https://github.com/blueimp/jQuery-File-Upload)
+﻿###         VWG Client side functions:
+         * Data_GetNode
+         * Web_GetEventSource
+         * Web_IsAttribute
+         * Web_GetQueryStringParam
+         * Web_GetVwgElement
+
+#### Javacript Notes：
+```javascript
+        // Get applicaion and client API reference
+        var anything = "";
+        window.mobjApp = parent.mobjApp;
+        window.vwgContext = parent.vwgContext;
+
+        // Get WebGUI control 嘅 id
+        var strControlId = mobjApp.Web_GetQueryStringParam(document.location.href, "id");
+        var objNode = mobjApp.Data_GetNode(strControlId);
+
+        // 顯示 attributes 數量：default + TreantBox.RenderAttributes()
+        console.log(strControlId + ": " + JSON.stringify(objNode.attributes));
+
+        // 顯示 attributes key value pairs
+        var strBackColor = "transparent";
+        var strForeColor = "transparent";
+        //
+        for (i = 0; i < objNode.attributes.length; i++) {
+            var attr = objNode.attributes[i];
+            console.log(attr.nodeName + " = " + attr.nodeValue);
+
+            switch (attr.nodeName) {
+                case "Attr.UploadControlMaxNumberOfFiles":
+                    break;
+                case "Attr.Background":
+                    strBackColor = attr.nodeValue;
+                    break;
+                case "Attr.Fore":
+                    strForeColor = attr.nodeValue;
+                    break;
+                case "ANYTHING":    // custom attribute (no leading Attr.)
+                    anything = attr.nodeValue;
+                    break;
+            };
+        };
+```
+### [UploadBox](https://github.com/blueimp/jQuery-File-Upload)
 
 
 改造 WebGUI 嘅 UploadControl，改動：

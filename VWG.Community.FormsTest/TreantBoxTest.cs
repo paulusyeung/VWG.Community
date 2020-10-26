@@ -11,6 +11,7 @@ using Gizmox.WebGUI.Common;
 using Gizmox.WebGUI.Forms;
 using Gizmox.WebGUI.Common.Resources;
 using VWG.Community.Forms;
+using System.IO;
 
 #endregion
 
@@ -30,30 +31,20 @@ namespace VWG.Community.FormsTest
 
         void Form1_Load(object sender, EventArgs e)
         {
-            var box2 = new TreantBox("Resources/UserData/json-data-sample.json");
+            string filename = "json-data-sample.json", json = "";
+            var file = File.OpenRead(Path.Combine(VWGContext.Current.Config.GetDirectory("UserData"), filename));
+            using (var sr = new StreamReader(file, Encoding.UTF8))
+            {
+                json = sr.ReadToEnd();
+            }
+
+            //var box2 = new TreantBox("Resources/UserData/json-data-sample.json");
+            // or
+            var box2 = new TreantBox();
+            box2.TreantBoxDataJson = json;
+
             box2.Dock = DockStyle.Fill;
             this.rightPanel.Controls.Add(box2);
-        }
-
-        private void cmdLoadXonomyBox_Click(object sender, EventArgs e)
-        {
-            var box = (TreantBox)this.rightPanel.Controls[0];
-            box.TreantBoxDataFile = "Resources/UserData/json-data-sample.json";
-
-            this.rightPanel.Controls.Add(box);
-            this.Update();
-        }
-
-        private void cmdHarvest_Click(object sender, EventArgs e)
-        {
-            var box = (TreantBox)this.rightPanel.Controls[0];
-            box.Harvest();
-        }
-
-        private void cmdShowAttribute_Click(object sender, EventArgs e)
-        {
-            var box2 = (TreantBox)this.rightPanel.Controls[0];
-            if (box2 != null) box2.ShowAttribute();
         }
     }
 }

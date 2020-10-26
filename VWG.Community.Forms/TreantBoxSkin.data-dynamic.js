@@ -1,16 +1,23 @@
 ﻿
 function loadJSON(callback) {
-    var dataFile = getParameterByName("datafile");              // 去 QueryString 讀入隻 data file 嘅 file path
+    //console.log("Html: " + strHtml);
+    // Html 優先，有 Html 就唔用 datafile
+    if (strHtml.length > 0) {
+        callback(strHtml);
+    }
+    else {
+        var dataFile = getParameterByName("datafile");              // 去 QueryString 讀入隻 data file 嘅 file path
 
-    var xobj = new XMLHttpRequest();
-    xobj.overrideMimeType("application/json");
-    xobj.open('GET', dataFile, true);                           // 讀啲 json data
-    xobj.onreadystatechange = function () {
-        if (xobj.readyState == 4 && xobj.status == "200") {
-            callback(xobj.responseText);
-        }
-    };
-    xobj.send(null);
+        var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+        xobj.open('GET', dataFile, true);                           // 讀啲 json data
+        xobj.onreadystatechange = function () {
+            if (xobj.readyState == 4 && xobj.status == "200") {
+                callback(xobj.responseText);
+            }
+        };
+        xobj.send(null);
+    }
 }
 
 var config = {

@@ -2,7 +2,7 @@
 // start() 喺 body onload 嘅時候用，initialize Xonomy
 //
 function start(dataFile, styleFile) {
-    if (!dataFile) dataFile = getParameterByName("datafile");                      // 如果 caller 冇提供 sUrlXmls 同 UrlSpec，就去 QueryString 搵
+    if (!dataFile) dataFile = getParameterByName("datafile");                 // 如果 caller 冇提供，就去 QueryString 搵
     if (!styleFile) styleFile = getParameterByName("stylefile");
 
     //var editor = document.getElementById("editor");
@@ -42,6 +42,7 @@ function showAttribute(attrId) {
     alert(attrValue);
 }
 
+/* 去 QueryString 搵 parameter */
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, "\\$&");

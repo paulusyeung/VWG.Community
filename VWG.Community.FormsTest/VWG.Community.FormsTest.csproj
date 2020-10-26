@@ -77,6 +77,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Readme.txt" />
+    <Content Include="Resources\Images\headshots\1.jpg" />
+    <Content Include="Resources\Images\headshots\10.jpg" />
+    <Content Include="Resources\Images\headshots\11.jpg" />
+    <Content Include="Resources\Images\headshots\2.jpg" />
+    <Content Include="Resources\Images\headshots\4.jpg" />
+    <Content Include="Resources\Images\headshots\5.jpg" />
+    <Content Include="Resources\Images\headshots\6.jpg" />
+    <Content Include="Resources\Images\headshots\7.jpg" />
+    <Content Include="Resources\Images\headshots\8.jpg" />
+    <Content Include="Resources\Images\headshots\9.jpg" />
     <Content Include="Resources\UserData\SampleDocSpec.js" />
     <Content Include="Resources\UserData\SampleXmlData.xml" />
   </ItemGroup>
@@ -127,7 +137,6 @@
   <ItemGroup>
     <Folder Include="Resources\Generated\" />
     <Folder Include="Resources\Icons\" />
-    <Folder Include="Resources\Images\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VWG.Community.Forms\VWG.Community.Forms.csproj">

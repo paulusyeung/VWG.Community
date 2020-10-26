@@ -29,39 +29,16 @@ namespace VWG.Community.FormsTest
         private void InitializeComponent()
         {
             this.leftPanel = new Gizmox.WebGUI.Forms.Panel();
-            this.cmdShowAttribute = new Gizmox.WebGUI.Forms.Button();
-            this.cmdHarvest = new Gizmox.WebGUI.Forms.Button();
             this.rightPanel = new Gizmox.WebGUI.Forms.Panel();
-            this.leftPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // leftPanel
             // 
-            this.leftPanel.Controls.Add(this.cmdShowAttribute);
-            this.leftPanel.Controls.Add(this.cmdHarvest);
             this.leftPanel.Dock = Gizmox.WebGUI.Forms.DockStyle.Left;
             this.leftPanel.Location = new System.Drawing.Point(0, 0);
             this.leftPanel.Name = "leftPanel";
             this.leftPanel.Size = new System.Drawing.Size(180, 600);
             this.leftPanel.TabIndex = 1;
-            // 
-            // cmdShowAttribute
-            // 
-            this.cmdShowAttribute.Location = new System.Drawing.Point(27, 71);
-            this.cmdShowAttribute.Name = "cmdShowAttribute";
-            this.cmdShowAttribute.Size = new System.Drawing.Size(133, 34);
-            this.cmdShowAttribute.TabIndex = 0;
-            this.cmdShowAttribute.Text = "Show Attribute";
-            this.cmdShowAttribute.Click += new System.EventHandler(this.cmdShowAttribute_Click);
-            // 
-            // cmdHarvest
-            // 
-            this.cmdHarvest.Location = new System.Drawing.Point(27, 24);
-            this.cmdHarvest.Name = "cmdHarvest";
-            this.cmdHarvest.Size = new System.Drawing.Size(133, 34);
-            this.cmdHarvest.TabIndex = 0;
-            this.cmdHarvest.Text = "Harvest";
-            this.cmdHarvest.Click += new System.EventHandler(this.cmdHarvest_Click);
             // 
             // rightPanel
             // 
@@ -71,13 +48,12 @@ namespace VWG.Community.FormsTest
             this.rightPanel.Size = new System.Drawing.Size(620, 600);
             this.rightPanel.TabIndex = 2;
             // 
-            // Form1
+            // TreantBoxTest
             // 
             this.Controls.Add(this.rightPanel);
             this.Controls.Add(this.leftPanel);
             this.Size = new System.Drawing.Size(800, 600);
             this.Text = "XonomyBoxTest";
-            this.leftPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -86,7 +62,5 @@ namespace VWG.Community.FormsTest
 
         private Gizmox.WebGUI.Forms.Panel leftPanel;
         private Gizmox.WebGUI.Forms.Panel rightPanel;
-        private Gizmox.WebGUI.Forms.Button cmdHarvest;
-        private Gizmox.WebGUI.Forms.Button cmdShowAttribute;
     }
 }
