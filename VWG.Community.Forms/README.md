@@ -44,6 +44,9 @@
 ```
 ### [UploadBox](https://github.com/blueimp/jQuery-File-Upload)
 
+![Screen Cap](https://github.com/paulusyeung/VWG.Community/blob/master/assets/images/UploadBox.png)
+
+左邊係 WebGUI 嘅，右邊係我改嘅
 
 改造 WebGUI 嘅 UploadControl，改動：
 1. 依然用 jQuery-File-Upload，不過唔用 embedded，改用 cdnjs 最新嘅 source code
@@ -67,7 +70,11 @@
 
 XML Editor
 
+![Screen Cap](https://github.com/paulusyeung/VWG.Community/blob/master/assets/images/XonomyBox.png)
+
 ### [Treant.js](https://fperucic.github.io/treant-js/)
 
 Organization Tree
+
+![Screen Cap](https://github.com/paulusyeung/VWG.Community/blob/master/assets/images/TreantBox.png)
 
