@@ -25,8 +25,8 @@ namespace VWG.Community.FormsTest
 
         private void UploadBoxTest_Load(object sender, EventArgs e)
         {
-            //VWGContext.Current.CurrentTheme = "Vista";
-            VWGContext.Current.CurrentTheme = "Graphite";
+            VWGContext.Current.CurrentTheme = "Vista";
+            //VWGContext.Current.CurrentTheme = "Graphite";
             Const_Uploaders();
         }
 
