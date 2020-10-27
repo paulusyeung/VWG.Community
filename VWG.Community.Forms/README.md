@@ -71,4 +71,3 @@ XML Editor
 
 Organization Tree
 
-未解決啲相（image）嘅問題

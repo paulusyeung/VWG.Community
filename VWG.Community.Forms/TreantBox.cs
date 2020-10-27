@@ -294,4 +294,14 @@ namespace VWG.Community.Forms
         }
         #endregion 
     }
+
+    public class TreantBoxRecord
+    {
+        public String id { get; set; }
+        public String parent { get; set; }
+        public String name { get; set; }
+        public String title { get; set; }
+        public String image { get; set; }
+        public string contact { get; set; }
+    }
 }

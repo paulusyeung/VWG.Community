@@ -61,6 +61,7 @@
     <Compile Include="Helper\ColorHelper.cs" />
     <Compile Include="Helper\ImageUploaderFile.cs" />
     <Compile Include="Helper\UploadBoxHelper.cs" />
+    <Compile Include="Helper\VwgHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TreantBox.cs">
       <SubType>Component</SubType>
