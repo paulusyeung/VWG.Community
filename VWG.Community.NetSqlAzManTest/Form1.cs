@@ -30,7 +30,7 @@ namespace VWG.Community.NetSqlAzManTest
             {
                 Dock = DockStyle.Fill
             };
-            webConsole.SqlConnectionString = @"Data Source=192.168.12.141;Initial Catalog=NetSqlAzmanStorage_Newish;Integrated Security=False;User ID=sa;Password=sa-9602;";
+            webConsole.SqlConnectionString = @"Your Connection String";
             webConsole.Theme = "light";
             this.Form.Controls.Add(webConsole);
         }
