@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("VWG.Community.NetSqlAzMan")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("VWG Community Custom Control")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("nxStudio")]
 [assembly: AssemblyProduct("VWG.Community.NetSqlAzMan")]
-[assembly: AssemblyCopyright("Copyright ©  2020")]
+[assembly: AssemblyCopyright("Copyright © nxStudio 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

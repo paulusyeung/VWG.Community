@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>VWG.Community.NetSqlAzMan</id>
+    <version>1.0.0</version>
+    <title>VWG.Community.NetSqlAzMan</title>
+    <authors>Paulus Yeung</authors>
+    <owners>nxStudio</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://raw.githubusercontent.com/paulusyeung/VWG.Community/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/paulusyeung/VWG.Community/tree/master/VWG.Community.NetSqlAzMan</projectUrl>
+    <description>A re-write of NetSqlAzMan WebConsole to be used under Visual WebGUI.
+
+You need to include your own icons or copy those from github.</description>
+    <summary>A re-write of NetSqlAzMan WebConsole to be used under Visual WebGUI.</summary>
+    <copyright>Copyright © nxStudio 2020</copyright>
+    <language>en-US</language>
+  </metadata>
+  <files>
+    <file src="lib\VWG.Community.NetSqlAzMan.dll" target="lib\VWG.Community.NetSqlAzMan.dll" />
+  </files>
+</package>

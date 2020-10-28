@@ -48,7 +48,12 @@ namespace VWG.Community.FormsTest
             List<TreantBoxRecord> items = JsonConvert.DeserializeObject<List<TreantBoxRecord>>(json);
             foreach (var item in items)
             {
-                // 假設啲 images 放喺 Resources/Images 之下，加個 VWG 認可嘅 Url，保持原 size
+                /** 假設啲 images 放喺 Resources/Images 之下，加個 VWG 認可嘅 Url，保持原 size
+                 * No resize:       GeneralSizeableHandle(strResource, 1)
+                 * Scale 25%:       GeneralSizeableHandle(strResource, 0.25)
+                 * Scale 500%:      GeneralSizeableHandle(strResource, 5)
+                 * Scale 100x25:    GeneralSizeableHandle(strResource, 100, 25)
+                 * Scale 250x100:   GeneralSizeableHandle(strResource, 250, 100) */
                 var vwgImageUrl = (new GeneralSizeableHandle("Resources/Images" + item.image, 1)).ToString();
                 // 加好之後放返落去 image value
                 item.image = vwgImageUrl;
