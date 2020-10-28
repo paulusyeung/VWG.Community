@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>VWG.Community.NetSqlAzMan</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <title>VWG.Community.NetSqlAzMan</title>
     <authors>Paulus Yeung</authors>
     <owners>nxStudio</owners>
@@ -11,8 +11,27 @@
     <projectUrl>https://github.com/paulusyeung/VWG.Community/tree/master/VWG.Community.NetSqlAzMan</projectUrl>
     <description>A re-write of NetSqlAzMan WebConsole to be used under Visual WebGUI.
 
-You need to include your own icons or copy those from github.</description>
+You need to include your own icons or copy those from github.
+
+Usage:
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            VWGContext.Current.CurrentTheme = "Vista";
+            //VWGContext.Current.CurrentTheme = "Graphite";
+
+            var webConsole = new VWG.Community.NetSqlAzMan.WebConsole()
+            {
+                Dock = DockStyle.Fill
+            };
+            webConsole.SqlConnectionString = @"Your Connection String;";
+            webConsole.Theme = "light";
+            this.Form.Controls.Add(webConsole);
+        }</description>
     <summary>A re-write of NetSqlAzMan WebConsole to be used under Visual WebGUI.</summary>
+    <releaseNotes>Add dependance:
+
+NetSqlAzMan-x64</releaseNotes>
     <copyright>Copyright © nxStudio 2020</copyright>
     <language>en-US</language>
     <dependencies>
