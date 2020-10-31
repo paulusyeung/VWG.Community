@@ -20,6 +20,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VWG.Community.Resources", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VWG.Community.RsourcesTest", "VWG.Community.RsourcesTest\VWG.Community.RsourcesTest.csproj", "{F2641EF6-0468-48E4-B9A5-41A0EC706D2A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VWG.Community.Util", "VWG.Community.Util\VWG.Community.Util.csproj", "{317E9C47-731D-4A0F-9989-9730816B93AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VWG.Community.UtilTest", "VWG.Community.UtilTest\VWG.Community.UtilTest.csproj", "{B9388020-69F8-4687-933C-F0EBDEC856FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +54,14 @@ Global
 		{F2641EF6-0468-48E4-B9A5-41A0EC706D2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2641EF6-0468-48E4-B9A5-41A0EC706D2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2641EF6-0468-48E4-B9A5-41A0EC706D2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{317E9C47-731D-4A0F-9989-9730816B93AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{317E9C47-731D-4A0F-9989-9730816B93AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{317E9C47-731D-4A0F-9989-9730816B93AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{317E9C47-731D-4A0F-9989-9730816B93AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9388020-69F8-4687-933C-F0EBDEC856FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9388020-69F8-4687-933C-F0EBDEC856FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9388020-69F8-4687-933C-F0EBDEC856FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9388020-69F8-4687-933C-F0EBDEC856FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
