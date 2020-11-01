@@ -40,6 +40,8 @@ namespace VWG.Community.Util
             return result;
         }
 
+        #region Find a single CountryCode record
+
         /// <summary>
         /// Find by Display Name where LevenshteinDistance.CalculateSimilarity > 0.6
         /// </summary>
@@ -151,6 +153,48 @@ namespace VWG.Community.Util
 
             return result;
         }
+
+        #endregion
+
+        #region Find multiple CountryCode records
+
+        /// <summary>
+        /// Find all CountryCode records by Display Name where LevenshteinDistance.CalculateSimilarity > 0.6
+        /// </summary>
+        /// <param name="target"></param>
+        /// <returns></returns>
+        public List<CountryCode> FindListByDisplayName(String target)
+        {
+            List<CountryCode> result = new List<CountryCode>();
+
+            var list = GetList();
+            var item = list.Where(x => LevenshteinDistance.CalculateSimilarity(x.CLDR_displayname.ToLower(), target.ToLower()) > 0.6).ToList<CountryCode>();
+            if (item != null) result = item;
+
+            return result;
+        }
+
+        /// <summary>
+        /// Find all CountryCode records by All
+        /// </summary>
+        /// <param name="target"></param>
+        /// <returns></returns>
+        public List<CountryCode> FindListByAll(String target)
+        {
+            List<CountryCode> result = new List<CountryCode>();
+
+            var list = GetList();
+            var item = list
+                .Where(x => x.Dial.ToLower() == target.ToLower() || x.FIPS.ToLower() == target || x.TLD.ToLower() == target ||
+                x.FIFA.ToLower() == target || x.ISO3166_1_Alpha_3.ToLower() == target ||
+                LevenshteinDistance.CalculateSimilarity(x.CLDR_displayname.ToLower(), target.ToLower()) > 0.6)
+                .ToList<CountryCode>();
+            if (item != null) result = item;
+
+            return result;
+        }
+
+        #endregion
     }
 
     public class CountryCode

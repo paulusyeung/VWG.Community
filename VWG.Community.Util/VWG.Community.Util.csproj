@@ -72,6 +72,7 @@
   <ItemGroup>
     <EmbeddedResource Include="assets\country-codes.csv" />
     <None Include="packages.config" />
+    <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Condition="" Project="$(MSBuildExtensionsPath)\Gizmox\v14.0\Net4.5.2\Gizmox.VWGLibrary.targets" />
