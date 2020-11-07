@@ -1,4 +1,4 @@
-namespace VWG.Community.RsourcesTest
+namespace VWG.Community.ResourcesTest
 {
     partial class Form1
     {

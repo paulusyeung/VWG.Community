@@ -18,7 +18,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VWG.Community.FormsTest", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VWG.Community.Resources", "VWG.Community.Resources\VWG.Community.Resources.csproj", "{DBE1C2D3-C54C-4C8E-9A17-BB004BAA916D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VWG.Community.RsourcesTest", "VWG.Community.RsourcesTest\VWG.Community.RsourcesTest.csproj", "{F2641EF6-0468-48E4-B9A5-41A0EC706D2A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VWG.Community.ResourcesTest", "VWG.Community.RsourcesTest\VWG.Community.ResourcesTest.csproj", "{F2641EF6-0468-48E4-B9A5-41A0EC706D2A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VWG.Community.Util", "VWG.Community.Util\VWG.Community.Util.csproj", "{317E9C47-731D-4A0F-9989-9730816B93AA}"
 EndProject

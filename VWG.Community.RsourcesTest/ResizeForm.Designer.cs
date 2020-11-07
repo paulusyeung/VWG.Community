@@ -1,7 +1,7 @@
 using Gizmox.WebGUI.Forms;
 using Gizmox.WebGUI.Common;
 
-namespace VWG.Community.RsourcesTest
+namespace VWG.Community.ResourcesTest
 {
     partial class ResizeForm
     {

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("VWG.Community.RsourcesTest")]
+[assembly: AssemblyTitle("VWG.Community.ResourcesTest")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("VWG.Community.RsourcesTest")]
+[assembly: AssemblyProduct("VWG.Community.ResourcesTest")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2005")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

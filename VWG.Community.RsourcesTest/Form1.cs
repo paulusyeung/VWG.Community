@@ -14,7 +14,7 @@ using Gizmox.WebGUI.Common.Resources;
 
 #endregion
 
-namespace VWG.Community.RsourcesTest
+namespace VWG.Community.ResourcesTest
 {
     public partial class Form1 : Form
     {

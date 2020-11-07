@@ -14,7 +14,7 @@ using VWG.Community.Resources;
 
 #endregion
 
-namespace VWG.Community.RsourcesTest
+namespace VWG.Community.ResourcesTest
 {
     public partial class ResizeForm : Form
     {
