@@ -87,9 +87,8 @@ namespace VWG.Community.UtilTest
                 case CurrentMode.Text:
                     try
                     {
-                        var opencc = new OpenCC();
-                        opencc.Load();
-                        txtResult.Text = opencc.Convert(txtSource.Text, _ConfigFileName);
+                        OpenCC.Load();
+                        txtResult.Text = OpenCC.Convert(txtSource.Text, _ConfigFileName);
                     }
                     catch (Exception exception)
                     {

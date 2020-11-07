@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>VWG.Community.Util</id>
+    <version>1.1.1</version>
+    <title>Visual WebGUI Custom Utilities</title>
+    <authors>Paulus Yeung</authors>
+    <owners>nxStudio</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://raw.githubusercontent.com/paulusyeung/VWG.Community/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/paulusyeung/VWG.Community/tree/master/VWG.Community.Util</projectUrl>
+    <description>A collective of utilities for Visual WebGUI Community, including:
+
+Phonetic utilities (Levenshtein Distance, Metaphone, Soundex) and Country Codes object.</description>
+    <releaseNotes>Use static functions for OpenCC</releaseNotes>
+    <copyright>Copyright © nxStudio 2020</copyright>
+    <language>en-UM</language>
+    <dependencies>
+      <dependency id="CsvHelper" version="15.0.8" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="lib\VWG.Community.Util.dll" target="lib\VWG.Community.Util.dll" />
+  </files>
+</package>

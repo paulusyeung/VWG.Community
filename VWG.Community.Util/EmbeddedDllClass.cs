@@ -34,7 +34,7 @@ namespace VWG.Community.Util
     /// <item>Continue using standard Pinvoke methods for the desired functions in the DLL</item>
     /// </list>
     /// </summary>
-    public class EmbeddedDllClass
+    public static class EmbeddedDllClass
     {
         private static string tempFolder = "";
 

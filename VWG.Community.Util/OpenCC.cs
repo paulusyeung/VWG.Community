@@ -8,17 +8,12 @@ using VWG.Community.Util.Helper;
 
 namespace VWG.Community.Util
 {
-    public class OpenCC
+    public static class OpenCC
     {
-        public void Load()
+        public static void Load()
         {
-            var asm = System.Reflection.Assembly.GetExecutingAssembly();
-            var source = asm.GetManifestResourceStream("VWG.Community.Util.Resources.opencc.dll");
-            var dll = OpenCCHelper.ReadToEnd(source);
-
             // call EmbeddedDllClass.ExtractEmbeddedDlls() for each DLL that is needed
             EmbeddedDllClass.ExtractEmbeddedDlls("opencc.dll", Properties.Resources.opencc);
-            EmbeddedDllClass.LoadDll("opencc.dll");
         }
 
         /// <summary>
@@ -33,7 +28,7 @@ namespace VWG.Community.Util
         /// <param name="configFileName">Config file name.</param>
         /// <returns></returns>
         /// <exception cref="ExternalException">Throw when OpenCC occurs an error!</exception>
-        public string Convert(string input, string configFileName)
+        public static string Convert(string input, string configFileName)
         {
             IntPtr opencc_ptr = opencc_open(configFileName);
             if (opencc_ptr == new IntPtr(-1))

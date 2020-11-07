@@ -50,9 +50,8 @@ cmake --build build --config Release --target install
 
 ##### Usage
 ```csharp
-var opencc = new OpenCC();
-opencc.Load();
-txtResult.Text = opencc.Convert(txtSource.Text, _ConfigFileName);
+OpenCC.Load();
+txtResult.Text = OpenCC.Convert(txtSource.Text, _ConfigFileName);
 ```
 
 ### Phonetic 內容
