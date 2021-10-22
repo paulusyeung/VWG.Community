@@ -58,15 +58,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DialogBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="DialogBox.designer.cs">
-      <DependentUpon>DialogBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DialogBoxSkin.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Helper\ColorHelper.cs" />
     <Compile Include="Helper\ImageUploaderFile.cs" />
     <Compile Include="Helper\UploadBoxHelper.cs" />
@@ -135,7 +126,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DialogBox.bmp" />
     <Content Include="TreantBox.bmp" />
     <Content Include="TreantBoxSkin.data-dynamic.css">
       <DependentUpon>TreantBoxSkin.cs</DependentUpon>
