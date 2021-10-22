@@ -58,10 +58,32 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DialogBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DialogBox.designer.cs">
+      <DependentUpon>DialogBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogBoxSkin.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Helper\ColorHelper.cs" />
     <Compile Include="Helper\ImageUploaderFile.cs" />
     <Compile Include="Helper\UploadBoxHelper.cs" />
     <Compile Include="Helper\VwgHelper.cs" />
+    <Compile Include="MessageBox2.cs" />
+    <Compile Include="MessageBox2Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageBox2Form.Designer.cs">
+      <DependentUpon>MessageBox2Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PagerBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PagerBox.Designer.cs">
+      <DependentUpon>PagerBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TreantBox.cs">
       <SubType>Component</SubType>
@@ -87,8 +109,17 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="MessageBox2Form.resx">
+      <DependentUpon>MessageBox2Form.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PagerBox.resx">
+      <DependentUpon>PagerBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="TreantBoxSkin.resx">
       <DependentUpon>TreantBoxSkin.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Upload\UploadBox.png" />
     <EmbeddedResource Include="Upload\UploadBox.bmp" />
@@ -104,6 +135,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DialogBox.bmp" />
     <Content Include="TreantBox.bmp" />
     <Content Include="TreantBoxSkin.data-dynamic.css">
       <DependentUpon>TreantBoxSkin.cs</DependentUpon>
@@ -185,6 +217,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Condition="" Project="$(MSBuildExtensionsPath)\Gizmox\v14.0\Net4.5.2\Gizmox.VWGLibrary.targets" />

@@ -66,6 +66,10 @@
 
 1. [Asp.net C# + Dropzone js : Easy Way to Upload Images (Drag & Drop Feature)](https://codepedia.info/using-dropzone-js-file-image-upload-in-asp-net-webform-c/)
 
+### [MessageBox2](#)
+
+跟 MessageBox 大致相同，唯一分別係：MessageBox 係 async，即係當你 call 完佢，佢有佢做，你會接住做下一句。而 MessageBox2 係 sync，你要等佢做完先可以 execute 下一句。
+
 ### [Xonomy](https://github.com/michmech/xonomy)
 
 XML Editor

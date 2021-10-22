@@ -81,6 +81,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Readme.txt" />
+    <Resource Include="Resources\Icons\dark\mdi-page-first.20.circle.png" />
+    <Resource Include="Resources\Icons\dark\mdi-page-last.20.circle.png" />
+    <Content Include="Resources\Icons\dark\mdi-chevron-left.20.circle.png" />
+    <Content Include="Resources\Icons\dark\mdi-chevron-right.20.circle.png" />
+    <Content Include="Resources\Icons\light\mdi-chevron-left.20.circle.png" />
+    <Content Include="Resources\Icons\light\mdi-chevron-right.20.circle.png" />
+    <Content Include="Resources\Icons\light\mdi-page-first.20.circle.png" />
+    <Content Include="Resources\Icons\light\mdi-page-last.20.circle.png" />
     <Content Include="Resources\Images\headshots\1.jpg" />
     <Content Include="Resources\Images\headshots\10.jpg" />
     <Content Include="Resources\Images\headshots\11.jpg" />
@@ -95,6 +103,18 @@
     <Content Include="Resources\UserData\SampleXmlData.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MessageBox2Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageBox2Test.Designer.cs">
+      <DependentUpon>MessageBox2Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PagerBoxTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PagerBoxTest.Designer.cs">
+      <DependentUpon>PagerBoxTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="TreantBoxTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +133,14 @@
     <Compile Include="UploadBoxTest.Designer.cs">
       <DependentUpon>UploadBoxTest.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="MessageBox2Test.resx">
+      <DependentUpon>MessageBox2Test.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PagerBoxTest.resx">
+      <DependentUpon>PagerBoxTest.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="TreantBoxTest.resx">
       <DependentUpon>TreantBoxTest.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -141,7 +169,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Generated\" />
-    <Folder Include="Resources\Icons\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VWG.Community.Forms\VWG.Community.Forms.csproj">
