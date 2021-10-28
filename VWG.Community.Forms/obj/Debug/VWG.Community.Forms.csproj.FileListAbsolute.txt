@@ -1,3 +1,10 @@
+C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.Skins.EChartsBoxSkin.resources
+C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.MessageBox2Form.resources
+C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.PagerBox.resources
+C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.Skins.TreantBoxSkin.resources
+C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.Skins.XonomyBoxSkin.resources
+C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.Skins.UploadBoxSkin.resources
+C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.csproj.GenerateResource.Cache
 C:\Projects\VWG.Community\VWG.Community.Forms\bin\Debug\VWG.Community.Forms.dll
 C:\Projects\VWG.Community\VWG.Community.Forms\bin\Debug\VWG.Community.Forms.pdb
 C:\Projects\VWG.Community\VWG.Community.Forms\bin\Debug\Gizmox.WebGUI.Common.dll
@@ -27,12 +34,8 @@ C:\Projects\VWG.Community\VWG.Community.Forms\bin\Debug\pt-PT\Gizmox.WebGUI.Form
 C:\Projects\VWG.Community\VWG.Community.Forms\bin\Debug\sv-SE\Gizmox.WebGUI.Forms.resources.dll
 C:\Projects\VWG.Community\VWG.Community.Forms\bin\Debug\tr-TR\Gizmox.WebGUI.Forms.resources.dll
 C:\Projects\VWG.Community\VWG.Community.Forms\bin\Debug\zh-CHS\Gizmox.WebGUI.Forms.resources.dll
-C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.Skins.TreantBoxSkin.resources
-C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.Skins.XonomyBoxSkin.resources
-C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.Skins.UploadBoxSkin.resources
-C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.csproj.GenerateResource.Cache
 C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.dll
 C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.pdb
-C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.PagerBox.resources
+C:\Projects\VWG.Community\VWG.Community.Forms\bin\Debug\VWG.Community.Forms.dll.config
+C:\Projects\VWG.Community\VWG.Community.Forms\bin\Debug\Newtonsoft.Json.xml
 C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.csprojResolveAssemblyReference.cache
-C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.MessageBox2Form.resources

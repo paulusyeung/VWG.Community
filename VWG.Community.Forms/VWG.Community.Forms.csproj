@@ -34,8 +34,13 @@
     <Reference Include="Gizmox.WebGUI.Forms.Design, Version=4.5.25701.0, Culture=neutral, PublicKeyToken=dd2a1fd4d120c769, processorArchitecture=MSIL" />
     <Reference Include="Gizmox.WebGUI.Forms.Extended, Version=4.5.25701.0, Culture=neutral, PublicKeyToken=85eae29607c9f5f3, processorArchitecture=MSIL" />
     <Reference Include="Gizmox.WebGUI.Forms.Extended.Design, Version=4.5.25701.0, Culture=neutral, PublicKeyToken=63e79e6cd5280864, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
@@ -58,8 +63,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EChartsBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EChartsBoxSkin.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Helper\ColorHelper.cs" />
     <Compile Include="Helper\ImageUploaderFile.cs" />
+    <Compile Include="Helper\JsonHelper.cs" />
     <Compile Include="Helper\UploadBoxHelper.cs" />
     <Compile Include="Helper\VwgHelper.cs" />
     <Compile Include="MessageBox2.cs" />
@@ -69,6 +81,150 @@
     <Compile Include="MessageBox2Form.Designer.cs">
       <DependentUpon>MessageBox2Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\ECharts\AbstractData.cs" />
+    <Compile Include="Model\ECharts\axis\AngleAxis.cs" />
+    <Compile Include="Model\ECharts\axis\Axis.cs" />
+    <Compile Include="Model\ECharts\axis\AxisData.cs" />
+    <Compile Include="Model\ECharts\axis\AxisLabel.cs" />
+    <Compile Include="Model\ECharts\axis\AxisLine.cs" />
+    <Compile Include="Model\ECharts\axis\AxisLink.cs" />
+    <Compile Include="Model\ECharts\axis\AxisName.cs" />
+    <Compile Include="Model\ECharts\axis\AxisPointer.cs" />
+    <Compile Include="Model\ECharts\axis\AxisTick.cs" />
+    <Compile Include="Model\ECharts\axis\CategoryAxis.cs" />
+    <Compile Include="Model\ECharts\axis\ChartAxis.cs" />
+    <Compile Include="Model\ECharts\axis\LogAxis.cs" />
+    <Compile Include="Model\ECharts\axis\ParallelAxis.cs" />
+    <Compile Include="Model\ECharts\axis\radiusAxis.cs" />
+    <Compile Include="Model\ECharts\axis\SingleAxis.cs" />
+    <Compile Include="Model\ECharts\axis\SplitArea.cs" />
+    <Compile Include="Model\ECharts\axis\SplitLine.cs" />
+    <Compile Include="Model\ECharts\axis\TimeAxis.cs" />
+    <Compile Include="Model\ECharts\axis\ValueAxis.cs" />
+    <Compile Include="Model\ECharts\Basic.cs" />
+    <Compile Include="Model\ECharts\bmap\BMap.cs" />
+    <Compile Include="Model\ECharts\bmap\MapStyle.cs" />
+    <Compile Include="Model\ECharts\bmap\StyleJson.cs" />
+    <Compile Include="Model\ECharts\bmap\Styler.cs" />
+    <Compile Include="Model\ECharts\bmap\VisibilityType.cs" />
+    <Compile Include="Model\ECharts\Brush.cs" />
+    <Compile Include="Model\ECharts\Calendar.cs" />
+    <Compile Include="Model\ECharts\category\XCategory.cs" />
+    <Compile Include="Model\ECharts\Chart.cs" />
+    <Compile Include="Model\ECharts\ChartData.cs" />
+    <Compile Include="Model\ECharts\ChartOption.cs" />
+    <Compile Include="Model\ECharts\Controller.cs" />
+    <Compile Include="Model\ECharts\DataRange.cs" />
+    <Compile Include="Model\ECharts\DataZoom.cs" />
+    <Compile Include="Model\ECharts\data\BasicData.cs" />
+    <Compile Include="Model\ECharts\data\Data.cs" />
+    <Compile Include="Model\ECharts\EChartEnums.cs" />
+    <Compile Include="Model\ECharts\feature\DataView.cs" />
+    <Compile Include="Model\ECharts\feature\data\FeatureData.cs" />
+    <Compile Include="Model\ECharts\feature\Feature.cs" />
+    <Compile Include="Model\ECharts\feature\FeatureBrush.cs" />
+    <Compile Include="Model\ECharts\feature\FeatureImage.cs" />
+    <Compile Include="Model\ECharts\feature\MagicOption.cs" />
+    <Compile Include="Model\ECharts\feature\MagicTitle.cs" />
+    <Compile Include="Model\ECharts\feature\MagicType.cs" />
+    <Compile Include="Model\ECharts\feature\Mark.cs" />
+    <Compile Include="Model\ECharts\feature\MarkTitle.cs" />
+    <Compile Include="Model\ECharts\feature\Range.cs" />
+    <Compile Include="Model\ECharts\feature\Restore.cs" />
+    <Compile Include="Model\ECharts\feature\Split.cs" />
+    <Compile Include="Model\ECharts\Geo.cs" />
+    <Compile Include="Model\ECharts\Grid.cs" />
+    <Compile Include="Model\ECharts\IData.cs" />
+    <Compile Include="Model\ECharts\IndicatorData.cs" />
+    <Compile Include="Model\ECharts\Legend.cs" />
+    <Compile Include="Model\ECharts\LoadingOption.cs" />
+    <Compile Include="Model\ECharts\NoDataLoadingOption.cs" />
+    <Compile Include="Model\ECharts\Parallel.cs" />
+    <Compile Include="Model\ECharts\Polar.cs" />
+    <Compile Include="Model\ECharts\Regions.cs" />
+    <Compile Include="Model\ECharts\RoamController.cs" />
+    <Compile Include="Model\ECharts\ScaleLimit.cs" />
+    <Compile Include="Model\ECharts\series\Bar.cs" />
+    <Compile Include="Model\ECharts\series\Boxplot.cs" />
+    <Compile Include="Model\ECharts\series\ChartSeries.cs" />
+    <Compile Include="Model\ECharts\series\Chord.cs" />
+    <Compile Include="Model\ECharts\series\Data\KData.cs" />
+    <Compile Include="Model\ECharts\series\Data\MapData.cs" />
+    <Compile Include="Model\ECharts\series\Data\PieData.cs" />
+    <Compile Include="Model\ECharts\series\Data\PolarData.cs" />
+    <Compile Include="Model\ECharts\series\Data\RadarData.cs" />
+    <Compile Include="Model\ECharts\series\Data\ScatterData.cs" />
+    <Compile Include="Model\ECharts\series\Data\SeriesData.cs" />
+    <Compile Include="Model\ECharts\series\Data\TreeData.cs" />
+    <Compile Include="Model\ECharts\series\EffectScatter.cs" />
+    <Compile Include="Model\ECharts\series\EventRiver.cs" />
+    <Compile Include="Model\ECharts\series\event\EventData.cs" />
+    <Compile Include="Model\ECharts\series\event\EventDetail.cs" />
+    <Compile Include="Model\ECharts\series\event\EventEvolution.cs" />
+    <Compile Include="Model\ECharts\series\Force.cs" />
+    <Compile Include="Model\ECharts\series\force\Category.cs" />
+    <Compile Include="Model\ECharts\series\force\Link.cs" />
+    <Compile Include="Model\ECharts\series\force\Node.cs" />
+    <Compile Include="Model\ECharts\series\Funnel.cs" />
+    <Compile Include="Model\ECharts\series\Gauge.cs" />
+    <Compile Include="Model\ECharts\series\Graph.cs" />
+    <Compile Include="Model\ECharts\series\graph\Force.cs" />
+    <Compile Include="Model\ECharts\series\guage\GaugeDetail.cs" />
+    <Compile Include="Model\ECharts\series\guage\GaugePointer.cs" />
+    <Compile Include="Model\ECharts\series\guage\GaugeTitle.cs" />
+    <Compile Include="Model\ECharts\series\HeatMap.cs" />
+    <Compile Include="Model\ECharts\series\heatmap\GradientColorData.cs" />
+    <Compile Include="Model\ECharts\series\K.cs" />
+    <Compile Include="Model\ECharts\series\Line.cs" />
+    <Compile Include="Model\ECharts\series\Map.cs" />
+    <Compile Include="Model\ECharts\series\mark\Bound.cs" />
+    <Compile Include="Model\ECharts\series\mark\Effect.cs" />
+    <Compile Include="Model\ECharts\series\mark\MarkArea.cs" />
+    <Compile Include="Model\ECharts\series\mark\MarkData.cs" />
+    <Compile Include="Model\ECharts\series\mark\MarkLine.cs" />
+    <Compile Include="Model\ECharts\series\mark\MarkPoint.cs" />
+    <Compile Include="Model\ECharts\series\other\AutoSizeConfig.cs" />
+    <Compile Include="Model\ECharts\series\Parallel.cs" />
+    <Compile Include="Model\ECharts\series\PictorialBar.cs" />
+    <Compile Include="Model\ECharts\series\Pie.cs" />
+    <Compile Include="Model\ECharts\series\Radar.cs" />
+    <Compile Include="Model\ECharts\series\Rectangular.cs" />
+    <Compile Include="Model\ECharts\series\RippleEffect.cs" />
+    <Compile Include="Model\ECharts\series\Sankey.cs" />
+    <Compile Include="Model\ECharts\series\Scatter.cs" />
+    <Compile Include="Model\ECharts\series\Series.cs" />
+    <Compile Include="Model\ECharts\series\ThemeRiver.cs" />
+    <Compile Include="Model\ECharts\series\Tree.cs" />
+    <Compile Include="Model\ECharts\series\TreeMap.cs" />
+    <Compile Include="Model\ECharts\series\tree\LocationData.cs" />
+    <Compile Include="Model\ECharts\series\Venn.cs" />
+    <Compile Include="Model\ECharts\series\WordCloud.cs" />
+    <Compile Include="Model\ECharts\style\AreaStyle.cs" />
+    <Compile Include="Model\ECharts\style\BrushStyle.cs" />
+    <Compile Include="Model\ECharts\style\CalendarLabel.cs" />
+    <Compile Include="Model\ECharts\style\CheckPointStyle.cs" />
+    <Compile Include="Model\ECharts\style\ChordStyle.cs" />
+    <Compile Include="Model\ECharts\style\ControlStyle.cs" />
+    <Compile Include="Model\ECharts\style\Emphasis.cs" />
+    <Compile Include="Model\ECharts\style\EntityStyle.cs" />
+    <Compile Include="Model\ECharts\style\IconStyle.cs" />
+    <Compile Include="Model\ECharts\style\ItemStyle.cs" />
+    <Compile Include="Model\ECharts\style\LabelLine.cs" />
+    <Compile Include="Model\ECharts\style\LineLabelStyle.cs" />
+    <Compile Include="Model\ECharts\style\LineStyle.cs" />
+    <Compile Include="Model\ECharts\style\LinkStyle.cs" />
+    <Compile Include="Model\ECharts\style\NodeStyle.cs" />
+    <Compile Include="Model\ECharts\style\Normal.cs" />
+    <Compile Include="Model\ECharts\style\PiecesStyle.cs" />
+    <Compile Include="Model\ECharts\style\Style.cs" />
+    <Compile Include="Model\ECharts\style\StyleLabel.cs" />
+    <Compile Include="Model\ECharts\style\TextStyle.cs" />
+    <Compile Include="Model\ECharts\TimeLine.cs" />
+    <Compile Include="Model\ECharts\Title.cs" />
+    <Compile Include="Model\ECharts\Toolbox.cs" />
+    <Compile Include="Model\ECharts\ToolTip.cs" />
+    <Compile Include="Model\ECharts\TreeData.cs" />
+    <Compile Include="Model\ECharts\VisualItem.cs" />
     <Compile Include="PagerBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -100,6 +256,10 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="EChartsBoxSkin.resx">
+      <DependentUpon>EChartsBoxSkin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="MessageBox2Form.resx">
       <DependentUpon>MessageBox2Form.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -126,6 +286,16 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EChartsBoxSkin.EChartsBox.direct.html">
+      <DependentUpon>EChartsBoxSkin.cs</DependentUpon>
+    </Content>
+    <Content Include="EChartsBoxSkin.EChartsBox.html">
+      <DependentUpon>EChartsBoxSkin.cs</DependentUpon>
+    </Content>
+    <Content Include="EChartsBoxSkin.EChartsBox.xslt">
+      <DependentUpon>EChartsBoxSkin.cs</DependentUpon>
+    </Content>
+    <Content Include="EChartsBox.bmp" />
     <Content Include="TreantBox.bmp" />
     <Content Include="TreantBoxSkin.data-dynamic.css">
       <DependentUpon>TreantBoxSkin.cs</DependentUpon>
@@ -206,6 +376,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>

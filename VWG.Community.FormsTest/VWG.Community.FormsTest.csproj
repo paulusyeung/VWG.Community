@@ -58,8 +58,8 @@
       <SpecificVersion>True</SpecificVersion>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -103,12 +103,33 @@
     <Content Include="Resources\UserData\SampleXmlData.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EChartsBoxTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EChartsBoxTest.Designer.cs">
+      <DependentUpon>EChartsBoxTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\EChartsDataHelper.cs" />
     <Compile Include="MessageBox2Test.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MessageBox2Test.Designer.cs">
       <DependentUpon>MessageBox2Test.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModelEx\ChartsData.cs" />
+    <Compile Include="ModelEx\ChartsData2.cs" />
+    <Compile Include="ModelEx\ChartsData3.cs" />
+    <Compile Include="ModelEx\ChartsData4.cs" />
+    <Compile Include="ModelEx\ChartsData_Calendar.cs" />
+    <Compile Include="ModelEx\ChartsData_Geo.cs" />
+    <Compile Include="ModelEx\ChartsData_Line.cs" />
+    <Compile Include="ModelEx\ChartsData_Parallel.cs" />
+    <Compile Include="ModelEx\ChartsData_River.cs" />
+    <Compile Include="ModelEx\ChartsData_ScatterMap.cs" />
+    <Compile Include="ModelEx\ChartsData_ScatterPolar.cs" />
+    <Compile Include="ModelEx\ChartsData_WeightScatter.cs" />
+    <Compile Include="ModelEx\ChartsData_WorldScatter.cs" />
+    <Compile Include="ModelEx\ChartsUtil.cs" />
     <Compile Include="PagerBoxTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +154,10 @@
     <Compile Include="UploadBoxTest.Designer.cs">
       <DependentUpon>UploadBoxTest.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EChartsBoxTest.resx">
+      <DependentUpon>EChartsBoxTest.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="MessageBox2Test.resx">
       <DependentUpon>MessageBox2Test.cs</DependentUpon>
       <SubType>Designer</SubType>
