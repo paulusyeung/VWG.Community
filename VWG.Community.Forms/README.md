@@ -66,6 +66,10 @@
 
 1. [Asp.net C# + Dropzone js : Easy Way to Upload Images (Drag & Drop Feature)](https://codepedia.info/using-dropzone-js-file-image-upload-in-asp-net-webform-c/)
 
+### [ECharts](https://echarts.apache.org/)Box 同埋 [EChartsGMap](https://github.com/plainheart/echarts-extension-gmap)Box
+
+用咗 [EChartsSDK](https://github.com/idoku/EChartsSDK) 做出嚟嘅，EChartsSDK 原作者冇完成所有 ECharts 嘅功能，不過已經幫咗好大忙，遇到冇嘅嘢可以自己補充 miss 咗嘅部份，我都冇用哂所有 functions，GMap 就係我自己作嘅！
+
 ### [MessageBox2](#)
 
 跟 MessageBox 大致相同，唯一分別係：MessageBox 係 async，即係當你 call 完佢，佢有佢做，你會接住做下一句。而 MessageBox2 係 sync，你要等佢做完先可以 execute 下一句。
