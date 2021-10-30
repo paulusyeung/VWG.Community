@@ -8,6 +8,7 @@ namespace VWG.Community.Forms.Model.ECharts.series
 {
     public class Map : ChartSeries<Map>
     {
+        #region Properties
         public SelectedModeType? selectedMode { get; set; }
 
         public string mapType { get; set; }
@@ -35,7 +36,9 @@ namespace VWG.Community.Forms.Model.ECharts.series
         public object geoCoord { get; set; }
 
         public object heatmap { get; set; }
+        #endregion
 
+        #region Methods
         public Map SetHeatmap(HeatMap heatmap)
         {
             this.heatmap = heatmap;
@@ -129,5 +132,6 @@ namespace VWG.Community.Forms.Model.ECharts.series
         {
             this.name = name;
         }
+        #endregion
     }
 }

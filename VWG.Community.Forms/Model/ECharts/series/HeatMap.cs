@@ -8,6 +8,7 @@ namespace VWG.Community.Forms.Model.ECharts.series
 {
     public class HeatMap : ChartSeries<HeatMap>
     {
+        #region Properties
         public int? blurSize { get; set; }
 
         public bool? hoverable { get; set; }
@@ -21,7 +22,9 @@ namespace VWG.Community.Forms.Model.ECharts.series
         public double? opacity { get; set; }
 
         public string coordinateSystem { get; set; }
+        #endregion
 
+        #region Methods
         public HeatMap CoordinateSystem(string coordinateSystem)
         {
             this.coordinateSystem = coordinateSystem;
@@ -75,5 +78,6 @@ namespace VWG.Community.Forms.Model.ECharts.series
         {
             this.name = name;
         }
+        #endregion
     }
 }

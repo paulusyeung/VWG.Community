@@ -30,9 +30,5 @@ namespace VWG.Community.Forms.Model.ECharts.series
         {
             this.name = name;
         }
-
-       
-
-
     }
 }

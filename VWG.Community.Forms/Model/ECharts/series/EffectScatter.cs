@@ -11,29 +11,31 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 
-
-
 using VWG.Community.Forms.Model.ECharts.series;
-namespace VWG.Community.Forms.Model.ECharts.series {
-	public class EffectScatter : Scatter {
 
-	    public string effectType { get; set; }
+namespace VWG.Community.Forms.Model.ECharts.series
+{
+    public class EffectScatter : Scatter
+    {
+        #region Properties
+        public string effectType { get; set; }
 
         public ShowEffectType showEffectOn { get; set; }
 
+        public RippleEffect rippleEffect { get; set; }
+        #endregion
 
-	    public RippleEffect rippleEffect { get; set; }
-
-	    public EffectScatter EffectType(string effectType)
-	    {
-	        this.effectType = effectType;
-	        return this;
-	    }
+        #region Methods
+        public EffectScatter EffectType(string effectType)
+        {
+            this.effectType = effectType;
+            return this;
+        }
 
         public EffectScatter ShowEffectOn(ShowEffectType showEffectOn)
         {
             this.showEffectOn = showEffectOn;
-            
+
             return this;
         }
 
@@ -45,24 +47,22 @@ namespace VWG.Community.Forms.Model.ECharts.series {
         }
 
         public RippleEffect RippleEffect(RippleEffect rippleEffect)
-	    {
+        {
             this.rippleEffect = rippleEffect;
-	        return rippleEffect;
-	    }
+            return rippleEffect;
+        }
 
-	    public EffectScatter()
-	    {
-	        this.type = ChartType.effectScatter;
-	    }
+        public EffectScatter()
+        {
+            this.type = ChartType.effectScatter;
+        }
 
         public EffectScatter(string name)
             : this()
         {
             this.name = name;
         }
-
-
-        
-	}//end EffectScatter
+        #endregion
+    }//end EffectScatter
 
 }//end namespace series

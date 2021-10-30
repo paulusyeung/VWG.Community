@@ -19,67 +19,48 @@ using VWG.Community.Forms.Model.ECharts.style;
 namespace VWG.Community.Forms.Model.ECharts
 {
 	public class Geo : Basic<Geo> {
-
+        #region Properties
         public ChartType? type { get; set; }
 
         public object center { get; set; }
 
-		public string map{
-			get;
-			set;
-		}
+		public string map { get; set; }
 
 	    public bool? silent { get; set; }
 
 	    public bool? roam { get; set; }
 
-		public double aspectScale{
-			get;
-			set;
-		}
+		public double aspectScale { get; set; }
 
-		public ScaleLimit scaleLimit{
-			get;
-			set;
-		}
+		public ScaleLimit scaleLimit { get; set; }
 
-		public object nameMap{
-			get;
-			set;
-		}
+		public object nameMap { get; set; }
 
-		public IList<string> layoutCenter{
-			get;
-			set;
-		}
+		public IList<string> layoutCenter { get; set; }
 
-		public object layoutSize{
-			get;
-			set;
-		}
+		public object layoutSize { get; set; }
 
-		public Regions regions{
-			get;
-			set;
-		}
+		public Regions regions { get; set; }
 
         public ItemStyle label { get; set; }
 
 	    public ItemStyle itemStyle { get; set; }
+        #endregion
 
-
+        #region Methods
         public Geo Type(ChartType type)
         {
             this.type = type;
             return this;
         }
 
-		/// 
-		/// <param name="map"></param>
-		public Geo Map(string map){
-		     this.map=map;
-		return this; 
-		}
+        /// 
+        /// <param name="map"></param>
+        public Geo Map(string map)
+        {
+            this.map = map;
+            return this;
+        }
 
 		/// 
 		/// <param name="aspectScale"></param>
@@ -170,7 +151,7 @@ namespace VWG.Community.Forms.Model.ECharts
             this.center = center;
             return this;
         }
-
-	}//end Geo
+        #endregion
+    }//end Geo
 
 }//end namespace Entities

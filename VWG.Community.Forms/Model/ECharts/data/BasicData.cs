@@ -9,6 +9,7 @@ namespace VWG.Community.Forms.Model.ECharts.data
 {
     public abstract class BasicData<T> where T : class
     {
+        #region Properties
         public string name { get; set; }
 
         public string text { get; set; }
@@ -36,8 +37,9 @@ namespace VWG.Community.Forms.Model.ECharts.data
         public int? valueIndex { get; set; }
 
         public IList<object> coord { get; set; }
+        #endregion
 
-
+        #region Methods
         public T SymbolSize(object symbolSize)
         {
             this.symbolSize = symbolSize;
@@ -120,7 +122,6 @@ namespace VWG.Community.Forms.Model.ECharts.data
             values.ToList().ForEach(v => coord.Add(v));
             return this as T;
         }
-
-
+        #endregion
     }
 }

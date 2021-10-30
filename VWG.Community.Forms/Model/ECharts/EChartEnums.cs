@@ -57,7 +57,7 @@ namespace VWG.Community.Forms.Model.ECharts
         [EnumMember(Value = "png")] png,
     }
 
-    public enum StyleLabelTyle
+    public enum StyleLabelType
     {
         [EnumMember(Value = "center")] center,
         [EnumMember(Value = "outer")] outer,
@@ -347,13 +347,14 @@ namespace VWG.Community.Forms.Model.ECharts
         
     }
 
-public enum CoordinateSystemType
+    public enum CoordinateSystemType
     {
         [EnumMember(Value = "cartesian2d")] cartesian2d,
         [EnumMember(Value = "geo")] geo,
         [EnumMember(Value = "bmap")] bmap,
         [EnumMember(Value = "polar")] polar,
-        [EnumMember(Value = "parallel")] parallel
+        [EnumMember(Value = "parallel")] parallel,
+        [EnumMember(Value = "gmap")] gmap       // 2021.10.31 paulus
     }
 
     public enum BrushToolBoxType

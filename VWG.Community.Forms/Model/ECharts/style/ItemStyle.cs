@@ -8,10 +8,13 @@ namespace VWG.Community.Forms.Model.ECharts.style
 {
     public class ItemStyle
     {
+        #region Properties
         public Normal normal { get; set; }
 
         public Emphasis emphasis { get; set; }
+        #endregion
 
+        #region Methods
         public Normal Normal() {
             if (normal==null)
             {
@@ -28,7 +31,6 @@ namespace VWG.Community.Forms.Model.ECharts.style
             }
             return this.emphasis;
         }
+        #endregion
     }
-
-   
 }

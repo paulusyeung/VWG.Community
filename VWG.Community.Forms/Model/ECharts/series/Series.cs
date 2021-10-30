@@ -12,7 +12,7 @@ namespace VWG.Community.Forms.Model.ECharts.series
     public abstract class Series 
     {
         #region properties
-        public string coordinateSystem { get; set; }
+        public CoordinateSystemType coordinateSystem { get; set; }
 
         public string id { get; set; }
 
@@ -36,7 +36,7 @@ namespace VWG.Community.Forms.Model.ECharts.series
 
         public MarkArea markArea { get; set; }
 
-        public ItemStyle label { get; set; }
+        public StyleLabel label { get; set; }
 
         public ItemStyle lineStyle { get; set; }
 
@@ -61,6 +61,10 @@ namespace VWG.Community.Forms.Model.ECharts.series
         public string blendMode { get; set; }
 
         public bool? hoverAnimation { get; set; }
+
+        public EffectScatter effectScatter { get; set; }
+
+        public object encode { get; set; }
         #endregion
 
         #region methods
@@ -83,7 +87,7 @@ namespace VWG.Community.Forms.Model.ECharts.series
             return this.areaStyle;
         }
 
-        public Series CoordinateSystem(string coordinateSystem)
+        public Series CoordinateSystem(CoordinateSystemType coordinateSystem)
         {
             this.coordinateSystem = coordinateSystem;
             return this;
@@ -167,10 +171,10 @@ namespace VWG.Community.Forms.Model.ECharts.series
             return this.markPoint;
         }
 
-        public ItemStyle Label()
+        public StyleLabel Label()
         {
             if (this.label == null)
-                this.label = new ItemStyle();
+                this.label = new StyleLabel();
             return this.label;
         }
 
@@ -248,6 +252,20 @@ namespace VWG.Community.Forms.Model.ECharts.series
         {
             this.blendMode = blendMode;
             return this;
+        }
+
+        public EffectScatter EffectScatter()
+        {
+            if (this.effectScatter == null)
+                this.effectScatter = new EffectScatter();
+            return this.effectScatter;
+        }
+
+        public object Encode()
+        {
+            if (this.encode == null)
+                this.encode = new object();
+            return this.encode;
         }
         #endregion
     }

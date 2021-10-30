@@ -1,0 +1,92 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml" lang="Context.Language">
+<head>
+    <meta charset="utf-8">
+    <title>#EChartsGMapTitle#</title>
+    <script type="text/javascript" src="Resources.Includes.js.wgx"></script>
+    <script type="text/javascript" src="Resources.Browser.Form.js.wgx"></script>
+    <script type="text/javascript" src="Resources.Gizmox.WebGUI.Forms.Skins.CommonSkin.Interfaces.js.wgx"></script>
+    <!-- import JavaScript API of Google Map, please replace the key with your own key -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=#GoogleApiKey#&language=#GoogleMapLocale#"></script>
+    <!-- import echarts -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.2.1/dist/echarts.min.js"></script>
+    <!-- import echarts-extension-gmap -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts-extension-gmap/dist/echarts-extension-gmap.min.js"></script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body, #echarts-google-map {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <!-- 为 ECharts 准备一个具备大小（宽高）的 Dom -->
+    <div id="echarts-google-map"></div>
+    <script type="text/javascript">
+
+        // Get applicaion and client API reference
+        window.mobjApp = parent.mobjApp;
+        window.vwgContext = parent.vwgContext;
+
+        // Get TreantBox control id
+        var strControlId = "#VWGControlId#";
+        var objNode = mobjApp.Data_GetNode(strControlId);
+
+        // 顯示 attributes 數量：default + TreantBox.RenderAttributes()
+        console.log(strControlId + ": " + JSON.stringify(objNode.attributes));
+
+        // 顯示 VWG Attributes: key value pairs
+        var echartsOption = "";
+        var strBackColor = "transparent";
+        var strForeColor = "transparent";
+        var strHtml = "";
+        //
+        for (i = 0; i < objNode.attributes.length; i++) {
+            var attr = objNode.attributes[i];
+            console.log(attr.nodeName + " = " + attr.nodeValue);
+
+            switch (attr.nodeName) {
+                case "Attr.Background":
+                    strBackColor = attr.nodeValue;
+                    break;
+                case "Attr.Fore":
+                    strForeColor = attr.nodeValue;
+                    break;
+                case "Attr.HTML5":
+                    strHtml = attr.nodeValue;
+                    break;
+                case "ANYTHING":    // custom attribute (no leading Attr.)
+                    anything = attr.nodeValue;
+                    break;
+                case "EChartsOption":
+                    echartsOption = attr.nodeValue;
+            }
+        };
+
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echarts-google-map'));
+
+        // Extra Javascript if any
+        #EChartsExtraScript#
+
+        // 指定图表的配置项和数据
+        var option = #EChartsOption#;
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+        // get google map instance
+        var gmap = myChart.getModel().getComponent("gmap").getGoogleMap();
+        // Add some markers to map
+        var marker = new google.maps.Marker({ position: gmap.getCenter() });
+        marker.setMap(gmap);
+        // Add TrafficLayer to map
+        var trafficLayer = new google.maps.TrafficLayer();
+        trafficLayer.setMap(gmap);
+    </script>
+</body>
+</html>

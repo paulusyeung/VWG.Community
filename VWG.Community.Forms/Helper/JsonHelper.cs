@@ -69,9 +69,9 @@ namespace VWG.Community.Forms.Helper
         /// </summary>
         /// <param name="value">被序列化的对象</param>
         /// <returns></returns>
-        public static string ObjectToJson2(object value)
+        public static string ObjectToJson2(object value, bool doubleQuotes = false)
         {
-            return ObjectToJson2(value, false);
+            return ObjectToJson2(value, false, doubleQuotes);
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace VWG.Community.Forms.Helper
         /// <param name="value">被序列化的对象</param>
         /// <param name="clearLastZero">是否清除小数位后的0</param>
         /// <returns></returns>
-        public static string ObjectToJson2(object value, bool clearLastZero)
+        public static string ObjectToJson2(object value, bool clearLastZero, bool doubleQuotes = false)
         {
             Type type = value.GetType();
             Newtonsoft.Json.JsonSerializer json = new Newtonsoft.Json.JsonSerializer();
@@ -102,7 +102,7 @@ namespace VWG.Community.Forms.Helper
             Newtonsoft.Json.JsonTextWriter writer = new JsonTextWriter(sw);
             writer.Formatting = Formatting.None;
             writer.QuoteChar = '"';
-            writer.QuoteName = true;    //! ECharts will fail without double quotes
+            writer.QuoteName = doubleQuotes;    //! ECharts html JSON.parse will fail without double quotes
             json.Serialize(writer, value);
 
             string output = sw.ToString();

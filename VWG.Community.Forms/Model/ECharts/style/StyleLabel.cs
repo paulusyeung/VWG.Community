@@ -8,9 +8,10 @@ namespace VWG.Community.Forms.Model.ECharts.style
 {
     public class StyleLabel
     {
+        #region Properties
         public bool? show { get; set; }
 
-        public StyleLabelTyle? position { get; set; }
+        public StyleLabelType? position { get; set; }
 
         public bool? rotate { get; set; }
 
@@ -25,7 +26,9 @@ namespace VWG.Community.Forms.Model.ECharts.style
         public int? x { get; set; }
 
         public int? y { get; set; }
+        #endregion
 
+        #region Methods
         public StyleLabel Y(int y)
         {
             this.y = y;
@@ -75,10 +78,11 @@ namespace VWG.Community.Forms.Model.ECharts.style
             return this.textStyle;
         }
 
-        public StyleLabel Position(StyleLabelTyle position)
+        public StyleLabel Position(StyleLabelType position)
         {
             this.position = position;
             return this;
         }
+        #endregion
     }
 }

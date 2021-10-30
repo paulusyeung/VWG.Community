@@ -109,7 +109,14 @@
     <Compile Include="EChartsBoxTest.Designer.cs">
       <DependentUpon>EChartsBoxTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="EChartsGMapBoxTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EChartsGMapBoxTest.Designer.cs">
+      <DependentUpon>EChartsGMapBoxTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper\EChartsDataHelper.cs" />
+    <Compile Include="Helper\EChartsGMapDataHelper.cs" />
     <Compile Include="MessageBox2Test.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +128,7 @@
     <Compile Include="ModelEx\ChartsData3.cs" />
     <Compile Include="ModelEx\ChartsData4.cs" />
     <Compile Include="ModelEx\ChartsData_Calendar.cs" />
+    <Compile Include="ModelEx\ChartsData_GMap.cs" />
     <Compile Include="ModelEx\ChartsData_Geo.cs" />
     <Compile Include="ModelEx\ChartsData_Line.cs" />
     <Compile Include="ModelEx\ChartsData_Parallel.cs" />
@@ -156,6 +164,10 @@
     </Compile>
     <EmbeddedResource Include="EChartsBoxTest.resx">
       <DependentUpon>EChartsBoxTest.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EChartsGMapBoxTest.resx">
+      <DependentUpon>EChartsGMapBoxTest.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MessageBox2Test.resx">

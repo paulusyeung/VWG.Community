@@ -38,4 +38,5 @@ C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.dll
 C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.pdb
 C:\Projects\VWG.Community\VWG.Community.Forms\bin\Debug\VWG.Community.Forms.dll.config
 C:\Projects\VWG.Community\VWG.Community.Forms\bin\Debug\Newtonsoft.Json.xml
+C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.Skins.EChartsGMapBoxSkin.resources
 C:\Projects\VWG.Community\VWG.Community.Forms\obj\Debug\VWG.Community.Forms.csprojResolveAssemblyReference.cache

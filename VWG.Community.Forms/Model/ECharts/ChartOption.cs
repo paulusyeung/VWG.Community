@@ -9,6 +9,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using VWG.Community.Forms.Model.ECharts.bmap;
+using VWG.Community.Forms.Model.ECharts.gmap;
 
 namespace VWG.Community.Forms.Model.ECharts
 {
@@ -74,6 +75,8 @@ namespace VWG.Community.Forms.Model.ECharts
         public Radar radar { get; set; }
 
         public BMap bmap { get; set; }
+
+        public GMap gmap { get; set; }
 
         public Geo geo { get; set; }
 

@@ -69,6 +69,12 @@
     <Compile Include="EChartsBoxSkin.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="EChartsGMapBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EChartsGMapBoxSkin.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Helper\ColorHelper.cs" />
     <Compile Include="Helper\ImageUploaderFile.cs" />
     <Compile Include="Helper\JsonHelper.cs" />
@@ -102,6 +108,11 @@
     <Compile Include="Model\ECharts\axis\TimeAxis.cs" />
     <Compile Include="Model\ECharts\axis\ValueAxis.cs" />
     <Compile Include="Model\ECharts\Basic.cs" />
+    <Compile Include="Model\ECharts\gmap\GMap.cs" />
+    <Compile Include="Model\ECharts\gmap\MapStyle.cs" />
+    <Compile Include="Model\ECharts\gmap\StyleJson.cs" />
+    <Compile Include="Model\ECharts\gmap\Styler.cs" />
+    <Compile Include="Model\ECharts\gmap\VisibilityType.cs" />
     <Compile Include="Model\ECharts\bmap\BMap.cs" />
     <Compile Include="Model\ECharts\bmap\MapStyle.cs" />
     <Compile Include="Model\ECharts\bmap\StyleJson.cs" />
@@ -260,6 +271,10 @@
       <DependentUpon>EChartsBoxSkin.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="EChartsGMapBoxSkin.resx">
+      <DependentUpon>EChartsGMapBoxSkin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="MessageBox2Form.resx">
       <DependentUpon>MessageBox2Form.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -296,6 +311,12 @@
       <DependentUpon>EChartsBoxSkin.cs</DependentUpon>
     </Content>
     <Content Include="EChartsBox.bmp" />
+    <Content Include="EChartsGMapBoxSkin.EChartsGMapBox.html">
+      <DependentUpon>EChartsGMapBoxSkin.cs</DependentUpon>
+    </Content>
+    <Content Include="EChartsGMapBoxSkin.EChartsGMapBox.xslt">
+      <DependentUpon>EChartsGMapBoxSkin.cs</DependentUpon>
+    </Content>
     <Content Include="TreantBox.bmp" />
     <Content Include="TreantBoxSkin.data-dynamic.css">
       <DependentUpon>TreantBoxSkin.cs</DependentUpon>

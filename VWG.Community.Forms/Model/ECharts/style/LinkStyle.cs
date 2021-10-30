@@ -8,6 +8,7 @@ namespace VWG.Community.Forms.Model.ECharts.style
 {
     public class LinkStyle
     {
+        #region Properties
         public LinkStyleType? type { get; set; }
 
         public double? opacity { get; set; }
@@ -15,7 +16,9 @@ namespace VWG.Community.Forms.Model.ECharts.style
         public object color { get; set; }
 
         public int? width { get; set; }
+        #endregion
 
+        #region Methods
         public LinkStyle Opacity(double opacity)
         {
             this.opacity = opacity;
@@ -28,7 +31,6 @@ namespace VWG.Community.Forms.Model.ECharts.style
             return this;
         }
 
-
         public LinkStyle Width(int width)
         {
             this.width = width;
@@ -40,7 +42,6 @@ namespace VWG.Community.Forms.Model.ECharts.style
             this.color = color;
             return this;
         }
-
-
+        #endregion
     }
 }

@@ -251,7 +251,7 @@ namespace VWG.Community.Forms.Model.ECharts.style
 
 		/// 
 		/// <param name="position"></param>
-		public T Position(StyleLabelTyle position){
+		public T Position(StyleLabelType position){
 		     this.position=position;
 		return this as T; 
 		}

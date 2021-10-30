@@ -208,7 +208,7 @@ namespace VWG.Community.FormsTest.Helper
             var tomatoStyle = new ItemStyle();
             tomatoStyle.Normal().Color("tomato").BarBorderRadius(0)
                 .BarBorderColor("tomato").BarBorderWidth(6)
-                .Label().Show(true).Position(StyleLabelTyle.insideTop);
+                .Label().Show(true).Position(StyleLabelType.insideTop);
             Bar b1 = new Bar("Acutal");
             b1.Stack("sum");
             b1.SetItemStyle(tomatoStyle);
@@ -222,7 +222,7 @@ namespace VWG.Community.FormsTest.Helper
             //! HACK: Formatter 去到 EChartsBox.html script 會出 JSON.parse error
             forecastStyle.Normal().Color("#fff").BarBorderRadius(0)
                 .BarBorderColor("tomato").BarBorderWidth(6)
-                .Label().Show(true).Position(StyleLabelTyle.top)
+                .Label().Show(true).Position(StyleLabelType.top)
                 .Formatter(new JRaw(@"function (params) {
                         for (var i = 0, l = option.xAxis[0].data.length; i < l; i++) {
                             if (option.xAxis[0].data[i] == params.name) {
