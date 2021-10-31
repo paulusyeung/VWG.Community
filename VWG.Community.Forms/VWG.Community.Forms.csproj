@@ -236,6 +236,7 @@
     <Compile Include="Model\ECharts\ToolTip.cs" />
     <Compile Include="Model\ECharts\TreeData.cs" />
     <Compile Include="Model\ECharts\VisualItem.cs" />
+    <Compile Include="Model\ECharts\VisualMap.cs" />
     <Compile Include="PagerBox.cs">
       <SubType>UserControl</SubType>
     </Compile>

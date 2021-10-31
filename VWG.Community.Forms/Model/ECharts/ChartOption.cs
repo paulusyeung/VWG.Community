@@ -211,13 +211,13 @@ namespace VWG.Community.Forms.Model.ECharts
             return this;
         }
 
- 
-        //public ChartOption VisualMap(params VisualMap[] values)
-        //{
-        //    this.visualMap = values.ToList();
-        //    return this;
-        //}
-        
+
+        public ChartOption VisualMap(params VisualMap[] values)
+        {
+            this.visualMap = values.ToList();
+            return this;
+        }
+
 
         public ChartOption XAxis(params Axis[] values)
         {
